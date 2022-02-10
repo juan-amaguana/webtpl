@@ -1,0 +1,1417 @@
+@font-face {
+    font-family: 'Terpel Sans';
+    src: url('../../') format('woff2'),
+    url('../../fonts/TerpelSans-Regular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+  }
+  @font-face {
+    font-family: 'Terpel Sans';
+    src: url('../../') format('woff2'),
+    url('../../fonts/TerpelSans-Light.woff') format('woff');
+          font-weight: 300;
+          font-style: normal;
+          font-display: swap;
+  }
+  @font-face {
+    font-family: 'Terpel Sans';
+    src: url('../../') format('woff2'),
+    url('../../fonts/TerpelSans-Medium.woff') format('woff');
+          font-weight: 500;
+          font-style: normal;
+          font-display: swap;
+  }
+  @font-face {
+    font-family: 'Terpel Sans';
+    src: url('../../') format('woff2'),
+    url('../../fonts/TerpelSans-Bold.woff') format('woff');
+          font-weight: bold;
+          font-style: normal;
+          font-display: swap;
+  }
+  @font-face {
+    font-family: 'Terpel Sans';
+    src: url('../../') format('woff2'),
+    url('../../fonts/TerpelSans-ExtraBold.woff') format('woff');
+          font-weight: 900;
+          font-style: bold;
+          font-display: swap;
+  }
+  ::placeholder { /* Most modern browsers support this now. */
+    color:    #fff !important;
+  }
+  h1, h2, h3, h4, h5, h6, p, a, label {
+    font-family: 'Terpel Sans' , sans-serif;;
+    transition: all 300ms ease-in; }
+  
+  h1 {
+    font-weight: 700;
+    line-height: 75%;
+    font-size: 4rem; }
+    @media (min-width: 576px) {
+      h1 {
+        font-size: 4rem; } }
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 5rem; } }
+    @media (min-width: 992px) {
+      h1 {
+        font-size: 6rem; } }
+    @media (min-width: 1200px) {
+      h1 {
+        font-size: 6.5rem; } }
+    @media (min-width: 1400px) {
+      h1 {
+        font-size: 6.5rem; } }
+  
+  h2 {
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 75%; }
+    @media (min-width: 576px) {
+      h2 {
+        font-size: 2rem; } }
+    @media (min-width: 768px) {
+      h2 {
+        font-size: 2.5rem; } }
+    @media (min-width: 992px) {
+      h2 {
+        font-size: 3rem; } }
+    @media (min-width: 1200px) {
+      h2 {
+        font-size: 4rem; } }
+    @media (min-width: 1400px) {
+      h2 {
+        font-size: 4rem; } }
+  
+  h3 {
+    font-weight: 500;
+    font-size: 1rem; }
+    @media (min-width: 576px) {
+      h3 {
+        font-size: 1rem; } }
+    @media (min-width: 768px) {
+      h3 {
+        font-size: 1.5rem; } }
+    @media (min-width: 992px) {
+      h3 {
+        font-size: 2rem; } }
+  
+  h4 {
+    font-weight: 500;
+    font-size: 1rem; }
+    @media (min-width: 576px) {
+      h4 {
+        font-size: 1rem; } }
+    @media (min-width: 768px) {
+      h4 {
+        font-size: 1.5rem; } }
+    @media (min-width: 992px) {
+      h4 {
+        font-size: 2rem; } }
+    @media (min-width: 1200px) {
+      h4 {
+        font-size: 2.5rem; } }
+    @media (min-width: 1400px) {
+      h4 {
+        font-size: 2.5rem; } }
+  
+  h5 {
+    font-weight: 500;
+    font-size: 1rem; }
+    @media (min-width: 576px) {
+      h5 {
+        font-size: 1rem; } }
+    @media (min-width: 768px) {
+      h5 {
+        font-size: 1rem; } }
+    @media (min-width: 992px) {
+      h5 {
+        font-size: 1rem; } }
+    @media (min-width: 1200px) {
+      h5 {
+        font-size: 1rem; } }
+    @media (min-width: 1400px) {
+      h5 {
+        font-size: 1rem; } }
+  
+  h6 {
+    font-weight: 500;
+    font-size: 0.8rem; }
+    @media (min-width: 576px) {
+      h6 {
+        font-size: 0.8rem; } }
+    @media (min-width: 768px) {
+      h6 {
+        font-size: 1rem; } }
+    @media (min-width: 992px) {
+      h6 {
+        font-size: 1rem; } }
+    @media (min-width: 1200px) {
+      h6 {
+        font-size: 1.2rem; } }
+    @media (min-width: 1400px) {
+      h6 {
+        font-size: 1.2rem; } }
+  p, h1, h2, h3, h4, h5, h6{
+    font-family: 'Terpel Sans' , sans-serif;
+    color: #666666;
+  }
+  p {
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+  
+  /* Styles */
+  body {
+    max-width: 100%;
+    min-height: 100% !important;
+    height: auto!important;
+    background-color: #FFFEFE;
+  }
+  
+  html {
+    max-width: 100%;
+    box-sizing: border-box;
+    min-height:100% !important;
+    height:100% !important;
+    font-size: 12px;
+  }
+    @media (min-width: 576px) {
+      html {
+        font-size: 12px; } }
+    @media (min-width: 768px) {
+      html {
+        font-size: 14px; } }
+    @media (min-width: 992px) {
+      html {
+        font-size: 16px; } }
+    @media (min-width: 1200px) {
+      html {
+        font-size: 18px; } }
+    @media (min-width: 1400px) {
+      html {
+        font-size: 20px; } }
+  
+  *, *:before, *:after {
+    box-sizing: inherit; }
+  
+    strong{
+      font-weight: 900;
+    }
+  a:hover{
+      text-decoration: none;
+  }
+  .wrapper{
+    margin: 0 auto;
+    padding:0 80px;
+    width:100%;
+    max-width:1600px;
+  }
+  .white{
+    color: #fff;
+  }
+  .red{
+      color:#FF1E0A;
+  }
+  .light{
+      font-weight: 200;
+  }
+  .normal{
+      font-weight: 400;
+  }
+  .bold{
+      font-weight: 600;
+  }
+  .superbold{
+      font-weight: 800;
+  }
+  .extrabold{
+      font-weight: 900;
+  }
+  .redButton{
+    background-color: #FF1E0A !important;
+    color: #fff;
+    padding: 15px 35px !important;
+    border-radius: 30px !important;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+}
+.redButton:hover{
+  text-decoration: none;
+  color: #fff;
+}
+.transparentButton{
+  background-color: #FF1E0A;
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-weight: 600;
+  border: solid 1px #fff;
+}
+.transparentButton:hover{
+  text-decoration: none;
+  color: #fff;
+}
+.buttAlignCenter{
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+}
+.middleLines{
+  position: relative;
+}
+.middleLines::before{
+  content: '';
+  background-image: url('../images/linea.png');
+  width: 175px;
+  height: 3px;
+  display: block;
+  position: absolute;
+  top: 10vh;
+  right: 25vw;
+}
+.middleLines::after{
+  content: '';
+  background-image: url('../images/linea.png');
+  width: 175px;
+  height: 3px;
+  display: block;
+  position: absolute;
+  bottom: 28vh;
+  left: 23vw;
+}
+/* Header */
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1.5vh 2.5vw;
+    background-color: #fff;
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+}
+.header img{
+    width: 200px;
+}
+.header .headEndCont{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 40%;
+    justify-content: space-around;
+}
+.header .headEndCont a h6{
+    margin: 0;
+    border: solid 1.5px #6666;
+    padding: 15px 25px;
+    border-radius: 50px;
+}
+.header .headEndCont a.redButton{
+    background-color: #FF1E0A;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+}
+/* Banner */
+.banner{
+    background-color: #FF1E0A;
+    display: flex;
+    flex-direction: row;
+    height: 85vh;
+}
+.banner .title{
+    color: #fff;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+.banner .title p{
+  margin: 15px 0;
+}
+.banner .title p, .banner .title form{
+  display: inline-block;
+  width: 75%;
+}
+.banner .clouds{
+    background-image: url('../images/skybck-min.png');
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-size: cover;
+}
+.banner .clouds img{
+  width: 85%;
+}
+.banner h2{
+    color: #fff;
+    font-size: 2.5rem;
+    line-height: 125%;
+    font-weight: 800;
+    display: inline-block;
+    margin: 0;
+    margin-bottom: 5vh;
+}
+.banner p{
+    color: #fff;
+    display: inline-block;
+}
+/* Body */
+.body{
+  margin-top: 10vh;
+}
+.body .redCircles{
+  margin-top: 10vh;
+}
+.body .redCircles .col-sm-4{
+  text-align: center;
+}
+.body .redCircles .col-sm-4 h6{
+  margin-top: 5vh;
+}
+.body .redCircles img{
+  background-color: #FF1E0A;
+  border-radius: 75px;
+    padding: 15px;
+}
+.winProducts{
+  margin-top: 10vh
+}
+.winProducts h4{
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: 700;
+}
+.winProducts h6{
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 5vh;
+  font-weight: 600;
+}
+.winProducts .col-sm-7{
+  border-right: solid 1.5px #CCCCCC;
+}
+.winProducts .col-sm-7 .row{
+  justify-content: space-evenly;
+}
+.winProducts .col-sm-5{
+  text-align: center;
+}
+.winProducts .col-sm-7 .row .col-sm-4{
+  text-align: center;
+}
+.redBox{
+background-image: url('../images/redBox.png');
+border-radius: 20px;
+justify-content: center;
+background-size: cover;
+padding: 30px 60px;
+margin-bottom: 25px;
+}
+.redBox h5{
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.redBox h2{
+  margin-top: 25px;
+  font-size: 4.85rem;
+  font-weight: 900;
+}
+.redBox h2 span{
+  font-size: 6rem;
+  font-weight: 900;
+}
+.redBox .whiteTb{
+  border-top: solid 1.5px #fff;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 25px;
+  padding-top: 10px;
+  margin-bottom: 45px;
+}
+.redBox .whiteTb .col-sm-3, .redBox .whiteTb .col-sm-4{
+  border-right: solid 1.5px #fff;
+}
+.redBox .whiteTb .col-sm-4 .row{
+  justify-content: space-around;
+}
+.redBox .whiteTb h4{
+  font-size: .9rem;
+  color: #fff;
+  margin: 0;
+}
+.redBox .whiteTb .col-sm-5 h6{
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 900;
+}
+.redBox .whiteTb h3{
+  color: #fff;
+  font-weight: 900;
+}
+.redBox .whiteTb h1{
+  color: #fff;
+  font-size: 5rem;
+  font-weight: 900;
+}
+.cards{
+  background-image: url('../images/cards.jpg');
+  background-size: cover;
+  padding: 60px;
+  background-position-y: center;
+  border-radius: 20px;
+}
+.cards h3, .cards p{
+  color: #fff;
+}
+.cards .redButton{
+  margin-top: 10px;
+}
+.fuelStation{
+  margin-top: 15vh;
+  margin-bottom: 15vh;
+  background-image: url('../images/fuelStation.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: right;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+}
+.fuelStation h3{
+  font-weight: 600;
+  margin-bottom: 5vh;
+}
+input#cedulaLogin {
+    text-align: center;
+}
+/* Prefooter */
+.redRec{
+  background-image: url('../images/redRec.png');
+  background-size: cover;
+  background-position-y: 15vh;
+  background-repeat: no-repeat;
+  height: 50vh;
+}
+.redRec .lastRegister{
+  background-color: #fff;
+  padding: 60px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.redRec .lastRegister h3{
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.redRec .lastRegister input.login-control-gb{
+  background-color: #fff;
+  border: solid 2px #90A4AE;
+  color: #90A4AE;
+}
+.redRec .lastRegister input.login-control-gb::placeholder { /* Most modern browsers support this now. */
+  color:  #90A4AE !important;
+}
+.redRec .lastRegister .submitLogin{
+  background-color: #FF1E0A;
+  color: #fff;
+  border-radius: 25px;
+  padding: 10px 25px;
+  cursor: pointer;
+  margin-left: 10px;
+  font-weight: 800;
+}
+/* Footer */
+footer {
+  background-color: #666666;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+footer .social{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 45%;
+}
+footer .social p{
+  color: #fff;
+  margin: 0;
+}
+
+/*Forms */
+input.login-control-gb{
+  color: #fff;
+  background-color: #FF1E0A;
+  border: solid 2px #fff;
+  border-radius: 25px;
+  padding: 10px 16px;
+  font-weight: 800;
+}
+.submitLogin{
+  background-color: #fff;
+  color: #FF1E0A;
+  border: solid 2px #fff;
+  border-radius: 25px;
+  padding: 10px 25px;
+  cursor: pointer;
+  margin-left: 10px;
+  font-weight: 800;
+}
+/* Winners banner */
+section#winners{
+  background-color: #E5E5E5;
+}
+.winnersBanner{
+  background-image: url('../images/skybck.png');
+  background-size: cover;
+  background-position-y: inherit;
+  position: relative;
+  color: #FF1E0A;
+}
+.winnersBanner .smLogo{
+  position: absolute;
+  top: 7vh;
+}
+.winnersBanner .bigWin{
+    width: 35%;
+    margin: 0 auto;
+    display: flex;
+}
+.winnersBanner h5, .winnersBanner h3{
+  color: #FF1E0A;
+}
+.winnersBanner h5{
+  font-size: 1.5rem;
+}
+.winnersBanner h3{
+  font-weight: 900;
+  font-size: 2.25rem;
+}
+.winnersBanner p{
+  font-size: 0.6rem;
+}
+
+.winnersBanner .wrapper .row .col-sm-7{
+  padding: 35px 0;
+  padding-left: 65px;
+}
+
+.winnersBanner .wrapper .row .col-sm-7 .redCup::before{
+  content: '';
+  display: inline-block;
+  background-image: url('../images/cup.svg');
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  vertical-align: bottom;
+  margin-right: 15px;
+}
+/* Winners Counter */
+.winnersCounter{
+  margin: 5vh 0;
+}
+.ycd-simple-content-wrapper-21 .ycd-simple-countdown-number, .ycd-simple-content-wrapper-21 .ycd-simple-timer-dots {
+    font-size: 50px !important;
+}
+.winnersCounter h3{
+  color: #FF1E0A;
+  font-weight: 600;
+  font-size: 1.75rem;
+  margin-bottom: 2.5vh;
+}
+.winnersCounter .moneyBack{
+  background-image: url('../images/time_counter_banner.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 25px;
+  height: 30vh;
+  align-items: center;
+}
+.winnersCounter .moneyBack .col-sm-6{
+  text-align: center;
+}
+.winnersCounter .moneyBack .col-sm-6 p{
+  color: #fff;
+  text-align: start;
+  width: 47%;
+  margin: 0 auto;
+}
+.winnersCounter .moneyBack .col-sm-6 h2{
+  color: #fff;
+  font-weight: 900;
+}
+.ycd-all-content-wrapper.ycd-countdown-content-wrapper-21 {
+  display: inline-block;
+  padding: 7px;
+  background-color: #fff;
+  border-radius: 15px;
+}
+/* Winners table */
+.winnersTable{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 5vh;
+}
+.winnersTable h4{
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #676766;
+  margin-top: 2.5vh;
+}
+.winnersTable h4 span{
+  color: #FF1E0A;
+  font-weight: 800;
+  font-size: 2rem;
+}
+.winnersTable .firstColumn, .winnersTable .secondColumn{
+  width: 49%;
+}
+.winnersTable .firstColumn .card{
+  margin-bottom: 3.5vh;
+}
+.winnersTable .card{
+  background-color: #fff;
+  border-radius: 25px;
+  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+  padding: 15px;
+}
+.winnersTable .card .winFlexTb{
+  list-style: auto;
+  border: solid 1px #CCCCCC;
+  border-radius: 15px;
+  width: 85%;
+  display: block;
+  margin: 0 auto;
+  margin-top: 5vh;
+  margin-bottom: 7vh;
+  max-height: 145vh;
+  overflow-y: scroll;
+  color: #666;
+}
+
+.winnersTable .card .winFlexTb p span{
+  width: 40%
+}
+
+.winnersTable .card .winFlexTb li:not(:last-child){
+  border-bottom: solid 1px #CCCCCC;
+}
+
+.winnersTable .card .winFlexTb p{
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 10px;
+}
+.socialBanner{
+  background-image: url('../images/socialBanner2.png');
+  background-size: contain;
+  height: 50vh;
+  background-repeat: no-repeat;
+  padding: 30px 65px;
+}
+.socialBanner h3{
+  color: #fff;
+}
+.socialBanner .social a{
+  margin-right: 10px;
+}
+/* Register */
+.register{
+  margin: 5vh 0 20vh 0;
+  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+  border-radius: 15px;
+}
+.register .ganaBack{
+  background-image: url('../images/lastKV.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+      background-position-y: -15px;
+}
+.register .ganaForm{
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.register h3{
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+.register .ganaForm .flexForm{
+  width: 80%;
+}
+/* User */
+.headerRed{
+  background-color: #FF1E0A;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.backstar{
+  background-image: url(../images/starsBack_cutted.png);
+  background-size: cover;
+  height: 42vh;
+  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+  border-radius: 20px;
+  margin-bottom: 2.5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.backstar h1{
+  color: #fff;
+  font-weight: 900;
+}
+.backstar h6{
+  color: #fff;
+  text-align: center;
+  font-weight: 800;
+}
+.saldo{
+  height: 42vh;
+  border-radius: 20px;
+  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+.saldo h6{
+  color: #FF1E0A;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.saldo h1{
+  font-size: 5.5rem;
+  font-weight: 900;
+  display: flex;
+}
+.saldo h1 span{
+  font-size: 1.5rem;
+}
+.saldo p{
+  font-size: 0.75rem;
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+}
+.saldo h1 span.big{
+  font-size: 5.5rem;
+  font-weight: 900;
+}
+.facCont{
+  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+.facCont .facFlex{
+  width: 85%;
+  margin: 7vh 0;
+}
+section#userPortal {
+  padding-bottom: 15vh;
+}
+.facCont .facFlex h6{
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2.5vh;
+}
+.noBorder{
+    border-right: none !important;
+}
+.winTableButt{
+  border-radius: 20px;
+  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+  margin-top: 2.5vh;
+  margin: 0 auto;
+  margin-top: 2.5vh;
+  background-image: url('../images/bluecroppedBack.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 103%;
+}
+.winTableButt .redBox{
+        padding: 25px 15px;
+}
+.winTableButt .redBox h2{
+    font-size: 3rem;
+    line-height: 100%;
+        margin-top: 10px;
+}
+.winTableButt .redBox h5{
+    font-size: 1.25rem;
+}
+.winTableButt .redBox h2 span{
+    font-size: 3.5rem;
+}
+.winTableButt .redBox .whiteTb h1{
+    font-size: 3rem;
+    text-align: center;
+}
+.noBorder h6{
+        color: #ffff;
+    font-size: .8rem;
+    font-weight: 800;
+}
+.winTableButt .row{
+  width: 95%;
+  margin: 0 auto;
+}
+.winTableButt .col-sm-4, .winTableButt .col-sm-3, .winTableButt .col-sm-9, .winTableButt .col-sm-8, .winTableButt .col-sm-5, .winTableButt .col-sm-7{
+  padding: 0;
+}
+.winTableButt .col-sm-12 h1{
+  border-bottom: 2px solid #666767;
+  font-size: 2.5rem;
+  color: #FF1E0A;
+  font-weight: 900;
+  text-align: center;
+  padding: 10px;
+  margin-top: 25px;
+  padding-bottom: 25px;
+}
+.winTableButt h1 span{
+  font-size: 2.8rem;
+  font-weight: 900;
+}
+.winTableButt .number{
+  font-size: 2.5rem;
+  color: #FF1E0A;
+  font-weight: 900;
+}
+.winTableButt .desc{
+  font-size: 0.7rem;
+  margin: 0;
+  line-height: 150%;
+}
+.winTableButt .desc2{
+  font-size: 0.7rem;
+  margin: 0;
+  line-height: 150%;
+}
+.winTableButt .desc2 span{
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+.winTableButt .desc span{
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.winnerTickets{
+  border-radius: 20px;
+  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+  display: flex;
+  justify-content: center;
+  padding-top: 5vh;
+  max-height: 86.5vh;
+}
+.winnerTickets .ticketsFlex{
+  width: 95%;
+}
+.winnerTickets .ticketsFlex h3{
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 2.5vh;
+}
+.winnerTickets .ticketsFlex ul{
+  list-style: none;
+  padding: 0;
+  overflow-x: scroll;
+  overflow-y: scroll;
+  height: calc(100% - 11vh);
+}
+.winnerTickets .ticketsFlex ul li::before{
+  content: '';
+  background-image: url(../images/ticket.svg);
+  width: 35px;
+  height: 29px;
+  display: inline-block;
+  background-size: cover;
+  position: relative;
+  top: 0.5vh;
+}
+.userTitle{
+  margin-top: 10vh;
+}
+.userTitle{
+  color: #FF1E0A;
+  font-weight: 900;
+}
+.userSubtitle{
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: #666666;
+}
+#errorCode, #codeAdded{
+  display: none;
+}
+.popupCont{
+  width: 100%;
+  height: 100vh;
+  background: rgba(12,12,12,.75);
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 99;
+}
+.popupCont .popup{
+  width: 45vw;
+  height: auto;
+  background-color: #fff;
+  border-radius: 16px;
+  z-index: 99;
+  padding: 30px;
+}
+ .popup h4{
+   font-size: 1.7rem;
+   color: #FF1E0A;
+ }
+ .popup p{
+    line-height: 125%;
+ }
+ .btn{
+   display: block;
+   padding: 10px 15px;
+   margin: 0 auto;
+   width: 50%;
+   border-radius: 21px;
+ }
+ .btn.face{
+  background-color: #1465C1;
+  position: relative;
+  margin-bottom: 15px;
+  font-weight: 600;
+ }
+ .btn.face a{
+  color: #fff !important;
+ }
+ .btn.face img{
+   margin-right: 10px;
+ }
+ .btn.understand{
+  background-color:#FF1E0A;
+  color: #fff;
+   margin-bottom: 10px;
+   font-weight: 600;
+ }
+ .singleCode {
+  display: inline-flex;
+  align-items: baseline;
+}
+/* Dashboard */
+table#mainTableGb{
+        display: block;
+    overflow-x: scroll;
+}
+/* T Y C */
+.row.tyc img{
+  width: 33%;
+  margin: 0 auto;
+  display: block;
+}
+.row.tyc p, .row.tyc li, .row.tyc td{
+  color: black;
+  text-align: justify;
+  font-size: 1rem;
+}
+.row.tyc p span{
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.row.tyc table, .row.tyc th, .row.tyc td{
+  border: solid 1px black
+}
+/* Estaciones */
+.estaciones{
+  display: flex;
+  flex-direction: row;
+  margin-top: 15vh;
+  justify-content: space-evenly;
+  align-items:stretch;
+}
+.estaciones .selector li{
+ margin-bottom: 8px; 
+}
+.estaciones .selector a{
+  color: #666666;
+  text-decoration: none;
+}
+.estaciones .selector a li.active{
+  border-left: solid red 3.5px;
+  padding-left: 5px;
+}
+.estaciones .selector ul{
+  list-style: none;
+  padding: 0;
+}
+.selector h3{
+  margin-bottom: 5px;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+.selector, .provinces > div{
+  background-color: #fff;
+  padding: 35px;
+  border-radius: 35px;
+  margin-bottom: 5vh;
+}
+.selector{
+  height: min-content;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+}
+.provinces {
+  width: 70%;
+}
+.provinces  h2{
+  font-size: 1.8rem;
+  margin-bottom: 4vh;
+}
+.provinces h3{
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-top: 3vh;
+  margin-bottom: 2vh;
+}
+.provinces p{
+  font-size: .8rem;
+  display: flex;
+  width: 50%;
+  margin-bottom: 4vh;
+}
+.cities {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.provinces p::before{
+    content: '';
+    background-image: url(../images/location.svg);
+    background-size: contain;
+    display: inline-block;
+    width: 20px;
+    height: 22px;
+    background-repeat: no-repeat;
+}
+.bannerEstaciones{
+  background-image: url(../images/skybck.png);
+}
+.bannerEstaciones h1{
+  color: #FF1E0A;
+  font-size: 2.3rem;
+  line-height: 120%;
+}
+.bannerEstaciones img{
+  width: 50%;
+}
+.flexEstaciones{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+}
+/*Responsive */
+/*
+.main-section{
+	background-image: url('https://terpelsicumple.com/wp-content/uploads/2022/01/319382871109211.png');
+	background-repeat: no-repeat;
+	background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    background-size: contain;
+    background-position-x: right;
+}
+.main-section h1{
+	max-width: 75%;
+}
+*/
+.main-section{
+	width: 100%;
+    height: 100vh;
+    background-color: #F61720;
+	display: flex;
+	position: relative;
+	align-items:center;
+	justify-content:center;
+	top: -32px;
+}
+.main-section .logoTer{
+	width: 175px;
+	margin-bottom: 12vh;
+}
+.main-section h1{
+	font-size: 3.75rem;
+	font-weight: 600;
+	line-height: 125%;
+}
+
+.proxim{
+	width:60%;
+}
+.main-section h1{
+	color: #fff;
+}
+p.imgContP{
+	color: #fff;
+	font-size: 1.5rem;
+	margin-top: 5vh;
+}
+p.imgContP span{
+	display: inline-flex;
+	flex-direction: row;
+	width: 150px;
+	justify-content: space-between;
+}
+p.imgContP span a{
+width: 30px;
+}
+p.imgContP span img{
+	width: 30px;
+	height: 30px;
+}
+@media only screen and (max-width: 650px) and (orientation: portrait) {
+	.proxim{
+		width: 90%;
+	}
+    body {
+        overflow-x: hidden;
+    }
+      .flexEstaciones{
+    flex-direction: column;
+    text-align: center;
+  }
+  .bannerEstaciones img {
+    width: 90%;
+}
+  .provinces p{
+    width: 100%;
+  }
+  .selector, .provinces > div {
+    padding: 20px;
+  }
+  .selector{
+    display: none;
+  }
+  h3 {
+    font-size: 1.85rem;
+  }
+  h4 {
+    font-size: 1.4rem;
+  }
+  h6 {
+    font-size: 1.5rem;
+  }
+  a{
+    font-size: 1.2rem;
+  }
+  .wrapper{
+    padding: 0;
+  }
+  .header{
+    flex-direction: column;
+    align-items: center;
+  }
+  .header .headEndCont{
+    width: 100%;
+  }
+  .banner{
+    flex-direction: column;
+  }
+  .banner .title{
+    padding: 0 10px;
+  }
+  .banner .title form, .banner .title p{
+    width: 100%;
+  }
+  .middleLines::before, .middleLines::after{
+    content: '';
+    display: none;
+  }
+  .body .redCircles{
+    margin-top: 5vh;
+  }
+  .body .redCircles .col-sm-4{
+    margin-bottom: 2.5vh;
+  }
+  .winProducts h6 {
+    font-size: 1.2rem;
+  }
+  .redBox {
+    padding: 15px 30px;
+  }
+  .redBox .whiteTb .col-sm-3 .row .col-8{
+    text-align: center;
+  }
+  .redBox .whiteTb .col-sm-3, .redBox .whiteTb .col-sm-4{
+    border: none;
+  }
+  .cards{
+    padding: 35px;
+    background-position-x: center;
+  }
+  .fuelStation{
+    background-position-y: bottom;
+    margin: 5vh 0;
+  }
+  .fuelStation h3{
+    text-align: center;
+  }
+  .fuelStation .redButton{
+    display: block;
+    margin: 0 auto;
+    width: 63%;
+    margin-top: 0vh;
+    margin-bottom: 5vh;
+  }
+  .redRec .lastRegister{
+    padding: 30px;
+  }
+  footer .social {
+    flex-direction: row;
+    text-align: center;
+	flex-wrap: wrap;
+	width: 42%;
+  }
+  .ycd-simple-content-wrapper-21 .ycd-simple-countdown-number, .ycd-simple-content-wrapper-21 .ycd-simple-timer-dots {
+    font-size: 35px !important;
+}
+  .winnersBanner .smLogo{
+    display: none;
+  }
+  .winnersBanner .wrapper .row .col-sm-7{
+    padding: 20px;
+    text-align:center;
+  }
+  .winnersCounter .moneyBack{
+    height: 20vh;
+  }
+  .winnersTable{
+    flex-direction: column;
+    padding-bottom: 1.5vh;
+  }
+  .winnersTable .firstColumn, .winnersTable .secondColumn{
+    width: 100%;
+  }
+  .socialBanner{
+    background-position-x: center;
+    margin-bottom: 1.5vh;
+    background-size: cover;
+    height: 23vh;
+  }
+  .socialBanner h3{
+    font-weight: 900;
+  }
+  .winnersCounter {
+    margin: 1.5vh 0;
+  }
+  .register{
+      margin: 0;
+      margin-top: 1.5vh;
+  }
+  .register .ganaBack{
+    height: 50vh;
+  }
+  .register .ganaForm .flexForm{
+    width: 95%;
+  }
+  .submitSection a{
+    font-size: 0.8rem;
+  }
+  #form-register label, #form-register p{
+    font-size: 0.88rem;
+  }
+  .userTitle, .userSubtitle{
+    padding: 0 15px;
+  }
+  .backstar, .saldo{
+    width: 60vw;
+    height: 25vh;
+    margin: 0 auto;
+    margin-top: 5vh;
+  }
+  .winnerTickets{
+    margin-top: 2vh;
+  }
+  
+  .winnerTickets .ticketsFlex {
+    width: 85%;
+  }
+  .winTableButt .number{
+    font-size: 2.75rem;
+    text-align: center;
+  }
+  .winTableButt .desc, .winTableButt .desc2{
+    text-align: center;
+    font-size: 1rem;
+  }
+  .popupCont .popup{
+    width: 80%;
+    padding: 10px;
+    height: auto;
+  }
+  .btn{
+    width: 85%;
+  }
+  .redBox h2{
+      line-height: 120%;
+  }
+.cards {
+        background-size: inherit;
+    height: 30vh;
+}
+.cards .redButton {
+    display: block;
+    width: 55vw;
+}
+.winTableButt .col-sm-12 h1{
+        line-height: 120%;
+}
+.winTableButt .redBox .whiteTb .col-sm-4{
+    text-align: center;
+    }
+    .winTableButt .redBox .whiteTb h1{
+            font-size: 4rem;
+    }
+    .winnersTable .firstColumn .card{
+            margin-bottom: 1.5vh;
+    }
+    .userTitle {
+    margin-top: 2vh;
+}
+.facCont .facFlex{
+    margin: 3vh 0;
+}
+section#userPortal{
+    padding-bottom: 2vh;
+}
+.winnersBanner .bigWin{
+    width: 65%;
+}
+.winnersTable .card .winFlexTb p span{
+  width: 41%
+}
+}

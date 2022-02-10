@@ -1,0 +1,220 @@
+.participantsTable h3{
+    text-align: center;
+}
+.dashboard h1{
+    text-align: center;
+    margin-bottom: 5vh;
+    color: #FF1E0A;
+    font-size: 1.8rem;
+    margin-top: 5vh;
+}
+.dashboard .firstBoxes .col-sm-4, .dashboard .secondBoxes .col-sm-4{
+    padding: 35px;
+    text-align: center;
+}
+.dashboard .firstBoxes .col-sm-4, .dashboard .secondBoxes .col-sm-4{
+    color: #fff;
+}
+.row.firstBoxes h4, .row.firstBoxes h2, .row.secondBoxes h4, .row.secondBoxes h2{
+    color: #fff;
+}
+.row.firstBoxes h4, .row.secondBoxes h4{
+    font-size: 1.5rem;
+    
+}
+.row.firstBoxes h2, .row.secondBoxes h2{
+    font-size: 1.6rem;
+}
+.row.smallTables {
+    margin-top: 5vh;
+    margin-bottom: 7vh;
+}
+.smallTables h5{
+    font-size: 1.5rem;
+    padding-top: 2.5vh;
+}
+
+.blue{
+    background-color: #003f5c;
+}
+.purple{
+    background-color: #58508d;
+}
+.pink{
+    background-color: #bc5090;
+}
+.red{
+    background-color: #ff6361;
+}
+.yellow{
+    background-color: #ffa600;
+}
+.smallTables h5, .smallTables th,.smallTables td{
+    text-align: center;
+    color: #fff;
+}
+input.login-control-gb{
+    color: #fff;
+    background-color: #FF1E0A;
+    border: solid 1px #fff;
+    border-radius: 25px;
+}
+input#cedulaLogin {
+    text-align: center;
+}
+.submitLogin{
+    background-color: #fff;
+    color: #FF1E0A;
+}
+#form-register label{
+    display: block;
+    color: #666666;
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-family: 900;
+    font-size: 0.77rem;
+}
+#form-register input{
+    border-radius: 20px;
+    border: solid 1px #cccccc;
+    display: block;
+    width: 85%;
+    padding: 5px 10px;
+}
+#form-register input::placeholder { /* Most modern browsers support this now. */
+    color:    #cccccc !important;
+  }
+#form-register p{
+      margin-top: 10px;
+      font-size: 0.7rem;
+      margin-bottom: 5px;
+}
+#form-register .submitSection{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#form-register .submitSection input{
+    width: auto !important;
+}
+#form-register .submitSection p{
+    margin: 0;
+    margin-left: 10px;
+}
+#form-register .face{
+    margin-top: 20px;
+    background-color: #1465C1;
+    color: #fff;
+    position: relative;
+    margin-bottom: 8px;
+    font-weight: 600;
+    padding: 10px 15px;
+    width: 84%;
+    border-radius: 21px;
+}
+#form-register .face img{
+    margin-right: 10px;
+}
+#form-register .registerButton{
+    background-color: #FF1E0A;
+    color: #fff;
+    padding: 10px 15px;
+    font-weight: 600;
+}
+#form-code label{
+    display: block;
+    margin: 0;
+    font-weight: 500;
+    color: #666666;
+    margin-top: 1.5vh;
+}
+#form-code input, #form-code select{
+    padding: 5px 10px;
+    display: block;
+    border-radius: 20px;
+    border: solid 1px #cccccc;
+    background-color: #fff;
+}
+#form-code input::placeholder{ /* Most modern browsers support this now. */
+    color:    #666666 !important;
+  }
+#form-code input.smallInput{
+    width: 20%;
+    display: inline-block;
+}
+#form-code input.medInput{
+    width: 50%;
+    display: inline-block;
+}
+#form-code .fullInput{
+    width: 92%;
+    display: inline-block;
+}
+#form-code .productsCheck input{
+    display: inline-block;
+    margin-right: 10px;
+}
+#form-code .productsCheck img{
+    width: 75px;
+}
+#form-code .productsCheck input.marleft{
+    margin-left: 20px;
+}
+.targets {
+    position: relative;
+}
+button#reset {
+    position: absolute;
+    right: 2vw;
+    top: 2vh;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+}
+button#reset img{
+    width: 20px !important;
+}
+button#reset:disabled{
+    cursor:auto;
+    opacity: 0.5;
+}
+
+
+#form-code .targets input{
+    display: inline-block;
+}
+#form-code .targets img{
+    width: 35px;
+}
+#form-code .targets  p{
+    margin: 0;
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+#form-code .redButton.buttAlignCenter{
+    margin-top: 2.5vh;
+}
+#form-code .redButton.buttAlignCenter:disabled{
+      opacity: 0.5;
+      cursor: auto;
+}
+.voucher{
+    display: none;
+}
+.voucher.show{
+    display: block !important;
+}
+.targetTbDash tr:last-child {
+    display:none;
+}
+.pagination h3{
+    display: block;
+    margin-right: 25px;
+}
+.pagination{
+    margin-top:25px;
+}
+.pagination li{
+    margin-right: 15px;
+}
