@@ -7,7 +7,7 @@ get_header();
 $site_url = get_site_url();
 ?>
 <section id="home" class="main-section">
-    <div class="proxim">
+    <!-- <div class="proxim">
     <img class="logoTer" src="<?php bloginfo('template_directory'); ?>/assets/images/teu.svg" />
     <h1>
         Próximamente,<br> tenemos una gran<br> sopresa para ti.
@@ -16,11 +16,11 @@ $site_url = get_site_url();
         Mantente atento a nuestras redes sociales: <span><a href="https://www.instagram.com/terpel_ec/"><img src="<?php bloginfo('template_directory'); ?>/assets/images/instWhite.png" /></a><a href="https://www.youtube.com/channel/UCeLmcRwZXtNifTen5oI7z9A"> 
         <img src="<?php bloginfo('template_directory'); ?>/assets/images/ytFinal.png"/></a><a href="https://www.facebook.com/terpelEC"><img src="<?php bloginfo('template_directory'); ?>/assets/images/faceWhite.png"/></a><a href="https://www.linkedin.com/company/terpel-ecuador"><img src="<?php bloginfo('template_directory'); ?>/assets/images/linkedinWhite.png"/></a>  </span>
     </p>
-    </div>
-    <!--
+    </div> -->
+    
     <div class="header">
-        <a href="<?php // echo $site_url; ?>">
-            <img src="<?php // bloginfo('template_directory'); ?>/assets/images/logoTerpel.svg" alt="logoTerpel" />
+        <a href="<?php echo $site_url; ?>">
+            <img src="<?php bloginfo('template_directory'); ?>/assets/images/logoTerpel.svg" alt="logoTerpel" />
         </a>
         <div class="headEndCont">
             <a href="<?php echo $site_url; ?>/ganadores">
@@ -37,7 +37,7 @@ $site_url = get_site_url();
             <h2>
                 Con Terpel, tú decides el<br> obsequio que mereces.
             </h2>
-            <?php // echo do_shortcode('[trade-form-login]'); ?>
+            <?php echo do_shortcode('[trade-form-login]'); ?>
         </div>
         <div class="clouds">
             <img src="<?php bloginfo('template_directory'); ?>/assets/images/newKV.png" />
@@ -50,17 +50,17 @@ $site_url = get_site_url();
                 </h3>
             <div class="row redCircles">
                 <div class="col-sm-4">
-                    <img src="<?php // bloginfo('template_directory'); ?>/assets/images/gasolina.svg" alt="gas" />
+                    <img src="<?php bloginfo('template_directory'); ?>/assets/images/gasolina.svg" alt="gas" />
                     <h6>Por cada $10
                         de<br> consumo
                         en Terpel</h6>
                 </div>
                 <div class="col-sm-4 middleLines">
-                    <img src="<?php  // bloginfo('template_directory'); ?>/assets/images/compu.svg" alt="pc" />
+                    <img src="<?php  bloginfo('template_directory'); ?>/assets/images/compu.svg" alt="pc" />
                     <h6>Regístrate e ingresa tu<br> factura en el siguiente<br> botón</h6>
                 </div>
                 <div class="col-sm-4">
-                    <img src="<?php // bloginfo('template_directory'); ?>/assets/images/trofeo.svg" alt="win" />
+                    <img src="<?php bloginfo('template_directory'); ?>/assets/images/trofeo.svg" alt="win" />
                     <h6>Y obtén una<br> oportunidad para<br> ganar</h6>
                 </div>
             </div>
@@ -78,11 +78,11 @@ $site_url = get_site_url();
                     </h4>
                     <div class="row">
                         <div class="col-sm-4">
-                            <img src="<?php // bloginfo('template_directory'); ?>/assets/images/super-evolt.png" alt="evolt" />
+                            <img src="<?php bloginfo('template_directory'); ?>/assets/images/super-evolt.png" alt="evolt" />
                         
                         </div>
                         <div class="col-sm-4">
-                            <img src="<?php // bloginfo('template_directory'); ?>/assets/images/lubricantes.png" alt="lubri" />
+                            <img src="<?php bloginfo('template_directory'); ?>/assets/images/lubricantes.png" alt="lubri" />
 
                         </div>
                     </div>
@@ -91,7 +91,7 @@ $site_url = get_site_url();
                     <h4>TRIPLE OPORTUNIDAD<br>
                         <span>Pagando con:</span>
                     </h4>
-                    <img src="<?php // bloginfo('template_directory'); ?>/assets/images/dinersclub.png" alt="diners" />
+                    <img src="<?php bloginfo('template_directory'); ?>/assets/images/dinersclub.png" alt="diners" />
                 </div>
             </div>
             <br><br>
@@ -152,10 +152,10 @@ $site_url = get_site_url();
                 </div>
             </div>
         </div>
-    </div>-->
-    <?php // wp_footer(); ?>
+    </div>
+    <?php wp_footer(); ?>
 </section>
-<?php // get_footer(); ?>
+<?php get_footer(); ?>
 </body>
 
 </html>

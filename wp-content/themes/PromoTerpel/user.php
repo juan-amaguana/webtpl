@@ -29,7 +29,7 @@ if (isset($_GET['id']) &&  $_GET['id'] !== '') {
     exit;
 }
 get_header(); ?>
-<section id="userPortal" class="main-section">
+<section id="userPortal">
     <div class="popupCont" id="errorCode">
         <div class="popup grey">
             <h4>¡Factura inválida!</h4>
