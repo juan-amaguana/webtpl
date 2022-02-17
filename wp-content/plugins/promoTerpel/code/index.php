@@ -287,6 +287,30 @@ margin-top: 40px;'>
         }
     };
 
+
+    add_filter( 'wp_handle_upload', function( $data )
+    {
+        if( ! isset( $data['file'] ) || ! isset( $data['type'] ) )
+            return $data;
+
+        // Target jpeg images       
+        if( in_array( $data['type'], [ 'image/jpg', 'image/jpeg' ] ) )
+        {
+            // Check for a valid image editor
+            $editor = wp_get_image_editor( $data['file'] );    
+            if( ! is_wp_error( $editor ) )
+            {
+                // Set the new image quality
+                $result = $editor->set_quality( 70 );
+
+                // Re-save the original image file
+                if( ! is_wp_error( $result ) )
+                    $editor->save( $data['file'] );
+            }
+        }
+        return $data;
+    } );
+
     if (isset($_POST['numFactura']) && isset($_POST['montoFactura']) && isset($_POST['ciudad']) 
     && isset($_POST['fuel'])  && isset($_POST['id'])
     ){        

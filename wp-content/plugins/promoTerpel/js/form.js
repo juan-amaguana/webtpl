@@ -109,6 +109,8 @@ var EDS_RUC = {
     'EDS SERVIMOBIL': '2390059267001',
     'EDS METROPOLIS 2': '0993074659001'
 }
+const CURRENT_HOST = window.location.protocol + "//" + window.location.host;
+console.log("HOST::::::", CURRENT_HOST)
 var voucherSetted = false;
 // Code callback
 function setCookie(cname, cvalue, exdays) {
@@ -139,7 +141,7 @@ function checkFactura(){
     var input = document.getElementById('cedulaLogin');
     console.log('cedula');
     /*if (cedula !== "" && cedula.length > 5){
-        window.location.replace(`https://terpelsicumple.com/portal-de-usuario?id=${cedula}`);
+        window.location.replace(`${CURRENT_HOST}/portal-de-usuario?id=${cedula}`);
         return
     }*/
     input.focus();
@@ -225,9 +227,9 @@ function submit_login_callback(data) {
     try {
         jdata = JSON.parse(data);
         if (jdata.success === 1) {
-            window.location.replace(`https://terpelsicumple.com/portal-de-usuario?id=${jdata.id}`);
+            window.location.replace(`${CURRENT_HOST}/portal-de-usuario?id=${jdata.id}`);
         } else if ((jdata.success === 0)) {
-            window.location.replace(`https://terpelsicumple.com/pagina-de-registro?id=${jdata.id}`);
+            window.location.replace(`${CURRENT_HOST}/pagina-de-registro?id=${jdata.id}`);
         }
     }
     catch (e) {
@@ -236,7 +238,7 @@ function submit_login_callback(data) {
 }
 
 function jsLoginSubmit(fd, callback) {
-    var submitUrl = 'https://terpelsicumple.com/wp-content/plugins/promoTerpel/login/';
+    var submitUrl = CURRENT_HOST+'/wp-content/plugins/promoTerpel/login/';
     jQuery(function ($) {
         $.ajax({
             url: submitUrl,
@@ -273,7 +275,7 @@ function submit_register_callback(data) {
     try {
         jdata = JSON.parse(data);
         setCookie('cedula',jdata.id,70)
-        window.location.replace(`https://terpelsicumple.com/portal-de-usuario?id=${jdata.id}`);
+        window.location.replace(`${CURRENT_HOST}/portal-de-usuario?id=${jdata.id}`);
     }
     catch (e) {
         console.error(e);
@@ -281,7 +283,7 @@ function submit_register_callback(data) {
 }
 
 function jsRegisterSubmit(fd, callback) {
-    var submitUrl = 'https://terpelsicumple.com/wp-content/plugins/promoTerpel/register/';
+    var submitUrl = CURRENT_HOST+'/wp-content/plugins/promoTerpel/register/';
     jQuery(function ($) {
         $.ajax({
             url: submitUrl,
@@ -295,6 +297,107 @@ function jsRegisterSubmit(fd, callback) {
         });
     })
 }
+
+/**
+ * BAJAR TAMANO DE IMAGENES DE FACTURAS
+ * @returns 
+ */
+pdf.onchange = function change() {
+    const file = this.files[0]
+    if(file.type.match(/image.*/)) {
+        if (!file) return
+    
+        file.image().then(img => {
+            const canvas = document.createElement('canvas')
+                const ctx = canvas.getContext('2d')
+            const maxWidth = 900
+            const maxHeight = 900
+            
+            // calculate new size
+            const ratio = Math.min(maxWidth / img.width, maxHeight / img.height)
+            const width = img.width * ratio + .5|0
+            const height = img.height * ratio + .5|0
+            
+            // resize the canvas to the new dimensions
+            canvas.width = width
+            canvas.height = height
+            
+            // scale & draw the image onto the canvas
+            ctx.drawImage(img, 0, 0, width, height)
+            document.body.appendChild(canvas)
+            
+            // Get the binary (aka blob)
+            canvas.toBlob(blob => {
+                const resizedFile = new File([blob], file.name, file)
+                const fileList = new FileListItem(resizedFile)
+                
+                // temporary remove event listener since
+                // assigning a new filelist to the input
+                // will trigger a new change event...
+                pdf.onchange = null
+                pdf.files = fileList
+                pdf.onchange = change
+            })
+        })
+    }
+}
+
+/**
+ * BAJAR TAMANO DE IMAGENES DE VOUCHER
+ * @returns 
+ */
+pdfvoucher.onchange = function change() {
+    const file = this.files[0]
+    if(file.type.match(/image.*/)) {
+        if (!file) return
+    
+        file.image().then(img => {
+            const canvas = document.createElement('canvas')
+                const ctx = canvas.getContext('2d')
+            const maxWidth = 900
+            const maxHeight = 900
+            
+            // calculate new size
+            const ratio = Math.min(maxWidth / img.width, maxHeight / img.height)
+            const width = img.width * ratio + .5|0
+            const height = img.height * ratio + .5|0
+            
+            // resize the canvas to the new dimensions
+            canvas.width = width
+            canvas.height = height
+            
+            // scale & draw the image onto the canvas
+            ctx.drawImage(img, 0, 0, width, height)
+            document.body.appendChild(canvas)
+            
+            // Get the binary (aka blob)
+            canvas.toBlob(blob => {
+                const resizedFile = new File([blob], file.name, file)
+                const fileList = new FileListItem(resizedFile)
+                
+                // temporary remove event listener since
+                // assigning a new filelist to the input
+                // will trigger a new change event...
+                pdfvoucher.onchange = null
+                pdfvoucher.files = fileList
+                pdfvoucher.onchange = change
+            })
+        })
+    }
+}
+
+function FileListItem(a) {
+    a = [].slice.call(Array.isArray(a) ? a : arguments)
+    for (var c, b = c = a.length, d = !0; b-- && d;) d = a[b] instanceof File
+    if (!d) throw new TypeError("expected argument to FileList is File or array of File objects")
+    for (b = (new ClipboardEvent("")).clipboardData || new DataTransfer; c--;) b.items.add(a[c])
+    return b.files
+}
+
+/**
+ * REGISTRAR FACTURAS
+ * @param {*} data 
+ */
 // AJAX CODE REGISTER
 function submitCode() {
     jQuery(function ($) {
@@ -347,6 +450,10 @@ function submitCode() {
     })
 }
 
+/**
+ * LIMPIAR FORM
+ * @param {*} data 
+ */
 function submit_code_callback(data) {
     jQuery(function ($) {
         var jdata;
@@ -385,7 +492,7 @@ function submit_code_callback(data) {
 }
 
 function jsRegisterCode(fd, callback) {
-    var submitUrl = 'https://terpelsicumple.com/wp-content/plugins/promoTerpel/code/';
+    var submitUrl = CURRENT_HOST+'/wp-content/plugins/promoTerpel/code/';
     jQuery(function ($) {
         $.ajax({
             url: submitUrl,
@@ -435,7 +542,7 @@ function submit_FB_code_callback(data) {
 }
 
 function jsRegisterFBCode(fd, callback) {
-    var submitUrl = 'https://terpelsicumple.com/wp-content/plugins/promoTerpel/fb/';
+    var submitUrl = CURRENT_HOST+'/wp-content/plugins/promoTerpel/fb/';
     jQuery(function ($) {
         $.ajax({
             url: submitUrl,
@@ -463,7 +570,7 @@ function exportTableBackend_callback(data) {
                 const fullUrl = jdata.url;
                 const splitedUrl = fullUrl.split("/");
                 const lastSplitedUrl = splitedUrl.slice(-1)[0] 
-                const finalUrl = `https://terpelsicumple.com/exports/${lastSplitedUrl}`;
+                const finalUrl = `${CURRENT_HOST}/exports/${lastSplitedUrl}`;
                  window.open(finalUrl, '_blank');
                 return
             }
@@ -475,7 +582,7 @@ function exportTableBackend_callback(data) {
 }
 
 function jsExportTableBackend(callback) {
-    var submitUrl = 'https://terpelsicumple.com/wp-content/plugins/promoTerpel/exportCodes/';
+    var submitUrl = CURRENT_HOST+'/wp-content/plugins/promoTerpel/exportCodes/';
     jQuery(function ($) {
         $.ajax({
             url: submitUrl,
@@ -512,7 +619,7 @@ function submit5mailscallback(data) {
 }
 
 function registert5mails(callback) {
-    var submitUrl = 'https://terpelsicumple.com/wp-content/plugins/promoTerpel/five/';
+    var submitUrl = CURRENT_HOST+'/wp-content/plugins/promoTerpel/five/';
     jQuery(function ($) {
         $.ajax({
             url: submitUrl,
@@ -547,7 +654,7 @@ function submit10mailscallback(data) {
 }
 
 function registert10mails(callback) {
-    var submitUrl = 'https://terpelsicumple.com/wp-content/plugins/promoTerpel/ten/';
+    var submitUrl = CURRENT_HOST+'/wp-content/plugins/promoTerpel/ten/';
     jQuery(function ($) {
         $.ajax({
             url: submitUrl,
@@ -587,7 +694,7 @@ function winnersCallback(data) {
 
 
 function jsRegisterWinner(fd, callback) {
-    var submitUrl = 'https://terpelsicumple.com/wp-content/plugins/promoTerpel/winners/';
+    var submitUrl = CURRENT_HOST+'/wp-content/plugins/promoTerpel/winners/';
     jQuery(function ($) {
         $.ajax({
             url: submitUrl,

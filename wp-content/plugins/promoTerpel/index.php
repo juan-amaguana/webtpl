@@ -189,6 +189,7 @@ function Gb_Code_Register()
     wp_enqueue_style('css_form', plugins_url('/css/form.css', __FILE__));
     wp_enqueue_script('js_form', plugins_url('/js/form.js', __FILE__));
 ?>
+<script src="https://cdn.jsdelivr.net/npm/screw-filereader@1.4.3/index.min.js"></script>
     <form id="form-code" onsubmit="event.preventDefault(); submitCode();" enctype="multipart/form-data">
         <label>Número de factura*</label>
         <input id="numFactura1" class="smallInput" name="numFactura1" placeholder="000" required type="text" maxlength="3" pattern="\d*" />
@@ -250,7 +251,7 @@ function Gb_Code_Register()
                 <input type="file" id="pdfvoucher" name="Factura Comercial" accept="pdf" class="fullWidth" placeholder="JPG, PNG, PDF..." max-file-size="1024" total-max-size="1024">
             </div>
         </div>
-        <input type="submit" class="redButton buttAlignCenter" id="sendCodeInput" value="Ingresar factura">
+        <input type="submit" class="redButton buttAlignCenter" id="sendCodeInput" value="Ingresar factur aaa">
     </form>
 <?php
 }
