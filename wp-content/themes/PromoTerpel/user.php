@@ -6,6 +6,16 @@ if (isset($_GET['id']) &&  $_GET['id'] !== '') {
     global $wpdb; //Acceder a la database de Wp
     $tabla_registros = $wpdb->prefix . 'participantes';
     $tabla_codigos = $wpdb->prefix . 'codigos';
+    $tabla_rangos = $wpdb->prefix . 'ranges';
+
+
+    /** RANGES */
+    $toDay = date('Y-m-d');
+    $range = $wpdb->get_row("SELECT * FROM $tabla_rangos WHERE '$toDay' BETWEEN start AND end;");
+    $startDate = $range->start. " 00:00:00";
+    $endDate = $range->end. " 23:59:59";
+    // print($startDate);
+    // print($endDate);
 
     $user = $wpdb->get_row("SELECT * FROM $tabla_registros WHERE cedula= $ppc;");
     $nombre = esc_textarea($user->nombre);
@@ -18,10 +28,10 @@ if (isset($_GET['id']) &&  $_GET['id'] !== '') {
     }
     $saldo = esc_textarea($user->account);
     $saldoArr = explode(".", $saldo);
-    $user_codes = $wpdb->get_results("SELECT * FROM $tabla_codigos WHERE (PersonId = $id) ORDER BY CodId DESC;");
-    //$user_codes = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $tabla_codigos WHERE PersonId = %d ORDER BY CodId DESC", $id ) );
+    // $user_codes = $wpdb->get_results("SELECT * FROM $tabla_codigos WHERE (PersonId = $id) ORDER BY CodId DESC;");
+    $user_codes = $wpdb->get_results("SELECT * FROM $tabla_codigos WHERE (PersonId = $id) AND created_at BETWEEN '$startDate' AND '$endDate'  ORDER BY CodId DESC;");
 
-    $tableCount = $wpdb->get_var("SELECT COUNT(*) FROM $tabla_codigos WHERE PersonId = $id;");
+    $tableCount =  count($user_codes); // $wpdb->get_var("SELECT COUNT(*) FROM $tabla_codigos WHERE PersonId = $id;");
 } else {
     //redirect if not user param
     $url = get_site_url();
@@ -66,7 +76,8 @@ get_header(); ?>
                         <div class="backstar">
                             <h1 id="codeCount"><?php echo $tableCount ?></h1>
                             <h6>Oportunidades<br>
-                                para ganar</h6>
+                                para ganar</h6><br>
+                            Para el sorteo del <?= $range->end ?>
                         </div>
                         <div class="saldo">
                             <h6>Saldo acumulado

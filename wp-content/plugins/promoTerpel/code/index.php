@@ -249,8 +249,11 @@ margin-top: 40px;'>
         $tabla_registros = $wpdb->prefix . 'participantes';
         $tabla_facturas = $wpdb->prefix . 'facturas';
 
-        $id = $wpdb->get_var( "SELECT PersonId FROM $tabla_registros WHERE cedula = $ci" );
-        $account = $wpdb->get_var( "SELECT account FROM $tabla_registros WHERE cedula = $ci" );
+        //$id = $wpdb->get_var( "SELECT PersonId FROM $tabla_registros WHERE cedula = $ci" );
+        //$account = $wpdb->get_var( "SELECT account FROM $tabla_registros WHERE cedula = $ci" );
+        $client = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $tabla_registros WHERE cedula = $ci" ) );
+        $id = $client->PersonId;
+        $account = $client->account;
 
         $insertData = $wpdb->insert(
             $tabla_facturas,
@@ -288,6 +291,9 @@ margin-top: 40px;'>
     };
 
 
+    /**
+     * LOWER QUALITY IMAGES 
+     */
     add_filter( 'wp_handle_upload', function( $data )
     {
         if( ! isset( $data['file'] ) || ! isset( $data['type'] ) )

@@ -26,6 +26,7 @@ function Form_init()
     $tabla_codigos = $wpdb->prefix . 'codigos';
     $tabla_productos = $wpdb->prefix . 'productos';
     $view_registros = $wpdb->prefix . 'view_participates';
+    $tabla_rangos = $wpdb->prefix . 'ranges';
 
     $wpdb->query("CREATE TABLE IF NOT EXISTS $tabla_registros (
         PersonId int(9) NOT NULL AUTO_INCREMENT,
@@ -89,6 +90,17 @@ function Form_init()
             PRIMARY KEY (prodId),
             FOREIGN KEY (PersonId) REFERENCES $tabla_registros(PersonId),
             FOREIGN KEY (FacturaId) REFERENCES $tabla_facturas(FacId)
+        )   ENGINE = INNODB
+            DEFAULT CHARACTER SET = utf8
+            COLLATE = utf8_general_ci"
+    );
+
+    $wpdb->query(
+        "CREATE TABLE IF NOT EXISTS $tabla_rangos (
+            id int NOT NULL AUTO_INCREMENT,
+            start date NOT NULL,
+            end date NOT NULL,
+            created_at datetime NOT NULL,
         )   ENGINE = INNODB
             DEFAULT CHARACTER SET = utf8
             COLLATE = utf8_general_ci"
