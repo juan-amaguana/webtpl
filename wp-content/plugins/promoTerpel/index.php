@@ -84,6 +84,7 @@ function Form_init()
             prodId int NOT NULL AUTO_INCREMENT,
             evolt BOOLEAN,
             lubricante BOOLEAN,
+            altoque BOOLEAN,
             created_at datetime NOT NULL,
             PersonId int,
             FacturaId int,
@@ -247,7 +248,8 @@ function Gb_Code_Register()
         <label>Obtén el doble de oportunidades si compraste:</label>
         <div class="productsCheck">
             <input type="checkbox" id="evolt" name="Evolt-t" value="evolt" name="product"><img src="<?php bloginfo('template_directory'); ?>/assets/images/evoltCheck.svg" />
-            <input type="checkbox" id="lubricante" name="Lubricante" value="lubricante" name="product" class="marleft"><img src="<?php bloginfo('template_directory'); ?>/assets/images/mobilCheck.svg" /><br>
+            <input type="checkbox" id="lubricante" name="Lubricante" value="lubricante" name="product" class="marleft"><img src="<?php bloginfo('template_directory'); ?>/assets/images/mobilCheck.svg" />
+            <input type="checkbox" id="altoque" name="altoque" value="lubricante" name="product" class="marleft"><img src="<?php bloginfo('template_directory'); ?>/assets/images/altoque.svg" /><br>
         </div>
         <label>Obtén el triple de oportunidades si compraste:</label>
         <div class="targets">

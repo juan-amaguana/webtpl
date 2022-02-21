@@ -74,16 +74,17 @@ get_header(); ?>
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="backstar">
-                            <h1 id="codeCount"><?php echo $tableCount ?></h1>
+                            <h1 id="codeCount" style="color: #ebbc4c!important;"><?php echo $tableCount ?></h1>
                             <h6>Oportunidades<br>
                                 para ganar</h6><br>
                             Para el sorteo del <?= $range->end ?>
                         </div>
                         <div class="saldo">
-                            <h6>Saldo acumulado
+                            <h6 class="black">Saldo acumulado
                                 pendiente por redimir</h6>
-                            <h1>$<span id="saldoUnidad" class="big"><?php echo $saldoArr[0]; ?></span><span>,</span><span id="saldoCentena"><?php echo $saldoArr[1]; ?></span></h1>
-                            <p><strong>Por cada $10 de consumo,</strong> recibes un cupón y aumentas tus posibilidades.</p>
+                            <h1 style="color: red;">$<span id="saldoUnidad" class="big"><?php echo $saldoArr[0]; ?></span><span>,</span><span id="saldoCentena"><?php echo $saldoArr[1]; ?></span></h1>
+                            <!--<p><strong>Por cada $10 de consumo,</strong> recibes un cupón y aumentas tus posibilidades.</p>-->
+                            <p style="text-align: center;">Válido hasta el 15-02-2022</p>
                         </div>
                     </div>
                     <div class="col-sm-6 winnerTickets">
@@ -100,46 +101,52 @@ get_header(); ?>
                         </div>
                     </div>
                 </div>
-               <div class="winTableButt">
+
+
+                <div class="winTableButt">
                 <div class="redBox">
-                <h5 class="text-center white">¡Tú puedes ser uno de nuestros<br>
-                    más de 200 afortunados!</h5>
-                <h2 class="text-center white"><span>1</span> GANADOR DE $50.000</h2>
+                <h5 class="text-center white"> <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/12ganadores.png" alt="lubri" /> </h5>
+                <h2 class="text-center white"><span></span> </h2>
                 <div class="row whiteTb">
                     <div class="col-sm-4">
-                        <div class="row">
+                        <div class="row" style="text-align: center;">
                             <div class="col-12">
-                                <h1>3</h1>
+                                <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/avion-icon.png" alt="lubri" />
                             </div>
                             <div class="col-12">
-                                <h4>GANADORES DE</h4>
-                                <h3>$10.000</h3>
+                                <p style="color: #fff; font-size: 12px;">Viaje & seguro para 2 personas </p>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-4">
-                        <div class="row">
+                        <div class="row"  style="text-align: center;">
                             <div class="col-12">
-                                <h1>14</h1>
+                            <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/alojamiento.png" alt="lubri" />
                             </div>
                             <div class="col-12">
-                                <h4>GANADORES DE</h4>
-                                <h3>$1.000</h3>
+                            <p style="color: #fff; font-size: 12px;">Alojamiento & desayunos</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-4 noBorder">
-                        <div class="row">
+                        <div class="row"  style="text-align: center;">
                             <div class="col-12">
-                                <h1>200</h1>
+                            <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/estadio.png" alt="lubri" />
                             </div>
                             <div class="col-12">
-                                <h4>GANADORES DE</h4>
-                                <h6>$30 DE CONSUMO<br>DE SUPER EVOL-T</h6>
+                            <p style="color: #fff; font-size: 12px;">Experiencia completa de partidos </p>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="row whiteTb">
+                    <div class="col-sm-12" style="text-align: center;">
+                        <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/experience.png" alt="lubri" />
+                        <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/qatar2022.png" alt="lubri" />
+                    </div>
+                </div>
+
             </div>
    
                 </div>

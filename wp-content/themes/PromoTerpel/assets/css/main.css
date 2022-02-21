@@ -452,7 +452,7 @@
   text-align: center;
 }
 .redBox{
-background-image: url('../images/redBox.png');
+background-image: url('../images/more-back.jpg');
 border-radius: 20px;
 justify-content: center;
 background-size: cover;
@@ -473,7 +473,7 @@ margin-bottom: 25px;
   font-weight: 900;
 }
 .redBox .whiteTb{
-  border-top: solid 1.5px #fff;
+  /*border-top: solid 1.5px #fff;*/
   width: 90%;
   margin: 0 auto;
   margin-top: 25px;
@@ -481,7 +481,7 @@ margin-bottom: 25px;
   margin-bottom: 45px;
 }
 .redBox .whiteTb .col-sm-3, .redBox .whiteTb .col-sm-4{
-  border-right: solid 1.5px #fff;
+  /*border-right: solid 1.5px #fff;*/
 }
 .redBox .whiteTb .col-sm-4 .row{
   justify-content: space-around;
@@ -804,7 +804,7 @@ section#winners{
   justify-content: space-between;
 }
 .backstar{
-  background-image: url(../images/starsBack_cutted.png);
+  background-image: url(../images/point-back.jpg);
   background-size: cover;
   height: 42vh;
   box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
@@ -814,6 +814,7 @@ section#winners{
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  color: #fff;
 }
 .backstar h1{
   color: #fff;

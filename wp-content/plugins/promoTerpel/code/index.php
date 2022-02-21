@@ -214,7 +214,7 @@ margin-top: 40px;'>
 
     }
 
-    function saveProduct($evolt, $lubricante, $fac_id, $person_id)
+    function saveProduct($evolt, $lubricante, $altoque, $fac_id, $person_id)
     {
         global $wpdb;
         $wpdb->show_errors();
@@ -227,13 +227,14 @@ margin-top: 40px;'>
             array(
                 'lubricante' => $lubricante,
                 'evolt' => $evolt,
+                'altoque' => $altoque,
                 'created_at' => $created_at,
                 'PersonId' => $person_id,
                 'FacturaId' => $fac_id,
             ));
     }
 
-    function saveFactura($url, $voucherURL, $voucherType, $triple, $evolt, $lubricante, $double)
+    function saveFactura($url, $voucherURL, $voucherType, $triple, $evolt, $lubricante, $altoque, $double)
     {
         $finalURL = urlencode($url);
         $numFactura = sanitize_text_field($_POST['numFactura']);
@@ -273,7 +274,7 @@ margin-top: 40px;'>
         $totalAccount = floatval($montoFactura) + $account;
 
         if ($evolt == true || $lubricante == true){
-            saveProduct($evolt, $lubricante, $fac_id, $id);
+            saveProduct($evolt, $lubricante, $altoque, $fac_id, $id);
         }
 
         if ($insertData == true){
@@ -338,6 +339,7 @@ margin-top: 40px;'>
         $voucherType = NULL;
         $evolt = false;
         $lubricante = false;
+        $altoque = false;
         $triple = $voucher;
         
 
@@ -354,11 +356,14 @@ margin-top: 40px;'>
             if (isset($_POST['lubricante'])){
                 $lubricante = true;
             }
+            if (isset($_POST['altoque'])){
+                $altoque = true;
+            }
         }
 
         $double = $evolt || $lubricante ? true : false;
 
-        saveFactura($URL, $voucherURL, $voucherType, $triple, $evolt, $lubricante, $double);
+        saveFactura($URL, $voucherURL, $voucherType, $triple, $evolt, $lubricante, $altoque, $double);
     }
 
 

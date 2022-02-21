@@ -423,6 +423,7 @@ function submitCode() {
         /* Optional Values */
         var evolt = document.getElementById('evolt').checked ?? true;
         var lubricante = document.getElementById('lubricante').checked ?? true;
+        var altoque = document.getElementById('altoque').checked ?? true;
 
         var voucherType = $('input[name="target"]:checked').val() ?? null;
         var voucher = $("#pdfvoucher").prop('files') !== undefined ? $("#pdfvoucher").prop('files')[0] : null;
@@ -441,6 +442,9 @@ function submitCode() {
         }
         if (lubricante) {
             fd.append('lubricante', lubricante);
+        }
+        if (altoque) {
+            fd.append('altoque', altoque);
         }
         if (voucherType !== null) {
             fd.append('voucherType', voucherType);
