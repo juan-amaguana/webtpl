@@ -81,12 +81,16 @@ $site_url = get_site_url();
                     </h4>
                     <div class="row">
                         <div class="col-sm-4">
-                            <img src="<?php bloginfo('template_directory'); ?>/assets/images/super-evolt.png" alt="evolt" />
-                        
+                            <img src="<?php bloginfo('template_directory'); ?>/assets/images/circle-evolt.png" alt="evolt" />
+                            <p class="black">Tanquea con gasolina Súper Evol-T</p>
                         </div>
                         <div class="col-sm-4">
-                            <img src="<?php bloginfo('template_directory'); ?>/assets/images/lubricantes.png" alt="lubri" />
-
+                            <img src="<?php bloginfo('template_directory'); ?>/assets/images/circle-mobil.png" alt="lubri" />
+                            <p class="black">Compra lubricantes Mobil</p>
+                        </div>
+                        <div class="col-sm-4">
+                            <img src="<?php bloginfo('template_directory'); ?>/assets/images/circle-altoque.png" alt="lubri" />
+                            <p class="black">Consumos en tiendas Altoque</p>
                         </div>
                     </div>
                 </div>
@@ -94,15 +98,34 @@ $site_url = get_site_url();
                     <h4>TRIPLE OPORTUNIDAD<br>
                         <span>Pagando con:</span>
                     </h4>
-                    <img src="<?php bloginfo('template_directory'); ?>/assets/images/dinersclub.png" alt="diners" />
+                    <img src="<?php bloginfo('template_directory'); ?>/assets/images/circle-diners.png" alt="diners" />
+                    <p class="black">Realiza tu compra con las tarjetas de crédito participantes</p>
                 </div>
             </div>
             <br><br>
             <button class="redButton buttAlignCenter" onClick="checkFactura()">
                 Ingresar factura
             </button>
+
+            <div class="row moreInformation">
+                <div class="col-sm-12" style="text-align: center; margin-top: 2%;">
+                    <img src="<?php bloginfo('template_directory'); ?>/assets/images/more-titlte-1.png" alt="lubri" />
+                    <br>
+                    <img src="<?php bloginfo('template_directory'); ?>/assets/images/qatar2022.png" alt="lubri" />
+                    <p style="color: #fff;">Gana 1 de los 12 viajes para 2 persona</p>
+                </div>
+                <div class="col-sm-12" style="text-align: center; margin-top: 2%;">
+                    <img src="<?php bloginfo('template_directory'); ?>/assets/images/features.png" alt="lubri" />
+                </div>
+                <div class="col-sm-12" style="text-align: center; margin-top: 2%;margin-bottom: 2%;">
+                    <button class="redButton buttAlignCenter" onClick="checkFactura()">
+                    Más información
+                </button>
+                </div>
+            </div>
+
             <br><br>
-            <div class="redBox">
+            <div class="redBox" style="display: none;">
                 <h5 class="text-center white">¡Tú puedes ser uno de nuestros<br>
                     más de 200 afortunados!</h5>
                 <h2 class="text-center white"><span>1</span> GANADOR DE $50.000</h2>
