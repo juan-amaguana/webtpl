@@ -8,8 +8,11 @@
 
         $tabla_registros = $wpdb->prefix . 'participantes';
         $tabla_codigos = $wpdb->prefix . 'codigos';
-        $nombre = $wpdb->get_var( "SELECT nombre FROM $tabla_registros WHERE PersonId = $id" );
-        $correo = $wpdb->get_var( "SELECT correo FROM $tabla_registros WHERE PersonId = $id" );
+        $user = $wpdb->get_row("SELECT * FROM $tabla_registros WHERE PersonId= $id;");
+        // $nombre = $wpdb->get_var( "SELECT nombre FROM $tabla_registros WHERE PersonId = $id" );
+        // $correo = $wpdb->get_var( "SELECT correo FROM $tabla_registros WHERE PersonId = $id" );
+        $nombre = $user->nombre;
+        $correo = $user->correo;
         
         $tableCount = $wpdb->get_var("SELECT COUNT(*) FROM $tabla_codigos WHERE PersonId = $id;");
         
