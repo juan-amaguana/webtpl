@@ -395,14 +395,30 @@ function FileListItem(a) {
 }
 
 /**
+ * MAX VALUE
+ */
+function correctValue() {
+    jQuery('#montoFactura').val('');
+    jQuery("#montoFactura").focus();
+    jQuery('#amountExceeded').modal('hide');
+}
+
+/**
+ * ACCEPT
+ */
+function acceptValue() {
+    jQuery('#amountExceeded').modal('hide');
+    submitCode(true);
+}
+
+/**
  * REGISTRAR FACTURAS
  * @param {*} data 
  */
 // AJAX CODE REGISTER
-function submitCode() {
+function submitCode(acceptValue=null) {
     jQuery(function ($) {
-        $('#sendCodeInput').prop('disabled', true);
-        $('#sendCodeInput').val('Cargando..');
+        
         var queryString = window.location.search;
         var urlParams = new URLSearchParams(queryString);
         var user = urlParams.get('id');
@@ -412,6 +428,13 @@ function submitCode() {
         var montoFactura = $("#montoFactura").val();
         var fuel = $("#fuel").val();
         var ruc = EDS_RUC[fuel];
+
+        if (montoFactura > 500 && !acceptValue) {
+            $('#amountExceeded').modal('show');
+            return;
+        }
+        $('#sendCodeInput').prop('disabled', true);
+        $('#sendCodeInput').val('Cargando..');
         //if (montoFactura < 10) {
         //    badCode();
         //    return;

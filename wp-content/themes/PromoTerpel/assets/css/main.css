@@ -246,6 +246,16 @@
   text-decoration: none;
   color: #fff;
 }
+.whiteButton{
+  background-color: #fff !important;
+  color: #FF1E0A;
+  padding: 15px 35px !important;
+  border-radius: 30px !important;
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid red;
+}
+
 .transparentButton{
   background-color: #FF1E0A;
   color: #fff;
