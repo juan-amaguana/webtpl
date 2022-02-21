@@ -35,18 +35,19 @@ $site_url = get_site_url();
     <div class="banner">
         <div class="title">
             <h2>
-                Con Terpel, tú decides el<br> obsequio que mereces.
+                Vive una experencia de<br>lujo, con todo incluido.
             </h2>
+            <p>Ingresa tu cédula y participa</p>
             <?php echo do_shortcode('[trade-form-login]'); ?>
         </div>
         <div class="clouds">
-            <img src="<?php bloginfo('template_directory'); ?>/assets/images/newKV.png" />
+            <!-- <img src="<?php bloginfo('template_directory'); ?>/assets/images/qatar-back.jpg" /> -->
         </div>
 
     </div>
     <div class="wrapper">
         <div class="body">
-            <h3 class="text-center red bold">¿Cómo participar?
+            <h3 class="text-center black bold">¿Cómo participar?</br> Mecánica del concurso.
                 </h3>
             <div class="row redCircles">
                 <div class="col-sm-4">
@@ -65,11 +66,13 @@ $site_url = get_site_url();
                 </div>
             </div>
             <br>
+            <p  style="text-align: center; margin-top: 2%;" >*Tus facturas son válidas hasta el sorteo más cercano a la fecha de ingreso.</p>
             <a href="#" class="redButton buttAlignCenter">
                 Participar
             </a>
             <br><br>
-            <h3 class="text-center red bold">
+            <h3 class="text-center black bold">
+                ¿Quieres ganar cupones adicionales? <br>
                 Gana doble o tripe cupón cumpliendo los siguientes requisitos. </h3>
             <div class="row winProducts">
                 <div class="col-sm-7">
