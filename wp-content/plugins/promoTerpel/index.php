@@ -178,7 +178,9 @@ function Gb_Register_Form()
             <label>Teléfono*</label>
             <input class="form-control-gb" id="telefono" name="telefono" placeholder="Tel&eacute;fono" required type="text" maxlength="10" minlength="10" pattern="\d*">
         </div>
-        <p>*Datos obligatorios
+        <p>
+            *Datos obligatorios <br>
+            **Recuerda que la información proporcionada será nuestro medio de contacto si resultas  ser ganador.
         </p>
         <div class="submitSection">
             <input type="checkbox" id="aceptacion" name="aceptacion" value="1" required>
@@ -187,7 +189,8 @@ function Gb_Register_Form()
         <button type="button" class="btn face" value="Registrame con Facebook" onClick="checkLoginState()"><img src="<?php bloginfo('template_directory'); ?>/assets/images/face.svg" alt="fb" /> Registrame con Facebook</button>
         <input type="submit" class="btn registerButton" value="Continuar">
         <p>
-            ** Recuerda guardar tu factura original para reclamar tu premio.<br>
+        ** Recuerda guardar tu factura original para reclamar tu premio.<br>
+        ***Las facturas de consumidor final no participan.
         </p>
     </form>
 <?php
