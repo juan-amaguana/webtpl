@@ -226,6 +226,23 @@ $site_url = get_site_url();
             </div>
         </div>
     </div>
+
+    <div class="container-fluid" style="background: #F4F4F4;">
+        <div class="row form-footer">
+            <div class="col-sm-6 col-md-6">
+                <p>Vive una experiencia de lujo única con Terpel en este 2022, participa ahora</p>
+            </div>
+            
+            <div class="col-sm-6 col-md-6">
+                <div style="margin-left: 2%;">
+                <p>Ingresa tu cédula de identidad</p>
+                <?php echo do_shortcode('[trade-form-login]'); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <?php wp_footer(); ?>
 </section>
 <?php get_footer(); ?>
