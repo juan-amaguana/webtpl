@@ -108,21 +108,68 @@ $site_url = get_site_url();
             </button>
 
             <div class="row moreInformation">
-                <div class="col-sm-12" style="text-align: center; margin-top: 2%;">
-                    <img src="<?php bloginfo('template_directory'); ?>/assets/images/more-titlte-1.png" alt="lubri" />
+                <div class="col-sm-12" style="text-align: center; margin-top: 5%;">
+                    <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/more-titlte-1.png" alt="lubri" />
                     <br>
-                    <img src="<?php bloginfo('template_directory'); ?>/assets/images/qatar2022.png" alt="lubri" />
+                    <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/qatar2022.png" alt="lubri" />
                     <p style="color: #fff;">Gana 1 de los 12 viajes para 2 persona</p>
                 </div>
+
                 <div class="col-sm-12" style="text-align: center; margin-top: 2%;">
-                    <img src="<?php bloginfo('template_directory'); ?>/assets/images/features.png" alt="lubri" />
+                    <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/features.png"/>
                 </div>
-                <div class="col-sm-12" style="text-align: center; margin-top: 2%;margin-bottom: 2%;">
-                    <button class="redButton buttAlignCenter" onClick="checkFactura()">
+                <div class="col-sm-12" style="text-align: center; margin-top: 5%;margin-bottom: 5%;">
+                    <button class="redButton buttAlignCenter" data-toggle="modal" data-target="#exampleModal">
                     Más información
-                </button>
+                    </button>
                 </div>
             </div>
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content moreinformation-modal">
+                        <div class="modal-body" style="text-align: center;">
+                            <br>
+                            <p>TANQUEA Y VIAJA A</p>
+                            <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/qatar2022.png" alt="lubri" />
+                            <p>Conoce los increibles premios de esta experiencia en Qatar que solo Terpel puede brindarte</p>
+
+                            <div class="row">
+
+                                <div class="col-sm-1">
+                                </div>
+                                <div class="col-sm-10">
+                                <div class="row awards">
+                                    <div class="col-md-6 col-sm-6"><img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/avion.png"/> Premio #1</div>
+                                    <div class="col-md-6 col-sm-6"><img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/avion.png"/> Premio #1</div>
+
+                                    <div class="col-md-6 col-sm-6"><img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/avion.png"/> Premio #1</div>
+                                    <div class="col-md-6 col-sm-6"><img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/avion.png"/> Premio #1</div>
+
+                                    <div class="col-md-6 col-sm-6"><img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/avion.png"/> Premio #1</div>
+                                    <div class="col-md-6 col-sm-6"><img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/avion.png"/> Premio #1</div>
+
+                                    <div class="col-md-6 col-sm-6"><img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/avion.png"/> Premio #1</div>
+                                    <div class="col-md-6 col-sm-6"><img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/avion.png"/> Premio #1</div>
+                                </div>
+                                </div>
+                                <div class="col-sm-1">
+                                </div>
+
+                            </div>
+                            <br><br>
+                            <button class="redButton buttAlignCenter"data-dismiss="modal">
+                            Entiendo
+                            </button>
+                            <br>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
             <br><br>
             <div class="redBox" style="display: none;">

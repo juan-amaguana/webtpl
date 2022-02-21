@@ -396,6 +396,26 @@
   background-size: cover;
   margin-top: 5%;
 }
+.moreinformation-modal{
+  background-image: url('../images/modal-back-over.jpg');
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-size: cover;
+}
+.moreinformation-modal p {
+  color: #fff;
+}
+.awards {
+  border: 1px solid #ebbc4c;
+  border-radius: 5px;
+  color: #fff;
+}
+.awards div{
+  margin-top: 4%;
+  margin-bottom: 4%;
+}
 
 
 .winProducts{
