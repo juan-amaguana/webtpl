@@ -27,6 +27,13 @@ if (isset($_GET['id']) &&  $_GET['id'] !== '') {
         exit;
     }
     $saldo = esc_textarea($user->account);
+
+    // coparar fecha de rangos con el la ultima factura 
+    $lastBillDate = $user->lastAddedCode;
+    if (!check_in_range($startDate, $endDate, $lastBillDate)){
+        $saldo = '0.00';
+    }
+
     $saldoArr = explode(".", $saldo);
     // $user_codes = $wpdb->get_results("SELECT * FROM $tabla_codigos WHERE (PersonId = $id) ORDER BY CodId DESC;");
     $user_codes = $wpdb->get_results("SELECT * FROM $tabla_codigos WHERE (PersonId = $id) AND created_at BETWEEN '$startDate' AND '$endDate'  ORDER BY CodId DESC;");
@@ -38,6 +45,20 @@ if (isset($_GET['id']) &&  $_GET['id'] !== '') {
     wp_redirect($url);
     exit;
 }
+
+
+function check_in_range($fecha_inicio, $fecha_fin, $fecha){
+    $fecha_inicio = strtotime($fecha_inicio);
+    $fecha_fin = strtotime($fecha_fin);
+    $fecha = strtotime($fecha);
+    if(($fecha >= $fecha_inicio) && ($fecha <= $fecha_fin)) {
+
+        return true;
+    } else {
+        return false;
+    }
+}
+
 get_header(); ?>
 <section id="userPortal">
     <div class="popupCont" id="errorCode">
