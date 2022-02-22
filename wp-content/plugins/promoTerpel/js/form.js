@@ -412,6 +412,14 @@ function acceptValue() {
 }
 
 /**
+ * ACCEPT DATE
+ */
+ function acceptDate() {
+    jQuery('#noticeDate').modal('hide');
+    submitCode(true);
+}
+
+/**
  * REGISTRAR FACTURAS
  * @param {*} data 
  */
@@ -433,7 +441,11 @@ function submitCode(acceptValue=null) {
             $('#valueInvoice').text('$'+montoFactura)
             $('#amountExceeded').modal('show');
             return;
+        } else if (!acceptValue) {
+            $('#noticeDate').modal('show');
+            return;
         }
+
         $('#sendCodeInput').prop('disabled', true);
         $('#sendCodeInput').val('Cargando..');
         //if (montoFactura < 10) {

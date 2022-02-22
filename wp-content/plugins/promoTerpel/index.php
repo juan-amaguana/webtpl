@@ -274,34 +274,34 @@ function Gb_Code_Register()
 
     <!-- Modal -->
     <div class="modal fade" id="amountExceeded" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-body" style="text-align: center;">
-                <div class="row">
-                    <div class="col-md-12">
-                        <br>
-                        <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/alert.svg"/>
-                        <br><br>
-                        <p style="font-size: 16px;">
-                            ¿Estás seguro de ingresar <strong> <span id="valueInvoice">$592,50</span> ?</strong>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body" style="text-align: center;">
+                    <div class="row">
+                        <div class="col-md-12">
                             <br>
-                            Recuerda que si el valor ingresado y el de la factura no coincide serás eliminado del concurso
-                        </p>
-                    </div>
-                    <div class="col-md-6">
-                        <button class="whiteButton buttAlignCenter"  onclick="acceptValue()">
-                            Estoy seguro
-                        </button>
-                    </div>
-                    <div class="col-md-6">
-                        <button class="redButton buttAlignCenter" onclick="correctValue()">
-                            Corregir valor
-                        </button>
+                            <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/alert.svg"/>
+                            <br><br>
+                            <p style="font-size: 16px;">
+                                ¿Estás seguro de ingresar <strong> <span id="valueInvoice">$592,50</span> ?</strong>
+                                <br>
+                                Recuerda que si el valor ingresado y el de la factura no coincide serás eliminado del concurso
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <button class="whiteButton buttAlignCenter"  onclick="acceptValue()">
+                                Estoy seguro
+                            </button>
+                        </div>
+                        <div class="col-md-6">
+                            <button class="redButton buttAlignCenter" onclick="correctValue()">
+                                Corregir valor
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 <?php
 }

@@ -153,6 +153,32 @@ get_header(); ?>
             </div>
         </div>
     </div>
+
+    <!-- Modal 2-->
+    <div class="modal fade" id="noticeDate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body" style="text-align: center;">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <br>
+                            <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/calendar.svg"/>
+                            <br><br>
+                            <p style="font-size: 16px;">
+                            Recuerda que los cupones ganados con esta factura ingresada participan solo en el sorteo del <?= $range->end ?>
+                            </p>
+                        </div>
+                        <div class="col-md-12">
+                            <button class="redButton buttAlignCenter" onclick="acceptDate()">
+                                Entendido
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 </section>
 <?php get_footer(); ?>
 </body>
