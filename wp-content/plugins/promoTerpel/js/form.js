@@ -430,6 +430,7 @@ function submitCode(acceptValue=null) {
         var ruc = EDS_RUC[fuel];
 
         if (montoFactura > 500 && !acceptValue) {
+            $('#valueInvoice').text('$'+montoFactura)
             $('#amountExceeded').modal('show');
             return;
         }

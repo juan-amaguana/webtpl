@@ -77,14 +77,14 @@ get_header(); ?>
                             <h1 id="codeCount" style="color: #ebbc4c!important;"><?php echo $tableCount ?></h1>
                             <h6>Oportunidades<br>
                                 para ganar</h6><br>
-                            Para el sorteo del <?= $range->end ?>
+                            Para el sorteo del <?= $range->raffle_date ?>
                         </div>
                         <div class="saldo">
                             <h6 class="black">Saldo acumulado
                                 pendiente por redimir</h6>
                             <h1 style="color: red;">$<span id="saldoUnidad" class="big"><?php echo $saldoArr[0]; ?></span><span>,</span><span id="saldoCentena"><?php echo $saldoArr[1]; ?></span></h1>
                             <!--<p><strong>Por cada $10 de consumo,</strong> recibes un cupón y aumentas tus posibilidades.</p>-->
-                            <p style="text-align: center;">Válido hasta el 15-02-2022</p>
+                            <p style="text-align: center;">Válido hasta el <?= $range->end ?></p>
                         </div>
                     </div>
                     <div class="col-sm-6 winnerTickets">

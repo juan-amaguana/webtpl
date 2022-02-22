@@ -101,6 +101,7 @@ function Form_init()
             id int NOT NULL AUTO_INCREMENT,
             start date NOT NULL,
             end date NOT NULL,
+            raffle_date date NOT NULL,
             created_at datetime NOT NULL,
         )   ENGINE = INNODB
             DEFAULT CHARACTER SET = utf8
@@ -282,7 +283,7 @@ function Gb_Code_Register()
                         <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/alert.svg"/>
                         <br><br>
                         <p style="font-size: 16px;">
-                            ¿Estás seguro de ingresar <strong>$592,50 (QUINIENTOS OCHENTA Y DOS DÓLARES CON CICUENTA CENTAVOS?)</strong>
+                            ¿Estás seguro de ingresar <strong> <span id="valueInvoice">$592,50</span> ?</strong>
                             <br>
                             Recuerda que si el valor ingresado y el de la factura no coincide serás eliminado del concurso
                         </p>
