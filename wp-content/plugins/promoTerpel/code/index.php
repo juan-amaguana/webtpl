@@ -239,6 +239,7 @@ margin-top: 40px;'>
 
     function saveFactura($url, $voucherURL, $voucherType, $triple, $evolt, $lubricante, $altoque, $double)
     {
+        global $wpdb;
         $finalURL = urlencode($url);
         $numFactura = sanitize_text_field($_POST['numFactura']);
         $montoFactura = sanitize_text_field($_POST['montoFactura']);
@@ -247,7 +248,6 @@ margin-top: 40px;'>
         $ci = sanitize_text_field($_POST['id']);
         $created_at = date('Y-m-d H:i:s');
 
-        global $wpdb;
         $wpdb->show_errors();
 
         $tabla_registros = $wpdb->prefix . 'participantes';
@@ -257,7 +257,20 @@ margin-top: 40px;'>
         //$account = $wpdb->get_var( "SELECT account FROM $tabla_registros WHERE cedula = $ci" );
         $client = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $tabla_registros WHERE cedula = $ci" ) );
         $id = $client->PersonId;
-        $account = $client->account;
+        // $account = $client->account;
+
+         /** RANGES */
+         $tabla_rangos = $wpdb->prefix . 'ranges';
+         $tabla_facturas = $wpdb->prefix . 'facturas';
+ 
+         $toDay = date('Y-m-d');
+         $range = $wpdb->get_row("SELECT * FROM $tabla_rangos WHERE '$toDay' BETWEEN start AND end;");
+         $startDate = $range->start. " 00:00:00";
+         $endDate = $range->end. " 23:59:59";
+ 
+         //facturas 
+        $lastBill = $wpdb->get_row("SELECT * FROM $tabla_facturas WHERE (PersonId = $id) AND created_at BETWEEN '$startDate' AND '$endDate'  ORDER BY FacId DESC LIMIT 1;");
+        $account = $lastBill->saldo;
 
         $insertData = $wpdb->insert(
             $tabla_facturas,
@@ -289,6 +302,15 @@ margin-top: 40px;'>
                 $num_Codes = $num_Codes * 2;
             }
             $saldo = fmod(floatval($totalAccount), 10);
+
+
+            $wpdb->update(
+                $tabla_facturas,
+                array( 
+                    'saldo' => $saldo,
+                ),
+                array('FacId' => $lastBill->FacId )
+            );
             
             createAndSendCodes($num_Codes, $fac_id, $id, $numFactura, $saldo, $triple);
         }
