@@ -16,21 +16,32 @@ get_header(); ?>
         </div>
     </div>
     <div class="winnersBanner">
-        <img src="<?php bloginfo('template_directory'); ?>/assets/images/terpelSmallLogo.svg" alt="logosmall" class="smLogo" />
         <div class="wrapper">
             <div class="row">
-                <div class="col-sm-12">
-                    <img src="<?php bloginfo('template_directory'); ?>/assets/images/newKV.png" class="bigWin" />
+                <div class="col-sm-6">
+                    <p style="color: #fff; font-size: 2rem;">TANQUEA Y VIAJA A </p>
+                    <img src="<?php bloginfo('template_directory'); ?>/assets/images/qatar2022.png"  />
+                </div>
+                <div class="col-sm-6">
+
                 </div>
             </div>
         </div>
     </div>
+
     <div class="winnersCounter">
         <div class="wrapper">
-            <h3>Conoce a los ganadores</h3>
+            <h3>¡Son 12 ganadores!</h3>
+
+
             <div class="row moneyBack">
-                <div class="col-sm-6">
-                    <h2>Sorteo final</h2>
+                <div class="col-sm-6" style="text-align: center;">
+                    <div class="marcador-label">FALTA</div>
+                    <div class="row marcador">
+                        <div class="col-md-6"> 0 </div>
+                        <div class="col-md-6"> 8 </div>
+                    </div>
+                    <div class="marcador-label">GANADORES</div>
                 </div>
                 <div class="col-sm-6">
                     <?php echo do_shortcode('[ycd_countdown id=21]'); ?>
@@ -38,6 +49,50 @@ get_header(); ?>
             </div>
         </div>
     </div>
+
+
+    <div class="winnersCards">
+        <div class="wrapper">
+            <div class="row moneyBack">
+                <div class="col-sm-12" style="text-align: center;">
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-4" style="text-align: right;">
+                            <img src="<?php bloginfo('template_directory'); ?>/assets/images/winner1.png"  />
+                        </div>
+                        <div class="col-md-4" style="text-align: left;">
+                            <div class="text-gold">
+                            Ganador #1 <br>
+                            Sorteo 15-03-2022
+                            </div>
+                            <br>
+                            <div class="winner-text-white">
+                                Juan Diego Lopez
+                            </div>
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+
+                    <div class="row" style="margin-top: 5%;">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            <img src="<?php bloginfo('template_directory'); ?>/assets/images/qatar2022.png"  />
+                            <div class="winner-text-white">
+                            Ellos ya ganaron su espacio para ir a 3 partidos en Qatar 2022 con una experiencia de lujo todo incluido gracias a Terpel
+                            </div>
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+                    <br> <br>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <br><br>
+    <br><br>
+    
 <div class="wrapper">
     <div class="winnersTable">
         <div class="firstColumn">

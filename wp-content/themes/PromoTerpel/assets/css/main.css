@@ -619,16 +619,42 @@ input.login-control-gb{
   margin-left: 10px;
   font-weight: 800;
 }
+
+.marcador-label {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 600;
+}
+.marcador{
+  width: 200PX;
+  background: #fff;
+  margin: auto;
+}
+.marcador div{
+  border: 5px solid #000;
+  color: red;
+  font-size: 3rem;
+  font-weight: 900;
+}
+
 /* Winners banner */
 section#winners{
   background-color: #E5E5E5;
 }
 .winnersBanner{
-  background-image: url('../images/skybck.png');
-  background-size: cover;
-  background-position-y: inherit;
-  position: relative;
+  background-image: url('../images/slide-back.jpg');
+  /*background-size: cover;
+  background-position-y: top;
+  position: relative;*/
   color: #FF1E0A;
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 .winnersBanner .smLogo{
   position: absolute;
@@ -669,6 +695,26 @@ section#winners{
   margin-right: 15px;
 }
 /* Winners Counter */
+.winnersCards .moneyBack{
+  background-image: url('../images/winners-back-2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 25px;
+  align-items: center;
+  padding-top: 5%;
+}
+.text-gold{
+  color: #ebbc4c;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1em;
+}
+.winner-text-white{
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1em;
+}
+
 .winnersCounter{
   margin: 5vh 0;
 }
@@ -682,11 +728,11 @@ section#winners{
   margin-bottom: 2.5vh;
 }
 .winnersCounter .moneyBack{
-  background-image: url('../images/time_counter_banner.jpg');
+  background-image: url('../images/winners-back-2.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 25px;
-  height: 30vh;
+  height: 50vh;
   align-items: center;
 }
 .winnersCounter .moneyBack .col-sm-6{
