@@ -255,7 +255,9 @@ margin-top: 40px;'>
 
         //$id = $wpdb->get_var( "SELECT PersonId FROM $tabla_registros WHERE cedula = $ci" );
         //$account = $wpdb->get_var( "SELECT account FROM $tabla_registros WHERE cedula = $ci" );
-        $client = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $tabla_registros WHERE cedula = $ci" ) );
+        //$client = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $tabla_registros WHERE cedula = $ci" ) );
+        $client = $wpdb->get_row("SELECT * FROM $tabla_registros WHERE cedula= $ci;");
+
         $id = $client->PersonId;
         $account = $client->account;
 
@@ -276,7 +278,7 @@ margin-top: 40px;'>
         $fac_id = $wpdb->insert_id;
         $totalAccount = floatval($montoFactura) + $account;
 
-        if ($evolt == true || $lubricante == true){
+        if ($evolt == true || $lubricante == true || $altoque == true){
             saveProduct($evolt, $lubricante, $altoque, $fac_id, $id);
         }
 
@@ -332,7 +334,7 @@ margin-top: 40px;'>
             echo json_encode($return);
         }
         $voucher = isset($_POST['voucherType']) ? true : false;
-        $product = isset($_POST['evolt']) || isset($_POST['lubricante']) ? true : false;
+        $product = isset($_POST['evolt']) || isset($_POST['lubricante']) || isset($_POST['altoque']) ? true : false;
 
         $uploadedfile = $_FILES['pdf'];
         $fileURL = wp_handle_upload($uploadedfile, array('test_form' => false));
@@ -364,7 +366,7 @@ margin-top: 40px;'>
             }
         }
 
-        $double = $evolt || $lubricante ? true : false;
+        $double = $evolt || $lubricante || $altoque ? true : false;
 
         saveFactura($URL, $voucherURL, $voucherType, $triple, $evolt, $lubricante, $altoque, $double);
     }
