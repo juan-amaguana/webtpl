@@ -9,8 +9,8 @@
 	<meta property="og:url"           content="https://terpelsicumple.com/" />
 	<meta property="og:type"          content="website" />
 	<meta property="og:title"         content="Gana con Terpel" />
-	<meta property="og:description"   content="Tus consumos en Terpel ahora pueden regalarte $100.000 en premios. ¡Que esperas para participar!" />
-	<meta property="og:image"         content="http://terpelsicumple.com/wp-content/uploads/2021/10/post_participarF.png" />
+	<meta property="og:description"   content="Me preparo para vivir una experiencia de lujo junto a Terpel en Qatar 2022. ⛽✈⚽. Estoy participando en #tanqueayviaja" />
+	<meta property="og:image"         content="https://terpelsicumple.com/wp-content/uploads/2022/02/og-image.png" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <?php wp_head(); ?> 
 
