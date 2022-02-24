@@ -755,6 +755,28 @@ section#winners{
   border-radius: 15px;
 }
 
+/* countdown*/
+.countdown-label{
+  color: #fff;
+  text-align: left;
+  font-size: 1.5rem;
+}
+.countdown{
+  background: #fff;
+  display: flex;
+  text-align: center;
+  border-radius: 10px;
+  color: #666666;
+}
+.countdown div{
+  float: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+.countdown div span{
+  font-size: 3rem;
+  font-weight: 600;
+}
 
 /*wiiners cards*/
 .winner-card .winner-name{

@@ -21,10 +21,53 @@ $winners = [
     [ "name" => "", "city" => "" ],
     [ "name" => "", "city" => "" ],
     [ "name" => "", "city" => "" ]
-]
+];
 
+global $wpdb;
+$tabla_rangos = $wpdb->prefix . 'ranges';
+
+
+/** RANGES */
+$toDay = date('Y-m-d');
+$range = $wpdb->get_row("SELECT * FROM $tabla_rangos WHERE '$toDay' BETWEEN start AND end;");
 
 ?>
+
+<script>
+    var raffleDate = "<?= $range->raffle_date ?>";
+
+    if (raffleDate && raffleDate !== "") {
+        var countDownDate = new Date(raffleDate).getTime();
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the element with id="demo"
+            // document.getElementById("demo").innerHTML = days + "d " + hours + "h "+ minutes + "m " + seconds + "s ";
+
+            document.getElementById("r-day").innerHTML = days + " :";
+            document.getElementById("r-hour").innerHTML = hours + " :";
+            document.getElementById("r-minute").innerHTML = minutes + " :";
+            document.getElementById("r-second").innerHTML = seconds + "";
+
+            // If the count down is finished, write some text
+            if (distance < 0) {
+            clearInterval(x);
+            //document.getElementById("demo").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    }
+</script>
 
 <section id="winners" class="main-section">
     <div class="header">
@@ -66,7 +109,30 @@ $winners = [
                     <div class="marcador-label">GANADORES</div>
                 </div>
                 <div class="col-sm-6">
-                    <?php echo do_shortcode('[ycd_countdown id=21]'); ?>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="countdown-label">Siguiente sorteo en</div>
+                            <div class="countdown">
+                                <div class="">
+                                    <span id="r-day">6 :</span><br> 
+                                    Dias
+                                </div>
+                                <div class="">
+                                    <span id="r-hour">06 :</span><br> 
+                                    Horas
+                                </div>
+                                <div class="">
+                                    <span id="r-minute">30 :</span><br>
+                                    Minutos
+                                </div>
+                                <div class="">
+                                    <span id="r-second">30</span><br>
+                                    Segundos
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -141,7 +207,7 @@ $winners = [
     <br><br>
     <br><br>
     
-<div class="wrapper">
+<div class="wrapper" style="display: none;">
     <div class="winnersTable">
         <div class="firstColumn">
             <div class="card">
