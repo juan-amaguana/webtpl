@@ -554,7 +554,11 @@ function Gb_Dashboard()
                     $evolt = esc_textarea($tb->evolt);
                     $lubri = esc_textarea($tb->lubri);
 
-                    echo "<tr><td><a href='https://terpelsicumple.com/facturas/?user=$cedula'>$nombre</a></td>";
+                    $class = "";
+                    if ($dinero > 500) {
+                        $class = "high-value";
+                    }
+                    echo "<tr class='".$class."'><td><a href='https://terpelsicumple.com/facturas/?user=$cedula'>$nombre</a></td>";
                     echo "<td>$apellido</td>";
                     echo "<td>$cedula</td>";
                     echo "<td>$telefono</td>";
