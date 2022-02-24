@@ -399,6 +399,7 @@ function FileListItem(a) {
  */
 function correctValue() {
     jQuery('#montoFactura').val('');
+    jQuery('#decimals').val('');
     jQuery("#montoFactura").focus();
     jQuery('#amountExceeded').modal('hide');
 }
@@ -434,6 +435,10 @@ function submitCode(acceptValue=null) {
         var numFactura2 = $("#numFactura2").val();
         var numFactura3 = $("#numFactura3").val();
         var montoFactura = $("#montoFactura").val();
+        var decimals = $("#decimals").val();
+        montoFactura  = Number(`${montoFactura}.${decimals}`);
+
+        console.log(montoFactura);
         var fuel = $("#fuel").val();
         var ruc = EDS_RUC[fuel];
 
@@ -503,12 +508,14 @@ function submit_code_callback(data) {
         $('#numFactura2').val('');
         $('#numFactura3').val('');
         $('#montoFactura').val('');
+        $('#decimals').val('');
         $("#ciudad").val('Elegir');
         $("#fuel").val('Elegir');
         $('#pdf').val('');
         $('input[name="target"]:checked').prop("checked", false);
         $('#evolt').prop("checked", false);
         $('#lubricante').prop("checked", false);
+        $('#altoque').prop("checked", false);
         $("#pdfvoucher").val('')
         try {
             jdata = JSON.parse(data);

@@ -186,7 +186,7 @@ get_header(); ?>
                             <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/calendar.svg"/>
                             <br><br>
                             <p style="font-size: 16px;">
-                            Recuerda que los cupones ganados con esta factura ingresada participan solo en el sorteo del <?= $range->end ?>
+                            Recuerda que los cupones ganados con esta factura ingresada participan solo en el sorteo del <?= $range->raffle_date ?>
                             </p>
                         </div>
                         <div class="col-md-12">

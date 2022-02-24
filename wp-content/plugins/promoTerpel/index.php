@@ -206,14 +206,23 @@ function Gb_Code_Register()
     wp_enqueue_style('css_form', plugins_url('/css/form.css', __FILE__));
     wp_enqueue_script('js_form', plugins_url('/js/form.js', __FILE__));
 ?>
+
+<style>
+canvas{
+  display: none;
+}
+</style>
 <script src="https://cdn.jsdelivr.net/npm/screw-filereader@1.4.3/index.min.js"></script>
     <form id="form-code" onsubmit="event.preventDefault(); submitCode();" enctype="multipart/form-data">
         <label>Número de factura*</label>
         <input id="numFactura1" class="smallInput" name="numFactura1" placeholder="000" required type="text" maxlength="3" pattern="\d*" />
         <input id="numFactura2" class="smallInput" name="numFactura2" placeholder="000" required type="text" maxlength="3" pattern="\d*" />
         <input id="numFactura3" class="medInput" name="numFactura3" placeholder="000" required type="text" pattern="\d*" maxlength="30" />
+
         <label>Monto total de factura*</label>
-        <input id="montoFactura" class="fullInput" name="montoFactura" placeholder="$0.00" type="number" required min="0.01" step="0.01" max="20000" />
+        <input id="montoFactura" class="smallInput" name="montoFactura" placeholder="00" type="number" required min="0.01" step="0.01" max="20000" />,
+        <input id="decimals" class="smallInput" name="decimals" placeholder="00" type="number" required min="0.01" step="0.01" max="20000" /> USD
+
         <label>Ciudad*</label>
         <select name="Cuidad" id="ciudad" class="fullInput" required>
             <option value="" disabled selected>Elegir</option>
