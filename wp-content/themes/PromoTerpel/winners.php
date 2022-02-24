@@ -2,7 +2,29 @@
 /* Template Name: Winners Page
 */
 
-get_header(); ?>
+get_header(); 
+
+
+$winners = [
+    [ "name" => "Juan Diego Lopez", "city" => "AZUAY" ],
+    [ "name" => "", "city" => "" ],
+    [ "name" => "", "city" => "" ],
+    [ "name" => "", "city" => "" ],
+    [ "name" => "", "city" => "" ],
+    [ "name" => "", "city" => "" ],
+    [ "name" => "", "city" => "" ],
+    [ "name" => "", "city" => "" ],
+    [ "name" => "", "city" => "" ],
+    [ "name" => "", "city" => "" ],
+    [ "name" => "", "city" => "" ],
+    [ "name" => "", "city" => "" ],
+    [ "name" => "", "city" => "" ],
+    [ "name" => "", "city" => "" ],
+    [ "name" => "", "city" => "" ]
+]
+
+
+?>
 
 <section id="winners" class="main-section">
     <div class="header">
@@ -83,7 +105,33 @@ get_header(); ?>
                         </div>
                         <div class="col-md-2"></div>
                     </div>
-                    <br> <br>
+                    
+
+                    <div class="row" style="margin-top: 5%; margin-bottom: 5%;">
+
+                        <?php foreach($winners as $x => $val) { ?>
+
+
+                            <?php if( $val["name"] !== "") { ?>
+                        <div class="col-md-3 winner-card" style="margin-top: 5%;">
+                            <img src="<?php bloginfo('template_directory'); ?>/assets/images/winner-theme.png"  />
+                            <div class="winner-name"> <?= $val["name"] ?> <br>  <strong>  <?= $val["city"] ?> </strong> </div>
+                        </div>
+                            <?php } else { ?>
+                        <div class="col-md-3" style="margin-top: 5%;">
+                            <div class="secret-card">
+                                <div class="content-text">
+                                    TANQUEA Y VIAJA A
+                                    <img src="<?php bloginfo('template_directory'); ?>/assets/images/qatar-mini.png"  />
+                                    <div class="week">GANADOR <br> SEMANA #<?= $x +1 ?> </div>
+                                </div>
+                            </div>
+                        </div>
+                            <?php } ?>
+
+                        <?php } ?>
+
+                    </div>
                 </div>
             </div>
 
