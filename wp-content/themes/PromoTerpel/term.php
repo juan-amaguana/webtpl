@@ -2,7 +2,73 @@
 /* Template Name: Terminos y Condiciones
 */
 
-get_header(); ?>
+get_header(); 
+
+$stations = [
+    [ "name" => "EDS LO JUSTO", "city" => "Ambato", "address" => "Av.  Bolivariana 747 E Isidro Viteri" ],
+    [ "name" => "EDS SILVAN 2", "city" => "Babahoyo", "address" => "Via Babahoyo" ],
+    [ "name" => "EDS SILVAN 1", "city" => "Babahoyo", "address" => "Los Rios Babahoyo Parroquia Clemente Baquerizo" ],
+    [ "name" => "EDS GAPAL", "city" => "Cuenca", "address" => "Av. 24 De Mayo y Cajabamba" ],
+    [ "name" => "EDS NARANCAY", "city" => "Cuenca", "address" => "Panamericana Sur Via Baños Km 1 1-2" ],
+    [ "name" => "EDS BAÑOS", "city" => "Cuenca", "address" => "Camino a Baños Av. Las Américas " ],
+    [ "name" => "EDS SAN JOSÉ DE TAMARINDO", "city" => "Cuenca", "address" => "Molleturo km 107 Sector Tamarindo Parroquia Jesús María" ],
+    [ "name" => "EDS ELOY ALFARO", "city" => "Durán", "address" => "Km 2.5 Durán Boliche" ],
+    [ "name" => "EDS VALGAS", "city" => "El Carmen", "address" => "Km 36 Via Chone" ],
+    [ "name" => "EDS RIO BONITO", "city" => "El Guabo", "address" => "Panamericana, Via Guayaquil " ],
+    [ "name" => "EDS EL JARDIÍN", "city" => "Esmeraldas", "address" => "Sur de la Ciudad Redonda De Codesa" ],
+    [ "name" => "EDS LA ISLA", "city" => "Esmeraldas", "address" => "Cl 16 Sl 1 Mz 23 Carretero Via Isla" ],
+    [ "name" => "EDS LA GARZOTA", "city" => "Guayaquil", "address" => "Av. Guillermo Pareja Y Av. Hermano Miguel" ],
+    [ "name" => "EDS GARITA CHIMBORAZO", "city" => "Guayaquil", "address" => "Av. Quito Y Primero De Mayo" ],
+    [ "name" => "EDS BAHÍA NORTE", "city" => "Guayaquil", "address" => "Av. De Las Américas Solar 5-6 " ],
+    [ "name" => "EDS 9 DE OCTUBRE", "city" => "Guayaquil", "address" => "Av. Juan Tanca Marengo Solar 5 y 6" ],
+    [ "name" => "EDS PETROPORT", "city" => "Guayaquil", "address" => "Av. Carlos Julio Arosemena Km 4,5" ],
+    [ "name" => "EDS GUAYACANES", "city" => "Guayaquil", "address" => "Av. Isidro Ayora Y Av. Jose Luis Tamayo" ],
+    [ "name" => "EDS METRÓPOLIS", "city" => "Guayaquil", "address" => "Autopista Terminal Pascuales, urbanización Metropolis II-B, solar 1 Mz 1009" ],
+    [ "name" => "EDS LAS AMÉRICAS", "city" => "Guayaquil", "address" => "Av. De Las Américas intersección " ],
+    [ "name" => "EDS PORTETE", "city" => "Guayaquil", "address" => "Portete, Estero Salado" ],
+    [ "name" => "EDS EL FORTÍN", "city" => "Guayaquil", "address" => "Km 27 Via Perimetral" ],
+    [ "name" => "EDS BELLAVISTA", "city" => "Guayaquil", "address" => "Av. Velasco Ibarra No. 3-4-8-9 Y Av. Barcelona" ],
+    [ "name" => "EDS PERIMETRAL", "city" => "Guayaquil", "address" => "Av. Perimetral Km 25-Guayaquil" ],
+    [ "name" => "EDS AUTOSERVICIO SUR", "city" => "Guayaquil", "address" => "Kennedy Norte y Av Francisco De Orellana" ],
+    [ "name" => "EDS EL ÉXITO", "city" => "Guayaquil", "address" => "Aguirre 1621 y Av. Del Ejercito" ],
+    [ "name" => "EDS DOMINGO COMIN", "city" => "Guayaquil", "address" => "Av. Domingo Comin Intersección Ernes" ],
+    [ "name" => "EDS ALBERESE", "city" => "Guayaquil", "address" => "Via Daule Mz 73 Si 1" ],
+    [ "name" => "EDS MAIOLI", "city" => "Guayaquil", "address" => "Ayacucho 3500 Y Leopoldo Izquieta " ],
+    [ "name" => "EDS DISCOLDA", "city" => "Guayaquil", "address" => "Posorja -Natividad Flores" ],
+    [ "name" => "EDS CASANOVA", "city" => "Guayaquil", "address" => "Gallegos Lara 2201 y Portete" ],
+    [ "name" => "EDS ARUAL", "city" => "Guayaquil", "address" => "Via Perimetral Km 42" ],
+    [ "name" => "EDS PERIMETRAL", "city" => "Guayaquil", "address" => "Av. Perimetral Km 26" ],
+    [ "name" => "EDS PISONI", "city" => "Guayaquil", "address" => "Puente Alterno Norte" ],
+    [ "name" => "EDS MALACATOS", "city" => "Loja", "address" => "Via Loja Malacatos Km 26" ],
+    [ "name" => "EDS MACHALA DOS", "city" => "Machala", "address" => "Km. 0.5 25 De Junio" ],
+    [ "name" => "EDS MALECÓN", "city" => "Manta", "address" => "N° 110 Carretero A Portoviejo" ],
+    [ "name" => "EDS AMCO", "city" => "Manta", "address" => "Av. 4 De Noviembre Manta Manabí" ],
+    [ "name" => "EDS MONTECRISTI", "city" => "Montecristi", "address" => "Parroquia Anibal San Andrés Carrete" ],
+    [ "name" => "EDS COSTA NORTE", "city" => "Pedernales", "address" => "García Moreno y 27 De Noviembre" ],
+    [ "name" => "EDS POSOIL", "city" => "Posorja", "address" => "Vial al Puerto de Aguas Profundas" ],
+    [ "name" => "EDS AUTOCENTRO", "city" => "Quevedo", "address" => "Av. Walter Andrade Cl 4" ],
+    [ "name" => "EDS LA VICTORIA", "city" => "Quevedo", "address" => "Quevedo, Km 1 Via San Carlos" ],
+    [ "name" => "EDS MIRAVALLE", "city" => "Quito", "address" => "Av. Interoceánica L.6 Via a Miravalle" ],
+    [ "name" => "EDS ANDINA", "city" => "Quito", "address" => "Autopista General Rumiñahui Lt 424 junto al puente 9" ],
+    [ "name" => "EDS TUFIÑO", "city" => "Quito", "address" => "Av. Galo Plaza Lasso Y Av. Luis Tufiño" ],
+    [ "name" => "EDS TERPEL UNO", "city" => "Quito", "address" => "Av. 10 De Agosto Y Rio Cofanes" ],
+    [ "name" => "EDS VIRGEN DEL QUINCHE", "city" => "Quito", "address" => "Via a Puellaro a 2 cuadras del parque recreacional Jerusalem" ],
+    [ "name" => "EDS EL QUINCHE", "city" => "Quito", "address" => "Panamericana Norte Km 2 Y Cornelio" ],
+    [ "name" => "EDS SENSACIÓN", "city" => "Riobamba", "address" => "Panamericana Norte Y Rio Quevedo" ],
+    [ "name" => "EDS PRESTOSERVICIO DEL VALLE", "city" => "Ruminahui", "address" => "Av. General Rumiñahui y 7Ma Transversal Conocoto Quito" ],
+    [ "name" => "EDS SAN SEBASTIÁN", "city" => "Ruminahui - Salgolqui", "address" => "Av. Luis Cordero Y García Morenos" ],
+    [ "name" => "EDS LA T SALITRE", "city" => "Salitre", "address" => "Sector la T de Salitre Carretero Via Daule" ],
+    [ "name" => "EDS FLAMINGO OCCIDENTAL", "city" => "San Lorenzo", "address" => "Panamericana Sur Tambillo" ],
+    [ "name" => "EDS FLAMINGO ORIENTAL", "city" => "San Lorenzo", "address" => "Panamericana Sur Tambillo" ],
+    [ "name" => "EDS QUATTRO", "city" => "Santa Elena", "address" => "Via Salinas-La Libertad Cl 53" ],
+    [ "name" => "EDS R Y G", "city" => "Santo Domingo De Los Tsáchilas", "address" => "Av. De Los Colonos " ],
+    [ "name" => "EDS ANTURIOS I", "city" => "Santo Domingo De Los Tsáchilas", "address" => "Via Quevedo Km 4.5 Margen Izquierdo" ],
+    [ "name" => "EDS TRUCK STOP", "city" => "Santo Domingo De Los Tsáchilas", "address" => "Via Quevedo Km 5 Cooperativa Nueva" ],
+    [ "name" => "EDS EL DESCANSO", "city" => "Santo Domingo De Los Tsáchilas", "address" => "Km 12 Via Santo Domingo Quito" ],
+    [ "name" => "EDS ANTURIOS II", "city" => "Santo Domingo De Los Tsáchilas", "address" => "Via Quevedo Km 4.5 " ],
+];
+
+?>
 
 <section>
     <div class="wrapper">
@@ -19,440 +85,13 @@ get_header(); ?>
                 <p>Esta promoción estará vigente en las estaciones de servicio participantes, las cuáles son: </p>
                 <table>
                     <tbody>
+                    <?php foreach($stations  as $x => $val) { ?>
                         <tr>
-                            <td>EDS MILCHICHIG</td>
-                            <td>Cuenca</td>
-                            <td>Av. Gonzalez Suarez Camino A Quinta</td>
-                        </tr>
-                        <tr>
-                            <td>EDS NARANCAY</td>
-                            <td>Cuenca</td>
-                            <td>Panamericana Sur Km 1,5 Via Baos</td>
-                        </tr>
-                        <tr>
-                            <td>EDS SENSACION</td>
-                            <td>Riobamba</td>
-                            <td>Panamericana Norte Y Rio Quevedo</td>
-                        </tr>
-                        <tr>
-                            <td>EDS MACHALA DOS</td>
-                            <td>Machala</td>
-                            <td>Km. 0.5 25 De Junio</td>
-                        </tr>
-                        <tr>
-                            <td>EDS RIO BONITO</td>
-                            <td>Machala</td>
-                            <td>Machala - Troncal de la Costa Panamericana sur E25 Sector Rio Zapote Parroquia, Machala 070117</td>
-                        </tr>
-                        <tr>
-                            <td>EDS EL JARDIN</td>
-                            <td>Esmeraldas</td>
-                            <td>Sur De La Ciudad Redonda De Codesa</td>
-                        </tr>
-                        <tr>
-                            <td>EDS PERIMETRAL (LTX)</td>
-                            <td>Guayaquil</td>
-                            <td>Km.25 Via Perimetral</td>
-                        </tr>
-                        <tr>
-                            <td>EDS EL FORTIN
-                            </td>
-                            <td>Guayaquil</td>
-                            <td>Km 27 Via Perimetral, Coop Unidos P
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS GARITA CHIMBORAZO
-                            </td>
-                            <td>Guayaquil</td>
-                            <td>Av Quito Y Primero De Mayo
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS CENTENARIO (Terpel)
-                            </td>
-                            <td>Guayaquil</td>
-                            <td>Calle Argentina Entre Cl Chile Y Ch
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS BAHIA NORTE
-                            </td>
-                            <td>Guayaquil</td>
-                            <td>Av De Las Americas Solar 5-6 Junto
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS BELLAVISTA
-                            </td>
-                            <td>Guayaquil</td>
-                            <td>Av. Velasco Ibarra 3-4-8-9 Y Av.Bar
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS ARUAL
-                            </td>
-                            <td>Guayaquil</td>
-                            <td>Via Perimetral Km 42
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS DOMINGO COMIN
-                            </td>
-                            <td>Guayaquil</td>
-                            <td>Av Domingo Comin Interseccion Ernes
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS CASANOVA
-                            </td>
-                            <td>Guayaquil</td>
-                            <td>Gallegos Lara 2201 Y Portete
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS MAIOLI
-                            </td>
-                            <td>Guayaquil</td>
-                            <td>Ayacucho 3500 Y Leopoldo Izquieta P
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS EL EXITO
-                            </td>
-                            <td>Guayaquil</td>
-                            <td>Aguirre 1621 Y Av. Del Ejercito
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS POSOIL
-                            </td>
-                            <td>Posorja</td>
-                            <td>Guayaquil - Posorja
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS ALBERESE
-                            </td>
-                            <td>Posorja</td>
-                            <td>Guayaquil - Vía Daule
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS PETRILLO 2
-                            </td>
-                            <td>Nobol</td>
-                            <td>#N/D
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS PETROPORT
-                            </td>
-                            <td>Guayaquil</td>
-                            <td>Av.Carlos Julio Arosemena Km 4,5
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS PORTETE
-                            </td>
-                            <td>Guayaquil</td>
-                            <td>Portete S/N Estero Salado Febres
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS ELOY ALFARO
-                            </td>
-                            <td>Duran</td>
-                            <td>Via Duran Boliche Km 2.5
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS LAS AMERICAS
-                            </td>
-                            <td>Guayaquil</td>
-                            <td>Av De Las Americas Interseccion Av
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS CEIBOS
-                            </td>
-                            <td>Guayaquil</td>
-                            <td>Av. Del Bombero Frente C.A Ceibos
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS BENEFICENCIA
-                            </td>
-                            <td>Guayaquil</td>
-                            <td>Av.De Las Americas Solar 7 Y Jaime
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS KENNEDY
-                            </td>
-                            <td>Guayaquil</td>
-                            <td>Av. Fco De Orellana Solar 1
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS PERIMETRAL
-                            </td>
-                            <td>Guayaquil</td>
-                            <td>Av Perimetral Km 26
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS GUAYACANES
-                            </td>
-                            <td>Guayaquil</td>
-                            <td>Av. Isidro Ayora Y Av. Jose Luis Ta
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS NATABUELA
-                            </td>
-                            <td>Ibarra</td>
-                            <td>Km 8 1/2 Via Ibarra Quito Natabuela
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS MALACATOS
-                            </td>
-                            <td>Loja</td>
-                            <td>#N/D
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS SILVAN 1
-                            </td>
-                            <td>Babahoyo</td>
-                            <td>Via Flores Km 2.5 Babahoyo Montalvo
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS LA VICTORIA
-                            </td>
-                            <td>Quevedo</td>
-                            <td>Quevedo, Km 1 Via San Carlos
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS AUTOCENTRO
-                            </td>
-                            <td>Quevedo</td>
-                            <td>Av.Walter Andrade S/N
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS AMCO
-                            </td>
-                            <td>Manta</td>
-                            <td>Av. 113 y Calle 319
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS MALECON
-                            </td>
-                            <td>Manta</td>
-                            <td>Av. Malecon Jaime Chavez Gutierrez y Av. 4 Noviembre
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS MONTECRISTI
-                            </td>
-                            <td>Montecristi</td>
-                            <td>Montecristi Vía Manta
-                            </td>
-                        </tr>
-                         <tr>
-                            <td>EDS AMAZONAS
-                            </td>
-                            <td>El Coca</td>
-                            <td>Av Alejandro Labaka S/N Y Atahuealp
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS SAN SEBASTIAN
-                            </td>
-                            <td>Quito</td>
-                            <td>Av Luis Cordero Y Garcia Morenos Sa
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS JB
-                            </td>
-                            <td>Quito</td>
-                            <td>Av. Mariscal Sucre 101 Y Pilalo
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS EL PINAR
-                            </td>
-                            <td>Quito</td>
-                            <td>Avenida Occidental N50-241 Y
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS PRESTOSERVICIO DEL VALLE
-                            </td>
-                            <td>Quito</td>
-                            <td>Av General Rumiñahui Y 7Ma Tv
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS AUTOSERVICIO SUR
-                            </td>
-                            <td>Quito</td>
-                            <td>Av Maldonado S10-84 Y Calvas
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS EL QUINCHE
-                            </td>
-                            <td>Quito</td>
-                            <td>Km Dos Panamericana Norte
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS EL BOSQUE
-                            </td>
-                            <td>Quito</td>
-                            <td>Mariscal Sucre N46 120 Y Francisco
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS ANDINA
-                            </td>
-                            <td>Quito</td>
-                            <td>Aut General Rumiñahui Lt 424 Junto Al Puente 9
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS MIRAVALLE
-                            </td>
-                            <td>Quito</td>
-                            <td>Via A Tanda Km 7.5 V.Interoceanica
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS TERPEL UNO
-                            </td>
-                            <td>Quito</td>
-                            <td>Av 10 De Agosto Y Rio Cofanes
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS FLAMINGO OCCIDENTAL
-                            </td>
-                            <td>Quito</td>
-                            <td>Panamericana Sur S/N Tambillo
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS FLAMINGO ORIENTAL
-                            </td>
-                            <td>Quito</td>
-                            <td>Panamericana Sur S/N Tambillo
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS TUFIÑO
-                            </td>
-                            <td>Quito</td>
-                            <td>Av Galo Plaza Lazo Y Av Luis Tufiño
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS QUATTRO
-                            </td>
-                            <td>Salinas</td>
-                            <td>Via Salinas-La Libertad Cl 53 Y Av
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS BALLENITA
-                            </td>
-                            <td>Ballenita</td>
-                            <td>Km 1,5 Via Santa Elena-Ballenita
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS TRUCK STOP
-                            </td>
-                            <td>Sto Domingo</td>
-                            <td>Via Quevedo Km 5 Cooperativa Nueva
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS EL DESCANSO
-                            </td>
-                            <td>Sto Domingo</td>
-                            <td>Via A Santo Domingo Km 12 Junto Al
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS R Y G
-                            </td>
-                            <td>Sto Domingo</td>
-                            <td>Av De Los Colonos S/N Y Via La Beng
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS VALGAS
-                            </td>
-                            <td>Sto Domingo</td>
-                            <td>Km 36 Via Chone
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS ANTURIOS II
-                            </td>
-                            <td>Sto Domingo</td>
-                            <td>Km 4 Via Quevedo, Santo Domingo
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS ANTURIOS I
-                            </td>
-                            <td>Sto Domingo</td>
-                            <td>Km 4 Via Quevedo, Santo Domingo
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS PETRO PLAZA
-                            </td>
-                            <td>Sto Domingo</td>
-                            <td>#N/D
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS LO JUSTO
-                            </td>
-                            <td>Ambato</td>
-                            <td>Av. Bolivariana N757 e Isidro Viteri
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS LA GARZOTA
-                            </td>
-                            <td>Guayaquil</td>
-                            <td>Av. Hermano Miguel 65-20, Guayaquil 090513
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS SERVICENTRO
-                            </td>
-                            <td>Sto Domingo</td>
-                            <td>Av.Quevedo 108 Y Av. Chone
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>EDS LA T SALITRE
-                            </td>
-                            <td>Guayaquil</td>
-                            <td>Calle La T vía Salitre Mz 40 S21 sector Daule
-                            </td>
-                        </tr>
+                            <td> <?= $val["name"] ?> </td>
+                            <td> <?= $val["city"] ?> </td>
+                            <td> <?= $val["address"] ?> </td>
+                        </tr>
+                    <?php } ?>
                     </tbody>
                 </table>
                 <br>
