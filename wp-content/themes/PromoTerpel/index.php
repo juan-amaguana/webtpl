@@ -34,11 +34,13 @@ $site_url = get_site_url();
     
     <div class="banner">
         <div class="title">
+            <div style="padding-left: 5%;">
             <h2>
                 Vive una experencia de<br>lujo, con todo incluido.
             </h2>
             <p>Ingresa tu cédula y participa</p>
             <?php echo do_shortcode('[trade-form-login]'); ?>
+            </div>
         </div>
         <div class="clouds">
             <!-- <img src="<?php bloginfo('template_directory'); ?>/assets/images/qatar-back.jpg" /> -->
@@ -119,7 +121,7 @@ $site_url = get_site_url();
                     <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/features.png"/>
                 </div>
                 <div class="col-sm-12" style="text-align: center; margin-top: 5%;margin-bottom: 5%;">
-                    <button class="redButton buttAlignCenter" data-toggle="modal" data-target="#exampleModal">
+                    <button class="redButton buttAlignCenter" data-toggle="modal" data-target="#exampleModal" style="display: none;">
                     Más información
                     </button>
                 </div>

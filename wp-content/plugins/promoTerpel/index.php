@@ -129,7 +129,7 @@ function Gb_Login_Form()
     wp_enqueue_script('js_form', plugins_url('js/form.js', __FILE__));
 ?>
     <form id="login-form" onsubmit="event.preventDefault(); submitLogin();">
-        <input type="text" class="login-control-gb" id="cedulaLogin" name="cedulaLogin" placeholder="Ingresa tu cédula" required maxlength="10" minlength="10" pattern="\d*" />
+        <input type="text" class="login-control-gb" id="cedulaLogin" name="cedulaLogin" placeholder="cédula" required maxlength="10" minlength="10" pattern="\d*" />
         <button type="submit" id="loginButton" class="submitLogin">Participar</button>
     </form>
 <?php
