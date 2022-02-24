@@ -72,7 +72,7 @@ $range = $wpdb->get_row("SELECT * FROM $tabla_rangos WHERE '$toDay' BETWEEN star
 <section id="winners" class="main-section">
     <div class="header">
         <a href="<?php echo get_site_url(); ?>">
-            <img src="<?php bloginfo('template_directory'); ?>/assets/images/logoTerpel.svg" alt="logoTerpel" />
+            <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/logoTerpel.svg" alt="logoTerpel" />
         </a>
         <div class="headEndCont">
             <a href="#">
@@ -85,7 +85,7 @@ $range = $wpdb->get_row("SELECT * FROM $tabla_rangos WHERE '$toDay' BETWEEN star
             <div class="row">
                 <div class="col-sm-6">
                     <p style="color: #fff; font-size: 2rem;">TANQUEA Y VIAJA A </p>
-                    <img src="<?php bloginfo('template_directory'); ?>/assets/images/qatar2022.png"  />
+                    <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/qatar2022.png"  />
                 </div>
                 <div class="col-sm-6">
 
@@ -94,21 +94,23 @@ $range = $wpdb->get_row("SELECT * FROM $tabla_rangos WHERE '$toDay' BETWEEN star
         </div>
     </div>
 
-    <div class="winnersCounter">
-        <div class="wrapper">
-            <h3>¡Son 12 ganadores!</h3>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
 
-
-            <div class="row moneyBack">
-                <div class="col-sm-6" style="text-align: center;">
+            <!-- CARD COUNT WINNERS AND COUNTDOWN -->
+            <h3 style="color: red; margin-top: 5%;">¡Son 12 ganadores!</h3>
+            <div class="row card-winner-countdown">
+                <div class="col-md-1"></div>
+                <div class="col-md-5" style="text-align: center;">
                     <div class="marcador-label">FALTA</div>
                     <div class="row marcador">
-                        <div class="col-md-6"> 0 </div>
-                        <div class="col-md-6"> 8 </div>
+                        <div class="col-md-6 col-xs-6"> 0 </div>
+                        <div class="col-md-6 col-xs-6"> 8 </div>
                     </div>
                     <div class="marcador-label">GANADORES</div>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-md-5">
                     <div class="row">
                         <div class="col-md-8">
                             <div class="countdown-label">Siguiente sorteo en</div>
@@ -134,21 +136,21 @@ $range = $wpdb->get_row("SELECT * FROM $tabla_rangos WHERE '$toDay' BETWEEN star
                         <div class="col-md-4"></div>
                     </div>
                 </div>
+                <div class="col-md-1"></div>
             </div>
-        </div>
-    </div>
+            <!-- CARD COUNT WINNERS AND COUNTDOWN -->
 
 
-    <div class="winnersCards">
-        <div class="wrapper">
-            <div class="row moneyBack">
-                <div class="col-sm-12" style="text-align: center;">
+            <!-- CARD lIST WINNERS -->
+            <div class="row card-list-winners">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
                     <div class="row">
                         <div class="col-md-2"></div>
-                        <div class="col-md-4" style="text-align: right;">
-                            <img src="<?php bloginfo('template_directory'); ?>/assets/images/winner1.png"  />
+                        <div class="col-md-4" style="text-align: center;">
+                            <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/winner1.png"  />
                         </div>
-                        <div class="col-md-4" style="text-align: left;">
+                        <div class="col-md-4" style="text-align: center;">
                             <div class="text-gold">
                             Ganador #1 <br>
                             Sorteo 15-03-2022
@@ -161,23 +163,19 @@ $range = $wpdb->get_row("SELECT * FROM $tabla_rangos WHERE '$toDay' BETWEEN star
                         <div class="col-md-2"></div>
                     </div>
 
-                    <div class="row" style="margin-top: 5%;">
+                    <div class="row" style="margin-top: 5%; text-align: center;">
                         <div class="col-md-2"></div>
                         <div class="col-md-8">
-                            <img src="<?php bloginfo('template_directory'); ?>/assets/images/qatar2022.png"  />
+                            <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/qatar2022.png"  />
                             <div class="winner-text-white">
                             Ellos ya ganaron su espacio para ir a 3 partidos en Qatar 2022 con una experiencia de lujo todo incluido gracias a Terpel
                             </div>
                         </div>
                         <div class="col-md-2"></div>
                     </div>
-                    
-
-                    <div class="row" style="margin-top: 5%; margin-bottom: 5%;">
-
+                    <!-- LIST -->
+                    <div class="row" style="margin-top: 5%; margin-bottom: 5%; text-align: center;">
                         <?php foreach($winners as $x => $val) { ?>
-
-
                             <?php if( $val["name"] !== "") { ?>
                         <div class="col-md-3 winner-card" style="margin-top: 5%;">
                             <img src="<?php bloginfo('template_directory'); ?>/assets/images/winner-theme.png"  />
@@ -194,14 +192,31 @@ $range = $wpdb->get_row("SELECT * FROM $tabla_rangos WHERE '$toDay' BETWEEN star
                             </div>
                         </div>
                             <?php } ?>
-
                         <?php } ?>
-
                     </div>
-                </div>
-            </div>
 
+
+                    <div class="row" style="margin-top: 5%; margin-bottom: 5%; text-align: center;">
+                        <div class="col-md-12">
+                            <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/una-experiencia.png"  />
+                            <br><br>
+                            <div class="winner-text-white">
+                                ¿Tienes una factura por ingresar? <br>
+                                ¡Participa ahora!
+                            </div>
+                            <br><br>
+                            <button class="redButton buttAlignCenter" >
+                            Ingresar factura
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+            <!-- CARD lIST WINNERS -->
         </div>
+        <div class="col-md-1"></div>
     </div>
 
     <br><br>
@@ -1697,7 +1712,7 @@ El Pinar  </span>
         </div>
     </div>
 </div>
-    <div class="wrapper">
+    <div class="wrapper" style="display: none;">
         <div class="socialBanner">
             <div class="row">
                 <div class="col-sm-6">

@@ -695,6 +695,27 @@ section#winners{
   margin-right: 15px;
 }
 /* Winners Counter */
+
+.card-winner-countdown{
+  background-image: url('../images/winners-back-2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 25px;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+.card-list-winners{
+  background-image: url('../images/winners-back-2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 25px;
+  align-items: center;
+  padding-top: 3%;
+  margin-top: 3%;
+}
+
+
 .winnersCards .moneyBack{
   background-image: url('../images/winners-back-2.jpg');
   background-size: cover;
@@ -732,7 +753,7 @@ section#winners{
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 25px;
-  height: 50vh;
+  /*height: 50vh;*/
   align-items: center;
 }
 .winnersCounter .moneyBack .col-sm-6{
