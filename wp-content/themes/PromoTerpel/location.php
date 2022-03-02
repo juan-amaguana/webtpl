@@ -146,8 +146,10 @@ get_header(); ?>
                     <h2>Azuay</h2>
                     <h3>Cuenca</h3>
                     <div class="cities">
-                        <p>Av. Gonzalez Suarez Camino A Quinta</p>
-                        <p>Panamericana Sur Km 1,5 Via Baos</p>
+                        <p>Av. 24 De Mayo y Cajabamba</p>
+                        <p>Panamericana Sur Via Baños Km 1 1-2</p>
+                        <p>Camino a Baños Av. Las Américas </p>
+                        <p>Molleturo km 107 Sector Tamarindo Parroquia Jesús María</p>
                     </div>
                 </div>
                 <div id="chimbo">
@@ -184,6 +186,7 @@ get_header(); ?>
                     <h3>Babahoyo</h3>
                     <div class="cities">
                         <p>Via Flores Km 2.5 Babahoyo Montalvo</p>
+                        <p>Los Rios Babahoyo Parroquia Clemente Baquerizo</p>
                     </div>
                     <h3>Quevedo</h3>
                     <div class="cities">

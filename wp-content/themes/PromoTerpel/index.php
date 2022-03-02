@@ -114,7 +114,7 @@ $site_url = get_site_url();
                     <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/more-titlte-1.png" alt="lubri" />
                     <br>
                     <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/qatar2022.png" alt="lubri" />
-                    <p style="color: #fff;">Gana 1 de los 12 viajes para 2 persona</p>
+                    <p style="color: #fff;">Gana 1 de los 12 viajes para 2 personas</p>
                 </div>
 
                 <div class="col-sm-12" style="text-align: center; margin-top: 2%;">
@@ -218,7 +218,7 @@ $site_url = get_site_url();
             <div class="row fuelStation">
                 <div class="col-xs-12 col-sm-12 col-md-6">
                     <h3>Conoce las estaciones de<br> servicio participantes</h3>
-                    <a href="https://terpelsicumple.com/estaciones-de-servicio/" target="_blank" class="redButton">
+                    <a href="/estaciones-de-servicio/" target="_blank" class="redButton">
                         Conocer estaciones
                     </a>
                 </div>

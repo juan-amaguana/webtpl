@@ -1317,6 +1317,12 @@ table#mainTableGb{
   align-items: center;
   padding: 10px 0;
 }
+
+/* Dirmo */
+.headEndCont a{
+    visibility: hidden;
+}
+
 /*Responsive */
 /*
 .main-section{
