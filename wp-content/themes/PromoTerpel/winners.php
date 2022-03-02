@@ -112,7 +112,7 @@ $range = $wpdb->get_row("SELECT * FROM $tabla_rangos WHERE '$toDay' BETWEEN star
                 </div>
                 <div class="col-md-5">
                     <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-9">
                             <div class="countdown-label">Siguiente sorteo en</div>
                             <div class="countdown">
                                 <div class="">
@@ -133,7 +133,7 @@ $range = $wpdb->get_row("SELECT * FROM $tabla_rangos WHERE '$toDay' BETWEEN star
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4"></div>
+                        <div class="col-md-3"></div>
                     </div>
                 </div>
                 <div class="col-md-1"></div>
