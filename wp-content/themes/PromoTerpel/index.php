@@ -47,8 +47,12 @@ $site_url = get_site_url();
         </div>
 
     </div>
-    <div class="wrapper">
-        <div class="body">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+            <div class="body">
             <h3 class="text-center black bold">¿Cómo participar?</br> Mecánica del concurso.
                 </h3>
             <div class="row redCircles">
@@ -378,7 +382,12 @@ $site_url = get_site_url();
                 </div>
             </div>
         </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
     </div>
+    
+    
 
     <div class="container-fluid" style="background: #F4F4F4;">
         <div class="row form-footer">
