@@ -421,11 +421,39 @@
   border: 1px solid #ebbc4c;
   border-radius: 5px;
   color: #fff;
+  /*
+  border-style: solid;
+  border-width: 1px;
+  border-image: linear-gradient(65.55deg, rgb(224, 197, 117, 1), rgb(239, 230, 131, 1),rgb(204, 169, 69, 1), rgb(228, 209, 111, 1)) 1;
+  border-radius: 20px;
+  color: #fff;*/
 }
 .awards div{
-  margin-top: 4%;
-  margin-bottom: 4%;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
+.awards .dates {
+  text-align: left;
+}
+.awards .dates p {
+  font-size: 12px;
+}
+.reduce-padding {
+  padding-left: 5px!important;
+  padding-right: 5px!important;
+}
+
+@media only screen and (max-width: 650px) and (orientation: portrait) {
+  .awards .dates {
+    text-align: center!important;
+  }
+  .moreinformation-modal .modal-header {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+
 
 .row.form-footer {
   padding-left: 10%;

@@ -110,19 +110,21 @@ $site_url = get_site_url();
             </button>
 
             <div class="row moreInformation">
-                <div class="col-sm-12" style="text-align: center; margin-top: 5%;">
+                <div class="col-1 col-md-12 col-sm-1"></div>
+                <div class="col-10 col-md-12 col-sm-10" style="text-align: center; margin-top: 5%;">
                     <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/more-titlte-1.png" alt="lubri" />
                     <br>
                     <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/qatar2022.png" alt="lubri" />
                     <p style="color: #fff;">Gana 1 de los 12 viajes para 2 personas</p>
                 </div>
+                <div class="col-1 col-md-12 col-sm-1"></div>
 
-                <div class="col-sm-12" style="text-align: center; margin-top: 2%;">
+                <div class="col-md-12 col-sm-12" style="text-align: center; margin-top: 2%;">
                     <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/features.png"/>
                 </div>
-                <div class="col-sm-12" style="text-align: center; margin-top: 5%;margin-bottom: 5%;">
-                    <button class="redButton buttAlignCenter" data-toggle="modal" data-target="#exampleModal" style="display: none;">
-                    Más información
+                <div class="col-md-12 col-sm-12" style="text-align: center; margin-top: 5%;margin-bottom: 5%;">
+                    <button class="redButton buttAlignCenter" data-toggle="modal" data-target="#exampleModal">
+                    Fechas de sorteos
                     </button>
                 </div>
             </div>
@@ -133,31 +135,180 @@ $site_url = get_site_url();
                 <div class="modal-dialog" role="document">
                     <div class="modal-content moreinformation-modal">
                         <div class="modal-body" style="text-align: center;">
-                            <br>
-                            <p>TANQUEA Y VIAJA A</p>
-                            <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/qatar2022.png" alt="lubri" />
-                            <p>Conoce los increibles premios de esta experiencia en Qatar que solo Terpel puede brindarte</p>
 
                             <div class="row">
-
-                                <div class="col-sm-1">
+                                <div class="col-1 col-md-12"></div>
+                                <div class="col-10 col-md-12" style="text-align: center;">
+                                    <p>TANQUEA Y VIAJA A</p>
+                                    <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/qatar2022.png" alt="lubri" />
+                                    <p>Conoce los increibles premios de esta experiencia en Qatar que solo Terpel puede brindarte</p>
                                 </div>
-                                <div class="col-sm-10">
-                                <div class="row awards">
-                                    <div class="col-md-6 col-sm-6"><img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/avion.png"/> Premio #1</div>
-                                    <div class="col-md-6 col-sm-6"><img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/avion.png"/> Premio #1</div>
+                                <div class="col-1 col-md-12"></div>
+                            </div>
 
-                                    <div class="col-md-6 col-sm-6"><img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/avion.png"/> Premio #1</div>
-                                    <div class="col-md-6 col-sm-6"><img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/avion.png"/> Premio #1</div>
-
-                                    <div class="col-md-6 col-sm-6"><img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/avion.png"/> Premio #1</div>
-                                    <div class="col-md-6 col-sm-6"><img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/avion.png"/> Premio #1</div>
-
-                                    <div class="col-md-6 col-sm-6"><img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/avion.png"/> Premio #1</div>
-                                    <div class="col-md-6 col-sm-6"><img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/avion.png"/> Premio #1</div>
+                            <div class="row">
+                                <div class="col-1 col-md-1 col-sm-1">
                                 </div>
+                                <div class="col-10 col-md-10 col-sm-10">
+                                    <div class="row awards">
+
+                                        <div class="col-6 col-md-6 col-sm-6 col-xs-6">
+                                            <div class="row">
+                                                <div class="col-md-12 col-sm-12">
+                                                    <div class="row">
+                                                        <div class="col-md-4 col-sm-4 reduce-padding"> 
+                                                            <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/avion.png"/>
+                                                        </div>
+                                                        <div class="col-md-8 col-sm-8 reduce-padding dates">
+                                                            <strong>Sorteo #1</strong> 
+                                                            <p>Mar. 29/03</p> 
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12 col-sm-12">
+                                                    <div class="row">
+                                                        <div class="col-md-4 col-sm-4 reduce-padding"> 
+                                                            <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/avion.png"/>
+                                                        </div>
+                                                        <div class="col-md-8 col-sm-8 reduce-padding dates">
+                                                            <strong>Sorteo #2</strong> 
+                                                            <p>Vie. 15/04</p> 
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12 col-sm-12">
+                                                    <div class="row">
+                                                        <div class="col-md-4 col-sm-4 reduce-padding"> 
+                                                            <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/avion.png"/>
+                                                        </div>
+                                                        <div class="col-md-8 col-sm-8 reduce-padding dates">
+                                                            <strong>Sorteo #3</strong> 
+                                                            <p>Vie. 29/04</p> 
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12 col-sm-12">
+                                                    <div class="row">
+                                                        <div class="col-md-4 col-sm-4 reduce-padding"> 
+                                                            <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/avion.png"/>
+                                                        </div>
+                                                        <div class="col-md-8 col-sm-8 reduce-padding dates">
+                                                            <strong>Sorteo #4</strong> 
+                                                            <p>Vie. 13/05</p> 
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12 col-sm-12">
+                                                    <div class="row">
+                                                        <div class="col-md-4 col-sm-4 reduce-padding"> 
+                                                            <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/avion.png"/>
+                                                        </div>
+                                                        <div class="col-md-8 col-sm-8 reduce-padding dates">
+                                                            <strong>Sorteo #5</strong> 
+                                                            <p>Vie. 27/05</p> 
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12 col-sm-12">
+                                                    <div class="row">
+                                                        <div class="col-md-4 col-sm-4 reduce-padding"> 
+                                                            <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/avion.png"/>
+                                                        </div>
+                                                        <div class="col-md-8 col-sm-8 reduce-padding dates">
+                                                            <strong>Sorteo #6</strong> 
+                                                            <p>Vie. 10/06</p> 
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!-- CULUMN 2 -->
+                                        <div class="col-6 col-md-6 col-sm-6 col-xs-6">
+                                            <div class="row">
+                                                <div class="col-md-12 col-sm-12">
+                                                    <div class="row">
+                                                        <div class="col-md-4 col-sm-4 reduce-padding"> 
+                                                            <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/avion.png"/>
+                                                        </div>
+                                                        <div class="col-md-8 col-sm-8 reduce-padding dates">
+                                                            <strong>Sorteo #7</strong> 
+                                                            <p>Vie. 24/06</p> 
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12 col-sm-12">
+                                                    <div class="row">
+                                                        <div class="col-md-4 col-sm-4 reduce-padding"> 
+                                                            <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/avion.png"/>
+                                                        </div>
+                                                        <div class="col-md-8 col-sm-8 reduce-padding dates">
+                                                            <strong>Sorteo #8</strong> 
+                                                            <p>Vie. 08/07</p> 
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12 col-sm-12">
+                                                    <div class="row">
+                                                        <div class="col-md-4 col-sm-4 reduce-padding"> 
+                                                            <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/avion.png"/>
+                                                        </div>
+                                                        <div class="col-md-8 col-sm-8 reduce-padding dates">
+                                                            <strong>Sorteo #9</strong> 
+                                                            <p>Vie. 22/07</p> 
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12 col-sm-12">
+                                                    <div class="row">
+                                                        <div class="col-md-4 col-sm-4 reduce-padding"> 
+                                                            <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/avion.png"/>
+                                                        </div>
+                                                        <div class="col-md-8 col-sm-8 reduce-padding dates">
+                                                            <strong>Sorteo #10</strong> 
+                                                            <p>Vie. 05/08</p> 
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12 col-sm-12">
+                                                    <div class="row">
+                                                        <div class="col-md-4 col-sm-4 reduce-padding"> 
+                                                            <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/avion.png"/>
+                                                        </div>
+                                                        <div class="col-md-8 col-sm-8 reduce-padding dates">
+                                                            <strong>Sorteo #11</strong> 
+                                                            <p>Vie. 19/08</p> 
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12 col-sm-12">
+                                                    <div class="row">
+                                                        <div class="col-md-4 col-sm-4 reduce-padding"> 
+                                                            <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/avion.png"/>
+                                                        </div>
+                                                        <div class="col-md-8 col-sm-8 reduce-padding dates">
+                                                            <strong>Sorteo #12</strong> 
+                                                            <p>Vie. 02/09</p> 
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>                    
+
+                                    </div>
                                 </div>
-                                <div class="col-sm-1">
+                                <div class="col-1 col-md-1 col-sm-1">
                                 </div>
 
                             </div>
