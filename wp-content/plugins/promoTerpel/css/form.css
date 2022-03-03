@@ -199,6 +199,9 @@ button#reset:disabled{
       opacity: 0.5;
       cursor: auto;
 }
+#montoFactura{
+    width: 60% !important;
+}
 .voucher{
     display: none;
 }

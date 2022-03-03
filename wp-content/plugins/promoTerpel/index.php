@@ -220,8 +220,8 @@ canvas{
         <input id="numFactura3" class="medInput" name="numFactura3" placeholder="000" required type="text" pattern="\d*" maxlength="30" />
 
         <label>Monto total de factura*</label>
-        <input id="montoFactura" class="smallInput" name="montoFactura" placeholder="00" type="number" required min="0.01" step="0.01" max="20000" />,
-        <input id="decimals" class="smallInput" name="decimals" placeholder="00" type="number" required min="0.01" step="0.01" max="20000" /> USD
+        <input id="montoFactura" class="smallInput" name="montoFactura" placeholder="00" type="text" required maxlength="10" pattern="\d*" />,
+        <input id="decimals" class="smallInput" name="decimals" placeholder="00" type="text" required maxlength="2" pattern="\d*" /> USD
 
         <label>Ciudad*</label>
         <select name="Cuidad" id="ciudad" class="fullInput" required>
@@ -231,22 +231,19 @@ canvas{
             <option value="sto_domingo">Sto Domingo</option>
             <option value="ambato">Ambato</option>
             <option value="babahoyo">Babahoyo</option>
-            <option value="ballenita">Ballenita</option>
             <option value="cuenca">Cuenca</option>
             <option value="duran">Duran</option>
             <option value="esmeraldas">Esmeraldas</option>
             <option value="el_carmen">El Carmen</option>
-            <option value="el_coca">El Coca</option>
-            <option value="ibarra">Ibarra</option>
             <option value="loja">Loja</option>
             <option value="machala">Machala</option>
             <option value="manta">Manta</option>
             <option value="montecristi">Montecristi</option>
-            <option value="nobol">Nobol</option>
             <option value="posorja">Posorja</option>
             <option value="quevedo">Quevedo</option>
             <option value="riobamba">Riobamba</option>
             <option value="salinas">Salinas</option>
+            <option value="salitre">Salitre</option>
         </select>
         <label>Estación de servicio*</label>
         <select name="Estación de servicio*" id="fuel" class="fullInput" required>
@@ -278,7 +275,7 @@ canvas{
                 <input type="file" id="pdfvoucher" name="Factura Comercial" accept="pdf" class="fullWidth" placeholder="JPG, PNG, PDF..." max-file-size="1024" total-max-size="1024">
             </div>
         </div>
-        <input type="submit" class="redButton buttAlignCenter" id="sendCodeInput" value="Ingresar factur aaa">
+        <input type="submit" class="redButton buttAlignCenter" id="sendCodeInput" value="Ingresar factura">
     </form>
 
     <!-- Modal -->

@@ -19,109 +19,87 @@
 
 <body style='margin-top: 0px;'>
     <div style='width: 600px; margin: 0 auto'>
-        <table>
-            <img src='http://terpelsicumple.com/wp-content/uploads/2021/10/bienvenidoMailHeader.png'
-                style='width: 100%;'>
+        <table style='background-color: black;'>
+            <tr>
+                <td>
+                    <img src='http://terpelsicumple.com/wp-content/themes/PromoTerpel/assets/mails/Mainhead1.png'
+                        style='width: 100%;'>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h1 style='font-family: work sans, Helvetica, sans-serif; font-weight: 600;color: #fff; width: 85%; display: block; margin: 0 auto;'>Registro
+                        exitoso de datos!</h1>
+                </td>
+            </tr>
+            <tr>
+                <td><p style='font-family: work sans, Helvetica, sans-serif; color: #fff; width: 85%; display: block; margin: 0 auto; padding: 10px 0; font-size: 19px; text-align: justify;'>Hola <span style='color: #e3af51;'>$name</span>, gracias por registrarte. Ahora es momento de ingresar tu primera factura, te deseamos
+                    mucha suerte. Con Terpel este 2022 podras vivir una experiencia de lujo apoyando a Ecuador en Qatar
+                    2022. </p></td>
+            </tr>
+            <tr>
+                <td>
+                    <img src='http://terpelsicumple.com/wp-content/themes/PromoTerpel/assets/mails/Mainhead2.png'
+                        style='width: 100%;'>
+                </td>
+            </tr>
         </table>
         <table style='width: 600px; margin: 0 auto; text-align: center;'>
-            <p
-                style='font-family:work sans, Helvetica, sans-serif; padding: 20px 35px; text-align: justify; color: #666666; font-weight: 300; margin-bottom: 20px;'>
-                <span style='font-weight: 900;'> Hola $name, </span>el registro de tus datos se realizó de
-                forma exitosa. Ahora estás listo para ingresar tu primera factura y participar por uno de los increíbles
-                premios que tenemos para tí.
-            </p>
-            <h3 style='font-family:work sans, Helvetica, sans-serif; text-align: center; color: #FF1E0A; font-weight: 600;
-            font-size: 21px;'>¿Cómo participar?</h3>
-            <img src='http://terpelsicumple.com/wp-content/uploads/2021/10/headerWelcomeTerpel.png'
+            <h1 style='color: #e3af51; text-align: center;font-family:work sans, Helvetica, sans-serif; '>Como
+                participar:</h1>
+            <img src='http://terpelsicumple.com/wp-content/themes/PromoTerpel/assets/mails/iconos.png'
                 style='width: 92.5%; display: block; margin: 0 auto; margin-top: 15px; margin-bottom: 20px;'>
 
-            <a href='https://terpelsicumple.com/'  style='    background-color: #FF1E0A;
-            color: #fff;
-            border-style: none;
-            padding: 10px 10px;
-            border-radius: 100px;
-            font-family: work sans, Helvetica, sans-serif;
-            font-size: 18px;
+            <a href='https://terpelsicumple.com/' style='
             margin: 0 auto;
             display: block;
-            text-decoration: none;
-            width: 125px;
+            width: 185px;
             text-align: center;
-            font-weight: 600;
             margin-top: 40px;'>
-                    Participar 
+                <img src='http://terpelsicumple.com/wp-content/themes/PromoTerpel/assets/mails/participar.png'
+                    style='width: 92.5%; display: block; margin: 0 auto; margin-top: 15px; margin-bottom: 20px;'>
             </a>
-            <p style='font-family: work sans, Helvetica, sans-serif; font-weight: 600; width: 60%; display: block; margin: 0 auto; text-align: center; color: #666666; font-size: 12px; margin-top: 30px;'>
-                *Participan todos los combustibles: Súper, Extra, Super Evol-t y Diesel y las facturas son acumulables.
+            <p
+                style='font-family: work sans, Helvetica, sans-serif; font-weight: 600; width: 95%; display: block; margin: 0 auto; text-align: center; color: #868686; font-size: 14px; margin-top: 30px;'>
+                *Participan todos los combustibles y las facturas son acumulables hasta el<br> sorteo mas cercano a la
+                fecha de ingreso.
             </p>
-            <h3 style='font-family:work sans, Helvetica, sans-serif; text-align: center; color: #FF1E0A; font-weight: 600;
-            font-size: 21px; margin-top:25px'>
-Gana doble o tripe cupón cumpliendo los siguientes requisitos. </h3>
-<img src='http://terpelsicumple.com/wp-content/uploads/2021/10/oportunityMail-1.png'
-style='width: 92.5%; display: block; margin: 0 auto; margin-top: 15px; margin-bottom: 20px;'>
-<a href='https://terpelsicumple.com/'  style='    background-color: #FF1E0A;
-color: #fff;
-border-style: none;
-padding: 10px 10px;
-border-radius: 100px;
-font-family: work sans, Helvetica, sans-serif;
-font-size: 18px;
-margin: 0 auto;
-display: block;
-text-decoration: none;
-width: 150px;
-text-align: center;
-font-weight: 600;
-margin-top: 15px;'>
-        Ingresar factura 
-</a>
-<h3 style='font-family:work sans, Helvetica, sans-serif; text-align: center; color: #666666; font-weight: 600;
-font-size: 19px; margin-top:25px'>¿Tienes alguna duda?<br>
-Conoce los términos y condiciones de la promoción</h3>
-<a href='https://terpelsicumple.com/terminos-y-condiciones/'  style='    background-color: #FF1E0A;
-color: #fff;
-border-style: none;
-padding: 10px 10px;
-border-radius: 100px;
-font-family: work sans, Helvetica, sans-serif;
-font-size: 18px;
-margin: 0 auto;
-display: block;
-text-decoration: none;
-width: 235px;
-text-align: center;
-font-weight: 600;
-margin-top: 40px;'>
-Términos y condiciones</a>
+            <img src='http://terpelsicumple.com/wp-content/themes/PromoTerpel/assets/mails/cupones.png'
+                style='width: 100%; display: block; margin: 0 auto; margin-top: 15px; margin-bottom: 0px;'>
         </table>
         <div
-            style='width: 600px; margin: 0 auto; background-color: #666666; padding: 20px 0px; margin-top: 40px; padding-left: 0px;'>
+            style='width: 600px; margin: 0 auto; background-color: #e5e5e5; padding: 20px 0px; margin-top: 0px; padding-left: 0px;'>
             <table style='width: 600px; margin: 0 auto; padding-left: 0px;'>
                 <tr style='padding-left: 0px;'>
                     <td colspan='1' style='text-align: left; padding-left: 0px;'>
-                        <img src='https://terpelecuadorgasolinagratis.com/wp-content/uploads/2021/09/LOGO-TERPEL.png'
+                        <img src='http://terpelsicumple.com/wp-content/themes/PromoTerpel/assets/mails/terpelLogo.png'
                             style='width: 120px; margin-left: 0px;'>
                     </td>
                     <td colspan='1' style='text-align: right; padding-right: 20px;'>
-                        <p style='    margin: 0;
-                        color: #fff;
-                        display: inline-block;
-                        font-family: work sans, Helvetica, sans-serif;
-                        vertical-align: text-top;
-                        font-size: 12px;
-                        margin-right: 10px;
-                    '> Síguenos en nuestras redes sociales</p>
                         <a href='https://www.facebook.com/terpelEC' style='margin-right: 10px; text-decoration: none;'>
-                            <img src='http://terpelsicumple.com/wp-content/uploads/2021/10/faceMail.png'
+                            <img src='http://terpelsicumple.com/wp-content/themes/PromoTerpel/assets/mails/face.png'
                                 style='width: 15px;'>
+                            <span
+                                style='color: #868686;font-family: work sans, Helvetica, sans-serif; font-size: 12px; font-weight: 600;'>
+                                /terpelEC
+                            </span>
                         </a>
-                        <a href='https://www.instagram.com/terpel_ec/' style='margin-right: 10px; text-decoration: none;'>
-                            <img src='http://terpelsicumple.com/wp-content/uploads/2021/10/instMail.png'
+                        <a href='https://www.instagram.com/terpel_ec/'
+                            style='margin-right: 10px; text-decoration: none;'>
+                            <img src='http://terpelsicumple.com/wp-content/themes/PromoTerpel/assets/mails/inst.png'
                                 style='width: 15px;'>
+                            <span
+                                style='color: #868686;font-family: work sans, Helvetica, sans-serif; font-size: 12px; font-weight: 600;'>
+                                /terpelEC
+                            </span>
                         </a>
                         <a href='https://ec.linkedin.com/company/terpel-ecuador' style='text-decoration: none;'>
-                            <img src='http://terpelsicumple.com/wp-content/uploads/2021/10/inst.png'
+                            <img src='http://terpelsicumple.com/wp-content/themes/PromoTerpel/assets/mails/linkedin.png'
                                 style='width: 15px;'>
+                            <span
+                                style='color: #868686;font-family: work sans, Helvetica, sans-serif; font-size: 12px; font-weight: 600;'>
+                                /terpelEC
+                            </span>
                         </a>
                     </td>
                 </tr>

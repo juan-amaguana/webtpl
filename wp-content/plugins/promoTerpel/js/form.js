@@ -1,7 +1,7 @@
 // GLOBAL VARS
 
 var EDS_RUC = {
-    'EDS BAÑOS': '0190158098001',
+    'EDS BAﾃ前S': '0190158098001',
     'EDS GAPAL': '0190158802001',
     'EDS MILCHICHIG': '0190357384001',
     'EDS NARANCAY': '0190168107001',
@@ -85,7 +85,7 @@ var EDS_RUC = {
     'EDS SAN SEBASTIAN': '1500463284001',
     'EDS SUPERMOBIL': '0991306498001',
     'EDS TERPEL UNO': '0991306498001',
-    'EDS TUFIÑO': '1708630619001',
+    'EDS TUFIﾃ前': '1708630619001',
     'EDS BALLENITA': '0992509538001',
     'EDS ANTURIOS I': '0991281258001',
     'EDS EL DESCANSO': '1711392603001',
@@ -107,7 +107,13 @@ var EDS_RUC = {
     'EDS MALACATOS': '0301255931001',
     'EDS SALITRE': '1792605504001',
     'EDS SERVIMOBIL': '2390059267001',
-    'EDS METROPOLIS 2': '0993074659001'
+    'EDS METROPOLIS 2': '0993074659001',
+    'EDS BAÑOS':'190158098',
+    'EDS TAMARINDO':'0300476744001',
+    'EDS LA ISLA': '1714305263001',
+    'EDS 9 DE OCTUBRE': '0992539380001',
+    'EDS EP VIRGEN DEL QUINCHE': '0050184913001',
+    'EDS LA T SALITRE': '1792605504001'
 }
 const CURRENT_HOST = window.location.protocol + "//" + window.location.host;
 console.log("HOST::::::", CURRENT_HOST)
@@ -814,29 +820,32 @@ jQuery(function ($) {
             $('#ciudad').css('color', 'black');
             $('#fuel').css('color', 'black');
             var current = $(this).val();
-            var cuenca = ['EDS MILCHICHIG', 'EDS NARANCAY']
+            var cuenca = ['EDS GAPAL', 'EDS NARANCAY', 'EDS BAÑOS', 'EDS TAMARINDO']
             var riobamba = ['EDS SENSACION']
             var machala = ['EDS MACHALA DOS', 'EDS RIO BONITO']
-            var esmeraldas = ['EDS EL JARDIN']
+            var esmeraldas = ['EDS EL JARDIN', 'EDS LA ISLA']
             var el_carmen = ['EDS VALGAS']
-            var guayaquil = ['EDS PISONI', 'EDS PERIMETRAL', 'EDS EL FORTIN', 'EDS GARITA CHIMBORAZO', 'EDS CENTENARIO', 'EDS BAHIA NORTE', 'EDS BELLAVISTA', 'EDS ARUAL','EDS DOMINGO COMIN', 'EDS CASANOVA',  'EDS MAIOLI',  'EDS EL EXITO', 'EDS ALBERESE', 'EDS PETROPORT', 'EDS PORTETE', 'EDS LAS AMERICAS', 'EDS CEIBOS / Mobil', 'EDS BENEFICENCIA', 'EDS KENNEDY', 'EDS GUAYACANES', 'EDS GARZOTA', 'EDS SALITRE', 'EDS METROPOLIS 2'];
+            var guayaquil = ['EDS GARZOTA', 'EDS GARITA CHIMBORAZO','EDS BAHIA NORTE','EDS PETROPORT', 'EDS GUAYACANES', 'EDS METROPOLIS', 'EDS LAS AMERICAS', 'EDS PORTETE','EDS EL FORTIN', 'EDS BELLAVISTA','EDS PERIMETRAL', 'EDS EL EXITO', 'EDS DOMINGO COMIN','EDS ALBERESE', 'EDS MAIOLI', 'EDS DISCOLDA', 'EDS CASANOVA', 'EDS ARUAL', 'EDS PISONI', 'EDS 9 DE OCTUBRE' ];
             var posorja = ['EDS POSOIL']
-            var nobol = ['EDS PETRILLO 2']
+            //var nobol = ['EDS PETRILLO 2']
             var duran = ['EDS ELOY ALFARO']
-            var ibarra = ['EDS NATABUELA']
-            var babahoyo = ['EDS SILVAN 1']
+            //var ibarra = ['EDS NATABUELA']
+            var babahoyo = ['EDS SILVAN 1','EDS SILVAN 2']
             var quevedo = ['EDS LA VICTORIA', 'EDS AUTOCENTRO']
             var manta = ['EDS AMCO', 'EDS MALECON']
             var montecristi = ['EDS MONTECRISTI']
-            var el_coca = ['EDS AMAZONAS']
-            var quito = ['EDS SAN SEBASTIAN', 'EDS JB', 'EDS EL PINAR', 'EDS PRESTOSERVICIO DEL VALLE', 'EDS AUTOSERVICIO SUR', 'EDS EL QUINCHE', 'EDS EL BOSQUE', 'EDS ANDINA', 'EDS MIRAVALLE', 'EDS TERPEL UNO', 'EDS FLAMINGO OCCIDENTAL', 'EDS FLAMINGO ORIENTAL', 'EDS TUFIÑO']
+            //var el_coca = ['EDS AMAZONAS']
+            var quito = ['EDS MIRAVALLE','EDS ANDINA', 'EDS TUFIﾃ前', 'EDS TERPEL UNO', 'EDS EL QUINCHE', 'EDS EP VIRGEN DEL QUINCHE']
             var salinas = ['EDS QUATRO']
-            var ballenita = ['EDS BALLENITA']
-            var sto_domingo = ['EDS TRUCK STOP', 'EDS EL DESCANSO', 'EDS R Y G', 'EDS ANTURIOS II', 'EDS ANTURIOS I', 'EDS PETRO PLAZA', 'EDS SERVIMOBIL']
+            //var ballenita = ['EDS BALLENITA']
+            var sto_domingo = ['EDS TRUCK STOP', 'EDS EL DESCANSO', 'EDS R Y G', 'EDS ANTURIOS II', 'EDS ANTURIOS I']
             var ambato = ['EDS LO JUSTO']
             var loja = ['EDS MALACATOS']
             var daule = ['EDS DAULE']
-
+            var pedernales = ['EDS COSTA NORTE']
+            var ruminahui = ['EDS PRESTOSERVICIO DEL VALLE','EDS SAN SEBASTIAN']
+            var san_lorenzo = ['EDS FLAMINGO OCCIDENTAL', 'EDS FLAMINGO ORIENTAL']
+            var salitre  = ['EDS LA T SALITRE']
             var fuelOptions = document.getElementById('fuel');
             while (fuelOptions.options.length > 0) {
                 fuelOptions.remove(0);
@@ -844,6 +853,42 @@ jQuery(function ($) {
             switch (current) {
                 case 'guayaquil':
                     guayaquil.map((i) => {
+                        var opt = document.createElement('option');
+                        opt.value = i;
+                        opt.name = i;
+                        opt.innerHTML = i;
+                        fuelOptions.appendChild(opt);
+                    })
+                    break;
+                case 'salitre':
+                    salitre.map((i) => {
+                        var opt = document.createElement('option');
+                        opt.value = i;
+                        opt.name = i;
+                        opt.innerHTML = i;
+                        fuelOptions.appendChild(opt);
+                    })
+                    break;
+                case 'san_lorenzo':
+                    san_lorenzo.map((i) => {
+                        var opt = document.createElement('option');
+                        opt.value = i;
+                        opt.name = i;
+                        opt.innerHTML = i;
+                        fuelOptions.appendChild(opt);
+                    })
+                    break;
+                case 'ruminahui':
+                    ruminahui.map((i) => {
+                        var opt = document.createElement('option');
+                        opt.value = i;
+                        opt.name = i;
+                        opt.innerHTML = i;
+                        fuelOptions.appendChild(opt);
+                    })
+                    break;
+                case 'pedernales':
+                    pedernales.map((i) => {
                         var opt = document.createElement('option');
                         opt.value = i;
                         opt.name = i;
@@ -888,15 +933,6 @@ jQuery(function ($) {
                         fuelOptions.appendChild(opt);
                     })
                     break;
-                case 'el_coca':
-                    el_coca.map((i) => {
-                        var opt = document.createElement('option');
-                        opt.value = i;
-                        opt.name = i;
-                        opt.innerHTML = i;
-                        fuelOptions.appendChild(opt);
-                    })
-                    break;
                 case 'daule':
                     daule.map((i) => {
                         var opt = document.createElement('option');
@@ -917,15 +953,6 @@ jQuery(function ($) {
                     break;
                 case 'quito':
                     quito.map((i) => {
-                        var opt = document.createElement('option');
-                        opt.value = i;
-                        opt.name = i;
-                        opt.innerHTML = i;
-                        fuelOptions.appendChild(opt);
-                    })
-                    break;
-                case 'ibarra':
-                    ibarra.map((i) => {
                         var opt = document.createElement('option');
                         opt.value = i;
                         opt.name = i;
@@ -969,15 +996,6 @@ jQuery(function ($) {
                         fuelOptions.appendChild(opt);
                     })
                     break;
-                case 'nobol':
-                    nobol.map((i) => {
-                        var opt = document.createElement('option');
-                        opt.value = i;
-                        opt.name = i;
-                        opt.innerHTML = i;
-                        fuelOptions.appendChild(opt);
-                    })
-                    break;
                 case 'duran':
                     duran.map((i) => {
                         var opt = document.createElement('option');
@@ -1007,15 +1025,6 @@ jQuery(function ($) {
                     break;
                 case 'quevedo':
                     quevedo.map((i) => {
-                        var opt = document.createElement('option');
-                        opt.value = i;
-                        opt.name = i;
-                        opt.innerHTML = i;
-                        fuelOptions.appendChild(opt);
-                    })
-                    break;
-                case 'ballenita':
-                    ballenita.map((i) => {
                         var opt = document.createElement('option');
                         opt.value = i;
                         opt.name = i;
