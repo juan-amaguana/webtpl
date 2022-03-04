@@ -164,7 +164,7 @@ get_header(); ?>
                 <div class="row whiteTb">
                     <div class="col-sm-12" style="text-align: center;">
                         <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/experience.png" alt="lubri" />
-                        <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/qatar2022.png" alt="lubri" />
+                        <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/qatar2022-min.png" alt="lubri" />
                     </div>
                 </div>
 

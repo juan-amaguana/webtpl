@@ -12,8 +12,10 @@ get_header(); ?>
             </div>
             <div class="col-sm-6 ganaForm">
                 <div class="flexForm">
+                    <br>
                     <h3>¡Ya casi terminamos!</h3>
                     <?php echo do_shortcode('[trade-form-register]'); ?>
+                    <p></p>
                 </div>
             </div>
         </div>
