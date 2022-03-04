@@ -1,7 +1,7 @@
 // GLOBAL VARS
 
 var EDS_RUC = {
-    'EDS BAﾃ前S': '0190158098001',
+    'EDS BAÑOS': '0190158098001',
     'EDS GAPAL': '0190158802001',
     'EDS MILCHICHIG': '0190357384001',
     'EDS NARANCAY': '0190168107001',
@@ -22,8 +22,10 @@ var EDS_RUC = {
     'EDS BARCELONA / Mobil': '0991306498001',
     'EDS BELLAVISTA': '0991321039001',
     'EDS CEIBOS / Mobil': '0991306498001',
+    'EDS CEIBOS': '0991306498001',
     'EDS BAHIA NORTE': '0992704187001',
     'EDS BENEFICENCIA / Mobil': '0991306498001',
+    'EDS BENEFICENCIA': '0991306498001',
     'EDS CARVAJAL': '0991344098001',
     'EDS CASANOVA': '0990330425001',
     'EDS CENTENARIO': '0991306498001',
@@ -50,7 +52,7 @@ var EDS_RUC = {
     'EDS PORTETE': '0990023263001',
     'EDS PRADERA': '0991306498001',
     'EDS PISONI': '0992301759001',
-    'EDS QUATRO': '0992914467001',
+    'EDS SANTA ELENA': '0992914467001', // TODO: REVISAR CAMBIO DE NOMBRE
     'EDS SAN CARLOS': '0990988838001',
     'EDS NATABUELA': '1703818565001',
     'EDS AUTOCENTRO': '1201695804001',
@@ -85,7 +87,7 @@ var EDS_RUC = {
     'EDS SAN SEBASTIAN': '1500463284001',
     'EDS SUPERMOBIL': '0991306498001',
     'EDS TERPEL UNO': '0991306498001',
-    'EDS TUFIﾃ前': '1708630619001',
+    'EDS TUFIÑO': '1708630619001',
     'EDS BALLENITA': '0992509538001',
     'EDS ANTURIOS I': '0991281258001',
     'EDS EL DESCANSO': '1711392603001',
@@ -108,7 +110,7 @@ var EDS_RUC = {
     'EDS SALITRE': '1792605504001',
     'EDS SERVIMOBIL': '2390059267001',
     'EDS METROPOLIS 2': '0993074659001',
-    'EDS BAÑOS':'190158098',
+    // 'EDS BAÑOS':'190158098',
     'EDS TAMARINDO':'0300476744001',
     'EDS LA ISLA': '1714305263001',
     'EDS 9 DE OCTUBRE': '0992539380001',
@@ -822,10 +824,10 @@ jQuery(function ($) {
             var current = $(this).val();
             var cuenca = ['EDS GAPAL', 'EDS NARANCAY', 'EDS BAÑOS', 'EDS TAMARINDO']
             var riobamba = ['EDS SENSACION']
-            var machala = ['EDS MACHALA DOS', 'EDS RIO BONITO']
+            var machala = ['EDS MACHALA DOS', /*'EDS RIO BONITO'*/]
             var esmeraldas = ['EDS EL JARDIN', 'EDS LA ISLA']
             var el_carmen = ['EDS VALGAS']
-            var guayaquil = ['EDS GARZOTA', 'EDS GARITA CHIMBORAZO','EDS BAHIA NORTE','EDS PETROPORT', 'EDS GUAYACANES', 'EDS METROPOLIS', 'EDS LAS AMERICAS', 'EDS PORTETE','EDS EL FORTIN', 'EDS BELLAVISTA','EDS PERIMETRAL', 'EDS EL EXITO', 'EDS DOMINGO COMIN','EDS ALBERESE', 'EDS MAIOLI', 'EDS DISCOLDA', 'EDS CASANOVA', 'EDS ARUAL', 'EDS PISONI', 'EDS 9 DE OCTUBRE' ];
+            var guayaquil = ['EDS GARZOTA', 'EDS GARITA CHIMBORAZO','EDS BAHIA NORTE','EDS PETROPORT', 'EDS GUAYACANES', 'EDS METROPOLIS', 'EDS LAS AMERICAS', 'EDS PORTETE','EDS EL FORTIN', 'EDS BELLAVISTA','EDS PERIMETRAL', 'EDS EL EXITO', 'EDS DOMINGO COMIN','EDS ALBERESE', 'EDS MAIOLI', 'EDS DISCOLDA', 'EDS CASANOVA', 'EDS ARUAL', 'EDS PISONI', 'EDS 9 DE OCTUBRE', 'EDS BENEFICENCIA', 'EDS KENNEDY', 'EDS CEIBOS'];
             var posorja = ['EDS POSOIL']
             //var nobol = ['EDS PETRILLO 2']
             var duran = ['EDS ELOY ALFARO']
@@ -835,8 +837,8 @@ jQuery(function ($) {
             var manta = ['EDS AMCO', 'EDS MALECON']
             var montecristi = ['EDS MONTECRISTI']
             //var el_coca = ['EDS AMAZONAS']
-            var quito = ['EDS MIRAVALLE','EDS ANDINA', 'EDS TUFIﾃ前', 'EDS TERPEL UNO', 'EDS EL QUINCHE', 'EDS EP VIRGEN DEL QUINCHE']
-            var salinas = ['EDS QUATRO']
+            var quito = ['EDS MIRAVALLE','EDS ANDINA', 'EDS TUFIÑO', 'EDS TERPEL UNO', 'EDS EL QUINCHE', 'EDS EP VIRGEN DEL QUINCHE']
+            var salinas = ['EDS SANTA ELENA'] // TODO: buscar en base el id EDS QUATRO y reemplazar por EDS SANTA ELENA
             //var ballenita = ['EDS BALLENITA']
             var sto_domingo = ['EDS TRUCK STOP', 'EDS EL DESCANSO', 'EDS R Y G', 'EDS ANTURIOS II', 'EDS ANTURIOS I']
             var ambato = ['EDS LO JUSTO']
@@ -846,6 +848,8 @@ jQuery(function ($) {
             var ruminahui = ['EDS PRESTOSERVICIO DEL VALLE','EDS SAN SEBASTIAN']
             var san_lorenzo = ['EDS FLAMINGO OCCIDENTAL', 'EDS FLAMINGO ORIENTAL']
             var salitre  = ['EDS LA T SALITRE']
+            var el_guabo  = ['EDS RIO BONITO'] // TODO: buscar en base EDS RIO BONITO y cambiar de ciudad a el guabo
+
             var fuelOptions = document.getElementById('fuel');
             while (fuelOptions.options.length > 0) {
                 fuelOptions.remove(0);
@@ -906,6 +910,15 @@ jQuery(function ($) {
                     })
                     break;
 
+                case 'el_guabo':
+                    el_guabo.map((i) => {
+                        var opt = document.createElement('option');
+                        opt.value = i;
+                        opt.name = i;
+                        opt.innerHTML = i;
+                        fuelOptions.appendChild(opt);
+                    })
+                    break;
                 case 'machala':
                     machala.map((i) => {
                         var opt = document.createElement('option');

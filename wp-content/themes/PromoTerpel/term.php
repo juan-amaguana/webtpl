@@ -34,6 +34,9 @@ $stations = [
     [ "name" => "EDS EL FORTÍN", "city" => "Guayaquil", "address" => "Km 27 Via Perimetral" ],
     [ "name" => "EDS BELLAVISTA", "city" => "Guayaquil", "address" => "Av. Velasco Ibarra No. 3-4-8-9 Y Av. Barcelona" ],
     [ "name" => "EDS PERIMETRAL", "city" => "Guayaquil", "address" => "Av. Perimetral Km 25-Guayaquil" ],
+    [ "name" => "EDS BENEFICENCIA", "city" => "Guayaquil", "address" => "Av. De Las Americas Solar 7 Y Jaime" ],
+    [ "name" => "EDS KENNEDY", "city" => "Guayaquil", "address" => "Av. Fco De Orellana Solar 1" ],
+    [ "name" => "EDS CEIBOS", "city" => "Guayaquil", "address" => "Av. Del Bombero Frente C.A Ceibos" ],
     // cambio
     [ "name" => "EDS AUTOSERVICIO SUR", "city" => "Quito", "address" => "Av Maldonado S10-84 Y Calvas" ],
 

@@ -100,6 +100,10 @@ get_header(); ?>
                         <p>Av. Fco De Orellana Solar 1</p>
                         <p>Av Perimetral Km 26</p>
                         <p>Av. Isidro Ayora Y Av. Jose Luis Ta</p>
+
+                        <p>Av.De Las Americas Solar 7 Y Jaime</p>
+                        <p>Av. Fco De Orellana Solar 1</p>
+                        <p>Av. Del Bombero Frente C.A Ceibos</p>
                     </div>
                     <h3>Durán</h3>
                     <div class="cities">
@@ -119,7 +123,7 @@ get_header(); ?>
                         <p>Avenida Occidental N50-241 Y</p>
                         <p>Av General Rumiñahui Y 7Ma Tv</p>
                         <p>Av Maldonado S10-84 Y Calvas </p>
-                        <p>Panamericana Sur Km 1,5 Via Baos</p>
+                        <p>Panamericana Sur Km 1,5 Via Baños</p>
                         <p>Km Dos Panamericana Norte</p>
                         <p>Mariscal Sucre N46 120 Y Francisco</p>
                         <p>Aut General Rumiñahui Lt 424

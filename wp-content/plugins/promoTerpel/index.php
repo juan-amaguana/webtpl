@@ -230,7 +230,7 @@ canvas{
             <option value="quito">Quito</option>
             <option value="sto_domingo">Sto Domingo</option>
             <option value="ambato">Ambato</option>
-            <option value="babahoyo">Babahoyo</option>
+            <!-- <option value="babahoyo">Babahoyo</option>  -->
             <option value="cuenca">Cuenca</option>
             <option value="duran">Duran</option>
             <option value="esmeraldas">Esmeraldas</option>
@@ -244,6 +244,7 @@ canvas{
             <option value="riobamba">Riobamba</option>
             <option value="salinas">Salinas</option>
             <option value="salitre">Salitre</option>
+            <option value="el_guabo">El Guabo</option>
         </select>
         <label>Estación de servicio*</label>
         <select name="Estación de servicio*" id="fuel" class="fullInput" required>
