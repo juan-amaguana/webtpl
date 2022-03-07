@@ -32,27 +32,35 @@ var EDS_RUC = {
     'EDS CORDOVA / Mobil': '0991306498001',
     'EDS DAULE': '0903267011001',
     'EDS DOMINGO COMIN': '0991334785001',
+    'ALTOQUE DOMINGO COMIN': '0991334785001',
     'EDS DURAN': '0991306498001',
     'EDS ECOLOGICA': '0991306498001',
     'EDS EL EXITO': '0991336060001',
     'EDS EL FORTIN': '0992732458001',
     'EDS ELOY ALFARO': '0992707933001',
+    'ALTOQUE ELOY ALFARO': '0992707933001',
     'EDS GARITA CHIMBORAZO': '0906007109001',
     'EDS GARZOTA': '0991306498001',
+    'ALTOQUE GARZOTA': '0991306498001',
     'EDS GUAYACANES': '0992262400001',
+    'ALTOQUE GUAYACANES': '0992262400001',
     'EDS GYR': '0992942770001',
     'EDS KENNEDY': '0991306498001',
     'EDS LEON': '0902821214001',
     'EDS LAS AMERICAS': '0991306498001',
+    'ALTOQUE AMERICAS': '0991306498001',
     'EDS MAIOLI': '0990997934001',
     'EDS MARIA AUXILIADORA': '0101900330001',
     'EDS PEGASO': '0991306498001',
     'EDS PERIMETRAL': '0992500875001',
+    'ALTOQUE PERIMETRAL': '0992500875001',
     'EDS PETROPORT': '0990243891001',
     'EDS PORTETE': '0990023263001',
     'EDS PRADERA': '0991306498001',
     'EDS PISONI': '0992301759001',
     'EDS SANTA ELENA': '0992914467001', // TODO: REVISAR CAMBIO DE NOMBRE
+    'EDS QUATTRO': '0992914467001',
+    'ALTOQUE LA QUATTRO': '0992914467001',
     'EDS SAN CARLOS': '0990988838001',
     'EDS NATABUELA': '1703818565001',
     'EDS AUTOCENTRO': '1201695804001',
@@ -69,9 +77,11 @@ var EDS_RUC = {
     'EDS SINDICATO DE CHOFERES DEL NAPO': '1720597416001',
     'EDS AMAZONAS': '1715059117001',
     'EDS ANDINA': '1724310071001',
+    'ALTOQUE ANDINA': '1724310071001',
     'EDS AUTOSERVICIO SUR': '1792605504001',
     'EDS CENTRAL': '0991306498001',
     'EDS EL BOSQUE': '1792570956001',
+    'ALTOQUE EL BOSQUE': '1792570956001',
     'EDS CORONEL': '1100604063001',
     'EDS EL PINAR': '1792645352001',
     'EDS EL QUINCHE': '1708304322001',
@@ -80,6 +90,7 @@ var EDS_RUC = {
     'EDS LABRADOR': '0991306498001',
     'EDS JB': '1700767351001',
     'EDS MIRAVALLE': '0991306498001',
+    'ALTOQUE MIRAVALLE': '0991306498001',
     'EDS ORIENTAL': '0991306498001',
     'EDS PANASUR': '0991306498001',
     'EDS PIFO': '1791729625001',
@@ -87,6 +98,7 @@ var EDS_RUC = {
     'EDS SAN SEBASTIAN': '1500463284001',
     'EDS SUPERMOBIL': '0991306498001',
     'EDS TERPEL UNO': '0991306498001',
+    'ALTOQUE TERPEL UNO': '0991306498001',
     'EDS TUFIÑO': '1708630619001',
     'EDS BALLENITA': '0992509538001',
     'EDS ANTURIOS I': '0991281258001',
@@ -99,6 +111,7 @@ var EDS_RUC = {
     'EDS SILVAN 1': '0991431535001',
     'EDS SILVAN 2': '0991431535001',
     'EDS POSOIL': '0991306498001',
+    'ALTOQUE POSOIL': '0991306498001',
     'EDS DISCOLDA': '0990030642001',
     'EDS AMCO': '0991306498001',
     'EDS MALECON': '0991306498001',
@@ -110,10 +123,14 @@ var EDS_RUC = {
     'EDS SALITRE': '1792605504001',
     'EDS SERVIMOBIL': '2390059267001',
     'EDS METROPOLIS 2': '0993074659001',
+    'EDS METROPOLIS': '0993074659001',
+    'ALTOQUE METROPOLIS': '0993074659001',
     // 'EDS BAÑOS':'190158098',
     'EDS TAMARINDO':'0300476744001',
     'EDS LA ISLA': '1714305263001',
-    'EDS 9 DE OCTUBRE': '0992539380001',
+    // 'EDS 9 DE OCTUBRE': '0992539380001',
+    'ESTACIÓN SAN FELIPE': '0992539380001',
+    'ALTOQUE SAN FELIPE': '0992539380001',
     'EDS EP VIRGEN DEL QUINCHE': '0050184913001',
     'EDS LA T SALITRE': '1792605504001'
 }
@@ -827,18 +844,30 @@ jQuery(function ($) {
             var machala = ['EDS MACHALA DOS', /*'EDS RIO BONITO'*/]
             var esmeraldas = ['EDS EL JARDIN', 'EDS LA ISLA']
             var el_carmen = ['EDS VALGAS']
-            var guayaquil = ['EDS GARZOTA', 'EDS GARITA CHIMBORAZO','EDS BAHIA NORTE','EDS PETROPORT', 'EDS GUAYACANES', 'EDS METROPOLIS', 'EDS LAS AMERICAS', 'EDS PORTETE','EDS EL FORTIN', 'EDS BELLAVISTA','EDS PERIMETRAL', 'EDS EL EXITO', 'EDS DOMINGO COMIN','EDS ALBERESE', 'EDS MAIOLI', 'EDS DISCOLDA', 'EDS CASANOVA', 'EDS ARUAL', 'EDS PISONI', 'EDS 9 DE OCTUBRE', 'EDS BENEFICENCIA', 'EDS KENNEDY', 'EDS CEIBOS'];
-            var posorja = ['EDS POSOIL']
+            var guayaquil = [
+                'EDS GARZOTA', 'EDS GARITA CHIMBORAZO','EDS BAHIA NORTE','EDS PETROPORT', 
+                'EDS GUAYACANES', 'EDS METROPOLIS', 'EDS LAS AMERICAS', 'EDS PORTETE','EDS EL FORTIN', 'EDS BELLAVISTA',
+                'EDS PERIMETRAL', 'EDS EL EXITO', 'EDS DOMINGO COMIN','EDS ALBERESE', 'EDS MAIOLI', 'EDS DISCOLDA', 
+                'EDS CASANOVA', 'EDS ARUAL', 'EDS PISONI', 'ESTACIÓN SAN FELIPE'/*'EDS 9 DE OCTUBRE'*/, 'EDS BENEFICENCIA', 
+                'EDS KENNEDY', 'EDS CEIBOS',
+                'ALTOQUE GARZOTA', 'ALTOQUE PERIMETRAL', 'ALTOQUE AMERICAS', 'ALTOQUE DOMINGO COMIN',
+                'ALTOQUE METROPOLIS', 'ALTOQUE SAN FELIPE', 'ALTOQUE GUAYACANES'
+            ];
+            var posorja = ['EDS POSOIL', 'ALTOQUE POSOIL']
             //var nobol = ['EDS PETRILLO 2']
-            var duran = ['EDS ELOY ALFARO']
+            var duran = ['EDS ELOY ALFARO', 'ALTOQUE ELOY ALFARO']
             //var ibarra = ['EDS NATABUELA']
             var babahoyo = ['EDS SILVAN 1','EDS SILVAN 2']
             var quevedo = ['EDS LA VICTORIA', 'EDS AUTOCENTRO']
             var manta = ['EDS AMCO', 'EDS MALECON']
             var montecristi = ['EDS MONTECRISTI']
             //var el_coca = ['EDS AMAZONAS']
-            var quito = ['EDS MIRAVALLE','EDS ANDINA', 'EDS TUFIÑO', 'EDS TERPEL UNO', 'EDS EL QUINCHE', 'EDS EP VIRGEN DEL QUINCHE']
+            var quito = [
+                'EDS MIRAVALLE','EDS ANDINA', 'EDS TUFIÑO', 'EDS TERPEL UNO', 'EDS EL QUINCHE', 'EDS EP VIRGEN DEL QUINCHE', 
+                'ALTOQUE MIRAVALLE', 'ALTOQUE TERPEL UNO', 'ALTOQUE EL BOSQUE', 'ALTOQUE ANDINA', 'EDS JB'
+            ]
             var salinas = ['EDS SANTA ELENA'] // TODO: buscar en base el id EDS QUATRO y reemplazar por EDS SANTA ELENA
+            var santa_elena = ['EDS QUATTRO', 'ALTOQUE LA QUATTRO']
             //var ballenita = ['EDS BALLENITA']
             var sto_domingo = ['EDS TRUCK STOP', 'EDS EL DESCANSO', 'EDS R Y G', 'EDS ANTURIOS II', 'EDS ANTURIOS I']
             var ambato = ['EDS LO JUSTO']
@@ -975,6 +1004,15 @@ jQuery(function ($) {
                     break;
                 case 'salinas':
                     salinas.map((i) => {
+                        var opt = document.createElement('option');
+                        opt.value = i;
+                        opt.name = i;
+                        opt.innerHTML = i;
+                        fuelOptions.appendChild(opt);
+                    })
+                    break;
+                case 'santa_elena':
+                    santa_elena.map((i) => {
                         var opt = document.createElement('option');
                         opt.value = i;
                         opt.name = i;

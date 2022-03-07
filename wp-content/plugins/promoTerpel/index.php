@@ -242,7 +242,8 @@ canvas{
             <option value="posorja">Posorja</option>
             <option value="quevedo">Quevedo</option>
             <option value="riobamba">Riobamba</option>
-            <option value="salinas">Salinas</option>
+            <!-- <option value="salinas">Salinas</option> -->
+            <option value="santa_elena">Santa Elena</option>
             <option value="salitre">Salitre</option>
             <option value="el_guabo">El Guabo</option>
         </select>

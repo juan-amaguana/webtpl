@@ -79,71 +79,85 @@ get_header(); ?>
                     <h2>Guayas</h2>
                     <h3>Guayaquil</h3>
                     <div class="cities">
-                        <p>Puente Alterno Norte</p>
-                        <p>Km.25 Via Perimetral</p>
-                        <p>Km 27 Via Perimetral, Coop Unidos P</p>
-                        <p>Av Quito Y Primero De Mayo</p>
-                        <p>Calle Argentina Entre Cl Chile Y Ch</p>
-                        <p>Av De Las Americas Solar 5-6 Junto</p>
-                        <p>Av. Velasco Ibarra 3-4-8-9 Y Av.Bar</p>
-                        <p>Via Perimetral Km 42</p>
-                        <p>Av Domingo Comin Interseccion Ernes</p>
-                        <p>Gallegos Lara 2201 Y Portete</p>
-                        <p>Ayacucho 3500 Y Leopoldo Izquieta P</p>
-                        <p>Aguirre 1621 Y Av. Del Ejercito</p>
-                        <p>Guayaquil - Vía Daule </p>
-                        <p>Av.Carlos Julio Arosemena Km 4,5</p>
-                        <p>Portete S/N Estero Salado Febres</p>
-                        <p>Av De Las Americas Interseccion Av</p>
-                        <p>Av. Del Bombero Frente C.A Ceibos</p>
-                        <p>Av.De Las Americas Solar 7 Y Jaime</p>
-                        <p>Av. Fco De Orellana Solar 1</p>
-                        <p>Av Perimetral Km 26</p>
-                        <p>Av. Isidro Ayora Y Av. Jose Luis Ta</p>
-
-                        <p>Av.De Las Americas Solar 7 Y Jaime</p>
-                        <p>Av. Fco De Orellana Solar 1</p>
-                        <p>Av. Del Bombero Frente C.A Ceibos</p>
+                        <p>Av. Guillermo Pareja Y Av. Hermano Miguel</p>
+                        <p>Av. Quito Y Primero De Mayo</p>
+                        <p>Av. De Las Américas Solar 5-6 </p>
+                        <p>Av. Juan Tanca Marengo Solar 5 y 6 </p>
+                        <p>Av. Carlos Julio Arosemena Km 4,5 </p>
+                        <p>Av. Isidro Ayora Y Av. Jose Luis Tamayo </p> 
+                        <p>Autopista Terminal Pascuales, urbanización Metropolis II-B, solar 1 Mz 1009 </p>
+                        <p>Av. De Las Américas intersección </p>
+                        <p>Portete, Estero Salado</p>
+                        <p>Km 27 Via Perimetral</p>
+                        <p>Av. Velasco Ibarra No. 3-4-8-9 Y Av. Barcelona</p> 
+                        <p>Av. Perimetral Km 25-Guayaquil</p>  
+                        <p>Aguirre 1621 y Av. Del Ejercito</p> 
+                        <p>Av. Domingo Comin Intersección Ernes</p> 
+                        <p>Via Daule Mz 73 Si 1</p> 
+                        <p>Ayacucho 3500 Y Leopoldo Izquieta </p> 
+                        <p>Posorja -Natividad Flores </p> 
+                        <p>Gallegos Lara 2201 y Portete </p> 
+                        <p>Av.De Las Américas Solar 7 Y Jaime</p> 
+                        <p>Av. Fco De Orellana Solar 1</p>                           
+                        <p>Av. Del Bombero Frente C.A Ceibos</p> 
+                        <p>Via Perimetral Km 42</p> 
+                        <p>Av. Perimetral Km 26</p> 
+                        <p>Puente Alterno Norte</p> 
+                        <p>Av. Hermano Miguel y Guillermo Pareja</p> 
+                        <p>Av. Perimetral Km 25 Antes De Mall El Fortin</p> 
+                        <p>Av De Las Americas Interseccion Av Juan Tancamarengo</p>
+                        <p>Av Domingo Comin Intersección</p> 
+                        <p>Autopista Terminal Terreste Pascuales junto a Metropolis</p> 
+                        <p>Av. Juan Tanca Marengo y Av. Del Santuario</p> 
+                        <p>Av. Isidro Ayora Sn Y Av. Jose Luis Tamayo , Cdla. Guayacanes</p>
                     </div>
                     <h3>Durán</h3>
                     <div class="cities">
                         <p>Via Duran Boliche Km 2.5</p>
+                        <p>Km 2.5 Durán Boliche</p>
                     </div>
                     <h3>Posorja</h3>
                     <div class="cities">
-                        <p>Guayaquil - Posorja </p>
+                        <p>Vial al Puerto de Aguas Profundas</p>
+                        <p>Vía Salica, Estacion de Servicio Terpel</p>
+                    </div>
+                    <h3>Salitre</h3>
+                    <div class="cities">
+                        <p>Sector la T de Salitre Carretero Via Daule</p>
                     </div>
                 </div>
                 <div id="pichincha">
                     <h2>Pichincha</h2>
                     <h3>Quito</h3>
                     <div class="cities">
-                        <p>Av Luis Cordero Y Garcia Morenos Sa</p>
-                        <p>Av. Mariscal Sucre 101 Y Pilalo</p>
-                        <p>Avenida Occidental N50-241 Y</p>
-                        <p>Av General Rumiñahui Y 7Ma Tv</p>
-                        <p>Av Maldonado S10-84 Y Calvas </p>
-                        <p>Panamericana Sur Km 1,5 Via Baños</p>
-                        <p>Km Dos Panamericana Norte</p>
-                        <p>Mariscal Sucre N46 120 Y Francisco</p>
-                        <p>Aut General Rumiñahui Lt 424
-                            Junto Al Puente 9</p>
-                        <p>Via A Tanda Km 7.5 V.Interoceanica</p>
-                        <p>Av 10 De Agosto Y Rio Cofanes</p>
-                        <p>Panamericana Sur S/N Tambillo</p>
-                        <p>Panamericana Sur S/N Tambillo</p>
-                        <p>Av Galo Plaza Lazo Y Av Luis Tufiño</p>
+                        <p>Av Maldonado S10-84 Y Calvas</p>
+                        <p>Av. Interoceánica L.6 Via a Miravalle</p>
+                        <p>Autopista General Rumiñahui Lt 424 junto al puente 9</p>
+                        <p>Av. Galo Plaza Lasso Y Av. Luis Tufiño</p>
+                        <p>Av. 10 De Agosto Y Rio Cofanes</p>
+                        <p>Via a Puellaro a 2 cuadras del parque recreacional Jerusalem</p>
+                        <p>Panamericana Norte Km 2 Y Cornelio</p>
+                        <p>Av. Interoceánica Parroquia Nayón C.C. Punto Plaza</p>
+                        <p>Av. 10 De Agosto Calle Rio Atrás de la Plaza De Toros, Quito</p>
+                        <p>Av. Mariscal Antonio Jose De Sucre Frente A Fco. Montalvo, Quito</p>
+                        <p>Av. Rumiñahui N5-100 Antes Del Puente 9, Quito</p>
+                        <p>Av Mariscal Sucre y Pilalo</p>
+                    </div>
+                    <h3>Ruminahui</h3>
+                    <div class="cities">
+                        <p>Av. General Rumiñahui y 7Ma Transversal Conocoto Quito</p>
+                        <p>Av. Luis Cordero Y García Morenos</p>
                     </div>
                 </div>
                 <div id="sto_domingo">
                     <h2>Santo Domingo de los Tsachilas</h2>
                     <h3>Santo Domingo</h3>
                     <div class="cities">
-                        <p>Via Quevedo Km 5 Cooperativa Nueva</p>
-                        <p>Via A Santo Domingo Km 12 Junto Al</p>
                         <p>Av De Los Colonos S/N Y Via La Beng</p>
-                        <p>Km 36 Via Chone</p>
-                        <p>Km 4 Via Quevedo, Santo Domingo</p>
+                        <p>Via Quevedo Km 4.5 Margen Izquierdo</p>
+                        <p>Via Quevedo Km 5 Cooperativa Nueva</p>
+                        <p>Km 12 Via Santo Domingo Quito</p>
+                        <p>Via Quevedo Km 4.5 </p>
                     </div>
                 </div>
                 <div id="azuay">
@@ -168,14 +182,19 @@ get_header(); ?>
                     <h3>Machala</h3>
                     <div class="cities">
                         <p>Km. 0.5 25 De Junio</p>
-                        <p>Troncal de la Costa Panamericana sur E25 Sector Rio Zapote Parroquia, Machala 070117</p>
+                    </div>
+                    <h3>El Guabo</h3>
+                    <div class="cities">
+                        <p>Panamericana, Via Guayaquil </p>
                     </div>
                 </div>
                 <div id="esmeraldas">
                     <h2>Esmeraldas</h2>
-                    <h3>Esmeraldas</h3>
+                    <h3>San Lorenzo</h3>
                     <div class="cities">
                         <p>Sur De La Ciudad Redonda De Codesa</p>
+                        <p>Cl 16 Sl 1 Mz 23 Carretero Via Isla</p>
+                        <p>Panamericana Sur Tambillo</p>
                     </div>
                 </div>
                 <div id="imbabura">
@@ -202,13 +221,20 @@ get_header(); ?>
                     <h2>Manabí</h2>
                     <h3>Manta</h3>
                     <div class="cities">
-                        <p>Av. 113 y Calle 319</p>
-                        <p>Av. Malecon Jaime Chavez Gutierrez
-                            y Av. 4 Noviembre</p>
+                        <p>N° 110 Carretero A Portoviejo</p>
+                        <p>Av. 4 De Noviembre Manta Manabí</p>
                     </div>
                     <h3>Montecristi</h3>
                     <div class="cities">
-                        <p>Montecristi Vía Manta</p>
+                        <p>Parroquia Anibal San Andrés Carrete</p>
+                    </div>
+                    <h3>El Carmen</h3>
+                    <div class="cities">
+                        <p>Km 36 Via Chone</p>
+                    </div>
+                    <h3>Pedernales</h3>
+                    <div class="cities">
+                        <p>García Moreno y 27 De Noviembre</p>
                     </div>
                 </div>
                 <div id="orellana">
@@ -222,7 +248,8 @@ get_header(); ?>
                     <h2>Santa Elena</h2>
                     <h3>Salinas</h3>
                     <div class="cities">
-                        <p>Via Salinas-La Libertad Cl 53 Y Av</p>
+                        <p>Calle C 53 Numero E/41Intersección 45</p>
+                        <p>Via Salinas-La Libertad Cl 53</p>
                     </div>
                     <h3>Ballenita</h3>
                     <div class="cities">

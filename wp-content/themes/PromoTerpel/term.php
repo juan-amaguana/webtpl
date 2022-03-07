@@ -14,6 +14,7 @@ $stations = [
     [ "name" => "EDS SAN JOSÉ DE TAMARINDO", "city" => "Cuenca", "address" => "Molleturo km 107 Sector Tamarindo Parroquia Jesús María" ],
 
     [ "name" => "EDS ELOY ALFARO", "city" => "Durán", "address" => "Km 2.5 Durán Boliche" ],
+    [ "name" => "ALTOQUE ELOY ALFARO", "city" => "Durán", "address" => "Vía Durán Boliche Km 2.5" ],
 
     [ "name" => "EDS VALGAS", "city" => "El Carmen", "address" => "Km 36 Via Chone" ],
 
@@ -49,6 +50,13 @@ $stations = [
     [ "name" => "EDS ARUAL", "city" => "Guayaquil", "address" => "Via Perimetral Km 42" ],
     [ "name" => "EDS PERIMETRAL", "city" => "Guayaquil", "address" => "Av. Perimetral Km 26" ],
     [ "name" => "EDS PISONI", "city" => "Guayaquil", "address" => "Puente Alterno Norte" ],
+    [ "name" => "ALTOQUE GARZOTA", "city" => "Guayaquil", "address" => "Av. Hermano Miguel y Guillermo Pareja" ],
+    [ "name" => "ALTOQUE PERIMETRAL", "city" => "Guayaquil", "address" => "Av. Perimetral Km 25 Antes De Mall El Fortin" ],
+    [ "name" => "ALTOQUE AMERICAS", "city" => "Guayaquil", "address" => "Av De Las Americas Interseccion Av Juan Tancamarengo" ],
+    [ "name" => "ALTOQUE DOMINGO COMIN", "city" => "Guayaquil", "address" => "Av Domingo Comin Intersección" ],
+    [ "name" => "ALTOQUE METROPOLIS", "city" => "Guayaquil", "address" => "Autopista Terminal Terreste Pascuales junto a Metropolis" ],
+    [ "name" => "ALTOQUE SAN FELIPE", "city" => "Guayaquil", "address" => "Av. Juan Tanca Marengo y Av. Del Santuario" ],
+    [ "name" => "ALTOQUE GUAYACANES", "city" => "Guayaquil", "address" => "Av. Isidro Ayora Sn Y Av. Jose Luis Tamayo , Cdla. Guayacanes" ],
 
     [ "name" => "EDS MALACATOS", "city" => "Loja", "address" => "Via Loja Malacatos Km 26" ],
 
@@ -62,6 +70,7 @@ $stations = [
     [ "name" => "EDS COSTA NORTE", "city" => "Pedernales", "address" => "García Moreno y 27 De Noviembre" ],
 
     [ "name" => "EDS POSOIL", "city" => "Posorja", "address" => "Vial al Puerto de Aguas Profundas" ],
+    [ "name" => "ALTOQUE POSOIL", "city" => "Posorja", "address" => "Vía Salica, Estacion de Servicio Terpel" ],
 
     [ "name" => "EDS AUTOCENTRO", "city" => "Quevedo", "address" => "Av. Walter Andrade Cl 4" ],
     [ "name" => "EDS LA VICTORIA", "city" => "Quevedo", "address" => "Quevedo, Km 1 Via San Carlos" ],
@@ -72,6 +81,11 @@ $stations = [
     [ "name" => "EDS TERPEL UNO", "city" => "Quito", "address" => "Av. 10 De Agosto Y Rio Cofanes" ],
     [ "name" => "EDS VIRGEN DEL QUINCHE", "city" => "Quito", "address" => "Via a Puellaro a 2 cuadras del parque recreacional Jerusalem" ],
     [ "name" => "EDS EL QUINCHE", "city" => "Quito", "address" => "Panamericana Norte Km 2 Y Cornelio" ],
+    [ "name" => "ALTOQUE MIRAVALLE", "city" => "Quito", "address" => "Av. Interoceánica Parroquia Nayón C.C. Punto Plaza" ],
+    [ "name" => "ALTOQUE TERPEL UNO", "city" => "Quito", "address" => "Av. 10 De Agosto Calle Rio Atrás de la Plaza De Toros, Quito" ],
+    [ "name" => "ALTOQUE EL BOSQUE", "city" => "Quito", "address" => "Av. Mariscal Antonio Jose De Sucre Frente A Fco. Montalvo, Quito" ],
+    [ "name" => "ALTOQUE ANDINA", "city" => "Quito", "address" => "Av. Rumiñahui N5-100 Antes Del Puente 9, Quito" ],
+    [ "name" => "EDS JB", "city" => "Quito", "address" => "Av Mariscal Sucre y Pilalo" ],
 
     [ "name" => "EDS SENSACIÓN", "city" => "Riobamba", "address" => "Panamericana Norte Y Rio Quevedo" ],
 
@@ -84,6 +98,7 @@ $stations = [
     [ "name" => "EDS FLAMINGO ORIENTAL", "city" => "San Lorenzo", "address" => "Panamericana Sur Tambillo" ],
 
     [ "name" => "EDS SANTA ELENA", "city" => "Santa Elena", "address" => "Via Salinas-La Libertad Cl 53" ],
+    [ "name" => "ALTOQUE LA QUATTRO", "city" => "Santa Elena", "address" => "Calle C 53 Numero E/41Intersección 45" ],
 
     [ "name" => "EDS R Y G", "city" => "Santo Domingo De Los Tsáchilas", "address" => "Av. De Los Colonos " ],
     [ "name" => "EDS ANTURIOS I", "city" => "Santo Domingo De Los Tsáchilas", "address" => "Via Quevedo Km 4.5 Margen Izquierdo" ],
@@ -97,8 +112,9 @@ $stations = [
 <section>
     <div class="wrapper">
         <div class="row tyc">
+            <div class="col-12 backgroud-term"></div>
             <div class="col-12">
-                <img style="width: 100%;" src="<?php bloginfo('template_directory'); ?>/assets/images/banner-terms.jpg" alt="terpelTyC" />
+                <!--<img style="width: 100%;" src="<?php bloginfo('template_directory'); ?>/assets/images/banner-terms.jpg" alt="terpelTyC" />-->
                 <br>
                 <p class="text-center"><span>Bases de la promoción</span></p>
                 <p><span>ORGANIZADOR:</span> Terpel-Comercial Ecuador Cia. Ltda. </p>
