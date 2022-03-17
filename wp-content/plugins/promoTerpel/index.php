@@ -215,13 +215,13 @@ canvas{
 <script src="https://cdn.jsdelivr.net/npm/screw-filereader@1.4.3/index.min.js"></script>
     <form id="form-code" onsubmit="event.preventDefault(); submitCode();" enctype="multipart/form-data">
         <label>Número de factura*</label>
-        <input id="numFactura1" class="smallInput" name="numFactura1" placeholder="000" required type="text" maxlength="3" pattern="\d*" />
-        <input id="numFactura2" class="smallInput" name="numFactura2" placeholder="000" required type="text" maxlength="3" pattern="\d*" />
-        <input id="numFactura3" class="medInput" name="numFactura3" placeholder="000" required type="text" pattern="\d*" maxlength="30" />
+        <input id="numFactura1" class="smallInput" name="numFactura1" placeholder="000" required type="number" maxlength="3" pattern="\d*" />
+        <input id="numFactura2" class="smallInput" name="numFactura2" placeholder="000" required type="number" maxlength="3" pattern="\d*" />
+        <input id="numFactura3" class="medInput" name="numFactura3" placeholder="000" required type="number" pattern="\d*" maxlength="30" />
 
         <label>Monto total de factura*</label>
-        <input id="montoFactura" class="smallInput" name="montoFactura" placeholder="00" type="text" required maxlength="10" pattern="\d*" />,
-        <input id="decimals" class="smallInput" name="decimals" placeholder="00" type="text" required maxlength="2" pattern="\d*" /> USD
+        <input id="montoFactura" class="smallInput" name="montoFactura" placeholder="00" type="number" required maxlength="10" pattern="\d*" />,
+        <input id="decimals" class="smallInput" name="decimals" placeholder="00" type="number" required maxlength="2" pattern="\d*" /> USD
 
         <label>Ciudad*</label>
         <select name="Cuidad" id="ciudad" class="fullInput" required>
@@ -230,22 +230,24 @@ canvas{
             <option value="quito">Quito</option>
             <option value="sto_domingo">Sto Domingo</option>
             <option value="ambato">Ambato</option>
-            <!-- <option value="babahoyo">Babahoyo</option>  -->
+            <option value="babahoyo">Babahoyo</option>
             <option value="cuenca">Cuenca</option>
             <option value="duran">Duran</option>
             <option value="esmeraldas">Esmeraldas</option>
             <option value="el_carmen">El Carmen</option>
+            <!-- <option value="el_guabo">El Guabo</option> -->
             <option value="loja">Loja</option>
             <option value="machala">Machala</option>
             <option value="manta">Manta</option>
             <option value="montecristi">Montecristi</option>
+            <option value="nobol">Nobol</option>
+            <option value="pedernales">Pedernales</option>
             <option value="posorja">Posorja</option>
             <option value="quevedo">Quevedo</option>
             <option value="riobamba">Riobamba</option>
             <!-- <option value="salinas">Salinas</option> -->
             <option value="santa_elena">Santa Elena</option>
             <option value="salitre">Salitre</option>
-            <option value="el_guabo">El Guabo</option>
         </select>
         <label>Estación de servicio*</label>
         <select name="Estación de servicio*" id="fuel" class="fullInput" required>
@@ -593,7 +595,7 @@ function Gb_Dashboard()
                         <option value="quito">Quito</option>
                         <option value="sto_domingo">Sto Domingo</option>
                         <option value="ambato">Ambato</option>
-                        <!-- <option value="babahoyo">Babahoyo</option>  -->
+                        <option value="babahoyo">Babahoyo</option>
                         <option value="cuenca">Cuenca</option>
                         <option value="duran">Duran</option>
                         <option value="esmeraldas">Esmeraldas</option>
@@ -602,13 +604,15 @@ function Gb_Dashboard()
                         <option value="machala">Machala</option>
                         <option value="manta">Manta</option>
                         <option value="montecristi">Montecristi</option>
+                        <option value="nobol">Nobol</option>
+                        <option value="pedernales">Pedernales</option>
                         <option value="posorja">Posorja</option>
                         <option value="quevedo">Quevedo</option>
                         <option value="riobamba">Riobamba</option>
                         <!-- <option value="salinas">Salinas</option> -->
                         <option value="santa_elena">Santa Elena</option>
                         <option value="salitre">Salitre</option>
-                        <option value="el_guabo">El Guabo</option>
+                        <!-- <option value="el_guabo">El Guabo</option> -->
                     </select>
                     <label>Estación de servicio*</label>
                     <select name="estacion" id="fuel" class="fullInput" >
