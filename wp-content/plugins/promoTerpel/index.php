@@ -109,9 +109,9 @@ function Form_init()
     );
 
     $wpdb->query(
-        "CREATE VIEW $view_registros AS SELECT p.PersonId, p.nombre, p.apellido, p.cedula, p.telefono, p.correo, p.lastAddedCode, p.facebookSharedCount, x.dinero, 
+        "CREATE VIEW wp_view_participates AS SELECT p.PersonId, p.nombre, p.apellido, p.cedula, p.telefono, p.correo, p.lastAddedCode, p.facebookSharedCount, x.dinero, x.mayor,
         COUNT(c.codId) as codigos, y.evolt, y.lubri FROM wp_participantes p LEFT JOIN 
-        (SELECT DISTINCT f.PersonId, SUM(f.valor) as dinero FROM wp_facturas f GROUP BY f.PersonId) AS x on 
+        (SELECT DISTINCT f.PersonId, SUM(f.valor) as dinero, IF(f.valor > 500, 1, 0) as mayor FROM wp_facturas f GROUP BY f.PersonId) AS x on 
         p.PersonId = x.PersonId LEFT JOIN wp_codigos c ON p.PersonId = c.PersonId LEFT JOIN(SELECT DISTINCT prod.PersonId, 
         SUM(prod.evolt) as evolt, SUM(prod.lubricante) as lubri FROM wp_productos prod GROUP BY prod.PersonId) as y on p.PersonId = y.PersonId GROUP BY p.PersonId;
         "
@@ -491,9 +491,9 @@ function Gb_Dashboard()
     if ($edsViewCondition !== ''  || $edsViewDateCondition !== '') {
         //var_dump($edsViewCondition);
         //var_dump($edsViewDateCondition);
-        $table = $wpdb->get_results("SELECT p.PersonId, p.nombre, p.apellido, p.cedula, p.telefono, p.correo, p.lastAddedCode, p.facebookSharedCount, x.dinero,
+        $table = $wpdb->get_results("SELECT p.PersonId, p.nombre, p.apellido, p.cedula, p.telefono, p.correo, p.lastAddedCode, p.facebookSharedCount, x.dinero, x.mayor,
         COUNT(c.codId) as codigos, y.evolt, y.lubri FROM wp_participantes p LEFT JOIN
-        (SELECT DISTINCT f.PersonId, SUM(f.valor) as dinero FROM wp_facturas f $edsViewCondition GROUP BY f.PersonId) AS x on
+        (SELECT DISTINCT f.PersonId, SUM(f.valor) as dinero, IF(f.valor > 500, 1, 0) as mayor FROM wp_facturas f $edsViewCondition GROUP BY f.PersonId) AS x on
         p.PersonId = x.PersonId LEFT JOIN wp_codigos c ON p.PersonId = c.PersonId LEFT JOIN(SELECT DISTINCT prod.PersonId,
         SUM(prod.evolt) as evolt, SUM(prod.lubricante) as lubri FROM wp_productos prod GROUP BY prod.PersonId) as y on p.PersonId = y.PersonId $edsViewDateCondition GROUP BY p.PersonId;");
     } else {
@@ -773,7 +773,7 @@ function Gb_Dashboard()
                     $lubri = esc_textarea($tb->lubri);
 
                     $class = "";
-                    if ($dinero > 500) {
+                    if ($tb->mayor > 0) {
                         $class = "high-value";
                     }
                     echo "<tr class='".$class."'><td><a href='https://terpelsicumple.com/facturas/?user=$cedula'>$nombre</a></td>";
