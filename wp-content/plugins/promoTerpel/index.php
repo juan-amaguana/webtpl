@@ -109,7 +109,7 @@ function Form_init()
     );
 
     $wpdb->query(
-        "CREATE VIEW $view_registros AS SELECT p.nombre, p.apellido, p.cedula, p.telefono, p.correo, p.lastAddedCode, p.facebookSharedCount, x.dinero, 
+        "CREATE VIEW $view_registros AS SELECT p.PersonId, p.nombre, p.apellido, p.cedula, p.telefono, p.correo, p.lastAddedCode, p.facebookSharedCount, x.dinero, 
         COUNT(c.codId) as codigos, y.evolt, y.lubri FROM wp_participantes p LEFT JOIN 
         (SELECT DISTINCT f.PersonId, SUM(f.valor) as dinero FROM wp_facturas f GROUP BY f.PersonId) AS x on 
         p.PersonId = x.PersonId LEFT JOIN wp_codigos c ON p.PersonId = c.PersonId LEFT JOIN(SELECT DISTINCT prod.PersonId, 
@@ -311,6 +311,103 @@ canvas{
             </div>
         </div>
     </div>
+<script>
+/**
+ * BAJAR TAMANO DE IMAGENES DE FACTURAS
+ * @returns 
+ */
+pdf.onchange = function change() {
+    const file = this.files[0]
+    if(file.type.match(/image.*/)) {
+        if (!file) return
+    
+        file.image().then(img => {
+            const canvas = document.createElement('canvas')
+                const ctx = canvas.getContext('2d')
+            const maxWidth = 900
+            const maxHeight = 900
+            
+            // calculate new size
+            const ratio = Math.min(maxWidth / img.width, maxHeight / img.height)
+            const width = img.width * ratio + .5|0
+            const height = img.height * ratio + .5|0
+            
+            // resize the canvas to the new dimensions
+            canvas.width = width
+            canvas.height = height
+            
+            // scale & draw the image onto the canvas
+            ctx.drawImage(img, 0, 0, width, height)
+            document.body.appendChild(canvas)
+            
+            // Get the binary (aka blob)
+            canvas.toBlob(blob => {
+                const resizedFile = new File([blob], file.name, file)
+                const fileList = new FileListItem(resizedFile)
+                
+                // temporary remove event listener since
+                // assigning a new filelist to the input
+                // will trigger a new change event...
+                pdf.onchange = null
+                pdf.files = fileList
+                pdf.onchange = change
+            })
+        })
+    }
+}
+
+/**
+ * BAJAR TAMANO DE IMAGENES DE VOUCHER
+ * @returns 
+ */
+pdfvoucher.onchange = function change() {
+    const file = this.files[0]
+    if(file.type.match(/image.*/)) {
+        if (!file) return
+    
+        file.image().then(img => {
+            const canvas = document.createElement('canvas')
+                const ctx = canvas.getContext('2d')
+            const maxWidth = 900
+            const maxHeight = 900
+            
+            // calculate new size
+            const ratio = Math.min(maxWidth / img.width, maxHeight / img.height)
+            const width = img.width * ratio + .5|0
+            const height = img.height * ratio + .5|0
+            
+            // resize the canvas to the new dimensions
+            canvas.width = width
+            canvas.height = height
+            
+            // scale & draw the image onto the canvas
+            ctx.drawImage(img, 0, 0, width, height)
+            document.body.appendChild(canvas)
+            
+            // Get the binary (aka blob)
+            canvas.toBlob(blob => {
+                const resizedFile = new File([blob], file.name, file)
+                const fileList = new FileListItem(resizedFile)
+                
+                // temporary remove event listener since
+                // assigning a new filelist to the input
+                // will trigger a new change event...
+                pdfvoucher.onchange = null
+                pdfvoucher.files = fileList
+                pdfvoucher.onchange = change
+            })
+        })
+    }
+}
+
+function FileListItem(a) {
+    a = [].slice.call(Array.isArray(a) ? a : arguments)
+    for (var c, b = c = a.length, d = !0; b-- && d;) d = a[b] instanceof File
+    if (!d) throw new TypeError("expected argument to FileList is File or array of File objects")
+    for (b = (new ClipboardEvent("")).clipboardData || new DataTransfer; c--;) b.items.add(a[c])
+    return b.files
+}
+</script>
 <?php
 }
 
@@ -327,22 +424,108 @@ function Gb_Dashboard()
     $view_registros = $wpdb->prefix . 'view_participates';
 
     $title = 'Datos generales';
+    $initDate = "";
+    $endDate = "";
+    if (!empty($_POST) && isset($_POST['datePicker'])) {
+        $Udate = sanitize_text_field($_POST['datePicker']);
+        $Date = explode(" - ", $Udate);
+        list($m1, $d1, $y1) = explode("/", $Date[0]);
+        list($m2, $d2, $y2) = explode("/", $Date[1]);
+        $initDate = "$y1-$m1-$d1";
+        $endDate = "$y2-$m2-$d2";
+        $title = "Datos filtrados del $initDate al $endDate ";
+    }
 
-    $table = $wpdb->get_results("SELECT * FROM $view_registros WHERE lastAddedCode IS NOT NULL LIMIT 100000;");
-    
+    $station = isset($_POST['estacion']) && $_POST['estacion'] !== '' ? $_POST['estacion'] : "";
+    $stationCondition = "";
+    if ($station && $station !== '') {
+        $stationCondition = "WHERE estacion = '$station'";
+
+        $title = "$station ".$title;
+    }
+
+    if ($initDate !== '' &&  $endDate !== '') {
+        if ($stationCondition == '') {
+            $stationCondition = "WHERE $tabla_facturas.created_at BETWEEN '$initDate' AND '$endDate'";
+        } else {
+            $stationCondition = $stationCondition." AND $tabla_facturas.created_at BETWEEN '$initDate' AND '$endDate'";
+        }
+    }
+
+
+    $listBills = $wpdb->get_results("SELECT * FROM $tabla_facturas $stationCondition;");
+    $CountQuantFac = count($listBills);
+    $listPersonIds = [];
+    foreach ( $listBills as $bill ) {
+        array_push($listPersonIds, (int)$bill->PersonId);
+    }
+    $listPersonIds = array_unique($listPersonIds);
+    $personIds = implode(', ', $listPersonIds);
+
+    /**
+     * CONDICIONES DE BUSQUEDA
+     */
+    $edsViewCondition = "";
+    $edsViewDateCondition = "";
+    $conditionParticipants = "";
+    if ($station && $station !== '' && $personIds) {
+        $conditionParticipants = "WHERE PersonId IN ($personIds)";
+        $edsViewCondition = "WHERE f.estacion = '$station'";
+    }
+
+    if ($initDate !== '' &&  $endDate !== '') {
+        if ($conditionParticipants == '') {
+            $conditionParticipants = "WHERE created_at BETWEEN '$initDate' AND '$endDate'";
+        } else {
+            $conditionParticipants = $conditionParticipants." AND created_at BETWEEN '$initDate' AND '$endDate'";
+        }
+
+        $edsViewDateCondition = "WHERE p.lastAddedCode BETWEEN '$initDate' AND '$endDate'";
+    }
+
+    $table = [];
+    $count = 0;
+    // if filter
+    if ($edsViewCondition !== ''  || $edsViewDateCondition !== '') {
+        //var_dump($edsViewCondition);
+        //var_dump($edsViewDateCondition);
+        $table = $wpdb->get_results("SELECT p.PersonId, p.nombre, p.apellido, p.cedula, p.telefono, p.correo, p.lastAddedCode, p.facebookSharedCount, x.dinero,
+        COUNT(c.codId) as codigos, y.evolt, y.lubri FROM wp_participantes p LEFT JOIN
+        (SELECT DISTINCT f.PersonId, SUM(f.valor) as dinero FROM wp_facturas f $edsViewCondition GROUP BY f.PersonId) AS x on
+        p.PersonId = x.PersonId LEFT JOIN wp_codigos c ON p.PersonId = c.PersonId LEFT JOIN(SELECT DISTINCT prod.PersonId,
+        SUM(prod.evolt) as evolt, SUM(prod.lubricante) as lubri FROM wp_productos prod GROUP BY prod.PersonId) as y on p.PersonId = y.PersonId $edsViewDateCondition GROUP BY p.PersonId;");
+    } else {
+        $table = $wpdb->get_results("SELECT * FROM $view_registros WHERE lastAddedCode IS NOT NULL LIMIT 100000;");
+    }
     $count = $wpdb->num_rows;
 
-    $CountFac = $wpdb->get_var("SELECT SUM(codigos) FROM $view_registros LIMIT 100000;");
 
-    $CountQuantFac = $wpdb->get_var("SELECT COUNT(*) FROM $tabla_facturas;");
-    
-    $CountMoney = $wpdb->get_var("SELECT SUM(dinero) FROM $view_registros LIMIT 100000;");
+    $CountFac = 0;
+    $CountMoney = 0;
+    $CountFace = 0;
+    $CountEvolt = 0;
+    $CountLubri = 0;
+    if ($edsViewCondition !== ''  || $edsViewDateCondition !== '') {
+        foreach ( $table as $item ) {
+            $CountFac = $CountFac + $item->codigos;
+            $CountMoney = $CountMoney + $item->dinero;
+            $CountFace = $CountFace + $item->facebookSharedCount;
+            $CountEvolt = $CountEvolt + $item->evolt;
+            $CountLubri = $CountLubri + $item->lubri;
+        }
+    } else {
+        $CountFac = $wpdb->get_var("SELECT SUM(codigos) FROM $view_registros LIMIT 100000;");
 
-    $CountFace = $wpdb->get_var("SELECT SUM(facebookSharedCount) FROM $view_registros LIMIT 100000;");
+        $CountMoney = $wpdb->get_var("SELECT SUM(dinero) FROM $view_registros LIMIT 100000;");
 
-    $CountEvolt = $wpdb->get_var("SELECT SUM(evolt) FROM $view_registros LIMIT 100000;");
+        $CountFace = $wpdb->get_var("SELECT SUM(facebookSharedCount) FROM $view_registros LIMIT 100000;");
 
-    $CountLubri = $wpdb->get_var("SELECT SUM(lubri) FROM $view_registros LIMIT 100000;");
+        $CountEvolt = $wpdb->get_var("SELECT SUM(evolt) FROM $view_registros LIMIT 100000;");
+
+        $CountLubri = $wpdb->get_var("SELECT SUM(lubri) FROM $view_registros LIMIT 100000;");
+    }
+
+    // $CountQuantFac = $wpdb->get_var("SELECT COUNT(*) FROM $tabla_facturas;");
 
     $citiesTable = $wpdb->get_results("SELECT f.ciudad, COUNT(f.ciudad) as ctCity FROM $tabla_facturas f GROUP BY f.ciudad ORDER BY `ctCity` DESC LIMIT 100000");
 
@@ -350,9 +533,10 @@ function Gb_Dashboard()
     
     $esTable = $wpdb->get_results("SELECT f.estacion, COUNT(f.estacion) as estac FROM $tabla_facturas f GROUP BY f.estacion ORDER BY `estac` DESC LIMIT 100000");
     
-    $particTables = $wpdb->get_results("SELECT * FROM $tabla_registros LIMIT 100000");
+    $particTables = $wpdb->get_results("SELECT * FROM $tabla_registros $conditionParticipants LIMIT 100000");
+    $partCount = count($particTables);
     
-    $partCount = $wpdb->num_rows;
+    // $partCount = $wpdb->num_rows;
 
     if (!empty($_POST)) {
         $Udate = sanitize_text_field($_POST['datePicker']);
@@ -361,20 +545,20 @@ function Gb_Dashboard()
         list($m2, $d2, $y2) = explode("/", $Date[1]);
         $initDate = "$y1/$m1/$d1";
         $endDate = "$y2/$m2/$d2";
-        $table = $wpdb->get_results("SELECT * FROM $view_registros WHERE $view_registros.lastAddedCode BETWEEN '$initDate' AND '$endDate'");
-        $count = $wpdb->num_rows;
+        //$table = $wpdb->get_results("SELECT * FROM $view_registros WHERE $view_registros.lastAddedCode BETWEEN '$initDate' AND '$endDate'");
+        //$count = $wpdb->num_rows;
 
-        $CountFac = $wpdb->get_var("SELECT SUM(codigos) FROM $view_registros WHERE $view_registros.lastAddedCode BETWEEN '$initDate' AND '$endDate'");
+        //$CountFac = $wpdb->get_var("SELECT SUM(codigos) FROM $view_registros WHERE $view_registros.lastAddedCode BETWEEN '$initDate' AND '$endDate'");
 
-        $CountQuantFac = $wpdb->get_var("SELECT COUNT(*) FROM $tabla_facturas WHERE $tabla_facturas.created_at BETWEEN '$initDate' AND '$endDate';");
+        //$CountQuantFac = $wpdb->get_var("SELECT COUNT(*) FROM $tabla_facturas WHERE $tabla_facturas.created_at BETWEEN '$initDate' AND '$endDate';");
 
-        $CountMoney = $wpdb->get_var("SELECT SUM(dinero) FROM $view_registros WHERE $view_registros.lastAddedCode BETWEEN '$initDate' AND '$endDate';");
+        //$CountMoney = $wpdb->get_var("SELECT SUM(dinero) FROM $view_registros WHERE $view_registros.lastAddedCode BETWEEN '$initDate' AND '$endDate';");
 
-        $CountFace = $wpdb->get_var("SELECT SUM(facebookSharedCount) FROM $view_registros WHERE $view_registros.lastAddedCode BETWEEN '$initDate' AND '$endDate';");
+        //$CountFace = $wpdb->get_var("SELECT SUM(facebookSharedCount) FROM $view_registros WHERE $view_registros.lastAddedCode BETWEEN '$initDate' AND '$endDate';");
 
-        $CountEvolt = $wpdb->get_var("SELECT SUM(evolt) FROM $view_registros WHERE $view_registros.lastAddedCode BETWEEN '$initDate' AND '$endDate';");
+        //$CountEvolt = $wpdb->get_var("SELECT SUM(evolt) FROM $view_registros WHERE $view_registros.lastAddedCode BETWEEN '$initDate' AND '$endDate';");
 
-        $CountLubri = $wpdb->get_var("SELECT SUM(lubri) FROM $view_registros WHERE $view_registros.lastAddedCode BETWEEN '$initDate' AND '$endDate';");
+        //$CountLubri = $wpdb->get_var("SELECT SUM(lubri) FROM $view_registros WHERE $view_registros.lastAddedCode BETWEEN '$initDate' AND '$endDate';");
 
         $citiesTable = $wpdb->get_results("SELECT f.ciudad, COUNT(f.ciudad) as ctCity FROM $tabla_facturas f WHERE f.created_at BETWEEN '$initDate' AND '$endDate' GROUP BY f.ciudad ORDER BY `ctCity` DESC");
 
@@ -382,11 +566,11 @@ function Gb_Dashboard()
 
         $esTable = $wpdb->get_results("SELECT f.estacion, COUNT(f.estacion) as estac FROM $tabla_facturas f WHERE f.created_at BETWEEN '$initDate' AND '$endDate' GROUP BY f.estacion ORDER BY `estac` DESC LIMIT 100000");
         
-        $particTables = $wpdb->get_results("SELECT * FROM $tabla_registros p WHERE p.created_at BETWEEN '$initDate' AND '$endDate' LIMIT 100000");
+        // $particTables = $wpdb->get_results("SELECT * FROM $tabla_registros p WHERE p.created_at BETWEEN '$initDate' AND '$endDate' LIMIT 100000");
         
-        $partCount = $wpdb->num_rows;
+        //$partCount = $wpdb->num_rows;
         
-        $title = "Datos filtrados del $initDate al $endDate";
+        //$title = "Datos filtrados del $initDate al $endDate";
     }
 
     wp_enqueue_style('css_form', plugins_url('css/form.css', __FILE__));
@@ -401,11 +585,42 @@ function Gb_Dashboard()
                 <form id="form-register" method="post">
                     <label>Fecha:</label>
                     <input type="text" id="datePicker" name="datePicker" min="2021-09-01" max="2022-03-31">
+                    
+                    <label>Ciudad*</label>
+                    <select name="Cuidad" id="ciudad" class="fullInput" >
+                        <option value="" disabled selected>Elegir</option>
+                        <option value="guayaquil">Guayaquil</option>
+                        <option value="quito">Quito</option>
+                        <option value="sto_domingo">Sto Domingo</option>
+                        <option value="ambato">Ambato</option>
+                        <!-- <option value="babahoyo">Babahoyo</option>  -->
+                        <option value="cuenca">Cuenca</option>
+                        <option value="duran">Duran</option>
+                        <option value="esmeraldas">Esmeraldas</option>
+                        <option value="el_carmen">El Carmen</option>
+                        <option value="loja">Loja</option>
+                        <option value="machala">Machala</option>
+                        <option value="manta">Manta</option>
+                        <option value="montecristi">Montecristi</option>
+                        <option value="posorja">Posorja</option>
+                        <option value="quevedo">Quevedo</option>
+                        <option value="riobamba">Riobamba</option>
+                        <!-- <option value="salinas">Salinas</option> -->
+                        <option value="santa_elena">Santa Elena</option>
+                        <option value="salitre">Salitre</option>
+                        <option value="el_guabo">El Guabo</option>
+                    </select>
+                    <label>Estación de servicio*</label>
+                    <select name="estacion" id="fuel" class="fullInput" >
+                        <option value="" disabled selected>Elegir</option>
+                    </select>
+
                     <button type="submit">Buscar</button>
                 </form><br>
             </div>
             <div class="col-sm-4"></div>
         </div>
+
         <div class="row secondBoxes">
             <div class="col-sm-2">
                 
