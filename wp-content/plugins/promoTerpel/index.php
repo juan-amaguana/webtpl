@@ -128,10 +128,11 @@ function Gb_Login_Form()
 {
     wp_enqueue_script('js_form', plugins_url('js/form.js', __FILE__));
 ?>
-    <form id="login-form" onsubmit="event.preventDefault(); submitLogin();">
-        <input type="text" class="login-control-gb" id="cedulaLogin" name="cedulaLogin" placeholder="cédula" required maxlength="10" minlength="10" pattern="\d*" />
-        <button type="submit" id="loginButton" class="submitLogin">Participar</button>
-    </form>
+<form id="login-form" onsubmit="event.preventDefault(); submitLogin();">
+    <input type="text" class="login-control-gb" id="cedulaLogin" name="cedulaLogin" placeholder="cédula" required
+        maxlength="10" minlength="10" pattern="\d*" />
+    <button type="submit" id="loginButton" class="submitLogin">Participar</button>
+</form>
 <?php
 }
 
@@ -141,10 +142,11 @@ function Gb_Login_Form2()
 {
     wp_enqueue_script('js_form', plugins_url('js/form.js', __FILE__));
 ?>
-    <form id="login-form2" onsubmit="event.preventDefault(); submitLogin2();">
-        <input type="text" class="login-control-gb" id="cedulaLogin2" name="cedulaLogin" placeholder="Cédula" required maxlength="10" minlength="10" pattern="\d*" />
-        <button type="submit" id="loginButton2" class="submitLogin">Participar</button>
-    </form>
+<form id="login-form2" onsubmit="event.preventDefault(); submitLogin2();">
+    <input type="text" class="login-control-gb" id="cedulaLogin2" name="cedulaLogin" placeholder="Cédula" required
+        maxlength="10" minlength="10" pattern="\d*" />
+    <button type="submit" id="loginButton2" class="submitLogin">Participar</button>
+</form>
 <?php
 }
 
@@ -159,42 +161,47 @@ function Gb_Register_Form()
     wp_enqueue_style('css_form', plugins_url('css/form.css', __FILE__));
     wp_enqueue_script('js_form', plugins_url('js/form.js', __FILE__));
 ?>
-    <form id="form-register" onsubmit="event.preventDefault(); submitRegister();">
-        <div>
-            <label>Nombre*</label>
-            <input type="text" class="form-control-gb" id="nombre" name="nombre" placeholder="Nombre" required>
-        </div>
-        <div>
-            <label>Apellido*</label>
-            <input type="text" class="form-control-gb" id="apellido" name="apellido" placeholder="Apellido" required>
-        </div>
-        <div>
-            <label>Email*</label>
-            <input type="email" class="form-control-gb" id="correo" name="correo" placeholder="Correo electrónico" required>
-        </div>
-        <div>
-            <label>Cédula*</label>
-            <input type="text" class="form-control-gb" id="cedula" name="cedula" value="<?php echo $id; ?>" maxlength="10" minlength="10" pattern="\d*">
-        </div>
-        <div>
-            <label>Teléfono*</label>
-            <input class="form-control-gb" id="telefono" name="telefono" placeholder="Tel&eacute;fono" required type="text" maxlength="10" minlength="10" pattern="\d*">
-        </div>
-        <p>
-            *Datos obligatorios <br>
-            **Recuerda que la información proporcionada será nuestro medio de contacto si resultas  ser ganador.
-        </p>
-        <div class="submitSection">
-            <input type="checkbox" id="aceptacion" name="aceptacion" value="1" required>
-            <p>He le&iacute;do y acepto los <a href="https://terpelsicumple.com/terminos-y-condiciones/" target="_blank" class="noLink">T&eacute;rminos y Condiciones.</a></p>
-        </div>
-        <button type="button" class="btn face" value="Registrame con Facebook" onClick="checkLoginState()"><img src="<?php bloginfo('template_directory'); ?>/assets/images/face.svg" alt="fb" /> Registrame con Facebook</button>
-        <input type="submit" class="btn registerButton" value="Continuar">
-        <p>
+<form id="form-register" onsubmit="event.preventDefault(); submitRegister();">
+    <div>
+        <label>Nombre*</label>
+        <input type="text" class="form-control-gb" id="nombre" name="nombre" placeholder="Nombre" required>
+    </div>
+    <div>
+        <label>Apellido*</label>
+        <input type="text" class="form-control-gb" id="apellido" name="apellido" placeholder="Apellido" required>
+    </div>
+    <div>
+        <label>Email*</label>
+        <input type="email" class="form-control-gb" id="correo" name="correo" placeholder="Correo electrónico" required>
+    </div>
+    <div>
+        <label>Cédula*</label>
+        <input type="text" class="form-control-gb" id="cedula" name="cedula" value="<?php echo $id; ?>" maxlength="10"
+            minlength="10" pattern="\d*">
+    </div>
+    <div>
+        <label>Teléfono*</label>
+        <input class="form-control-gb" id="telefono" name="telefono" placeholder="Tel&eacute;fono" required type="text"
+            maxlength="10" minlength="10" pattern="\d*">
+    </div>
+    <p>
+        *Datos obligatorios <br>
+        **Recuerda que la información proporcionada será nuestro medio de contacto si resultas ser ganador.
+    </p>
+    <div class="submitSection">
+        <input type="checkbox" id="aceptacion" name="aceptacion" value="1" required>
+        <p>He le&iacute;do y acepto los <a href="https://terpelsicumple.com/terminos-y-condiciones/" target="_blank"
+                class="noLink">T&eacute;rminos y Condiciones.</a></p>
+    </div>
+    <button type="button" class="btn face" value="Registrame con Facebook" onClick="checkLoginState()"><img
+            src="<?php bloginfo('template_directory'); ?>/assets/images/face.svg" alt="fb" /> Registrame con
+        Facebook</button>
+    <input type="submit" class="btn registerButton" value="Continuar">
+    <p>
         ** Recuerda guardar tu factura original para reclamar tu premio.<br>
         ***Las facturas de consumidor final no participan.
-        </p>
-    </form>
+    </p>
+</form>
 <?php
 
 }
@@ -208,111 +215,124 @@ function Gb_Code_Register()
 ?>
 
 <style>
-canvas{
-  display: none;
+canvas {
+    display: none;
 }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/screw-filereader@1.4.3/index.min.js"></script>
-    <form id="form-code" onsubmit="event.preventDefault(); submitCode();" enctype="multipart/form-data">
-        <label>Número de factura*</label>
-        <input id="numFactura1" class="smallInput" name="numFactura1" placeholder="000" required type="number" maxlength="3" pattern="\d*" />
-        <input id="numFactura2" class="smallInput" name="numFactura2" placeholder="000" required type="number" maxlength="3" pattern="\d*" />
-        <input id="numFactura3" class="medInput" name="numFactura3" placeholder="000" required type="number" pattern="\d*" maxlength="30" />
+<form id="form-code" onsubmit="event.preventDefault(); submitCode();" enctype="multipart/form-data">
+    <label>Número de factura*</label>
+    <input id="numFactura1" class="smallInput" name="numFactura1" placeholder="000" required type="number" maxlength="3"
+        pattern="\d*" />
+    <input id="numFactura2" class="smallInput" name="numFactura2" placeholder="000" required type="number" maxlength="3"
+        pattern="\d*" />
+    <input id="numFactura3" class="medInput" name="numFactura3" placeholder="000" required type="number" pattern="\d*"
+        maxlength="30" />
 
-        <label>Monto total de factura*</label>
-        <input id="montoFactura" class="smallInput" name="montoFactura" placeholder="00" type="number" required maxlength="10" pattern="\d*" />,
-        <input id="decimals" class="smallInput" name="decimals" placeholder="00" type="number" required maxlength="2" pattern="\d*" /> USD
+    <label>Monto total de factura*</label>
+    <input id="montoFactura" class="smallInput" name="montoFactura" placeholder="00" type="number" required
+        maxlength="10" pattern="\d*" />,
+    <input id="decimals" class="smallInput" name="decimals" placeholder="00" type="number" required maxlength="2"
+        pattern="\d*" /> USD
 
-        <label>Ciudad*</label>
-        <select name="Cuidad" id="ciudad" class="fullInput" required>
-            <option value="" disabled selected>Elegir</option>
-            <option value="guayaquil">Guayaquil</option>
-            <option value="quito">Quito</option>
-            <option value="sto_domingo">Sto Domingo</option>
-            <option value="ambato">Ambato</option>
-            <option value="babahoyo">Babahoyo</option>
-            <option value="cuenca">Cuenca</option>
-            <option value="duran">Duran</option>
-            <option value="esmeraldas">Esmeraldas</option>
-            <option value="el_carmen">El Carmen</option>
-            <!-- <option value="el_guabo">El Guabo</option> -->
-            <option value="loja">Loja</option>
-            <option value="machala">Machala</option>
-            <option value="manta">Manta</option>
-            <option value="montecristi">Montecristi</option>
-            <option value="nobol">Nobol</option>
-            <option value="pedernales">Pedernales</option>
-            <option value="posorja">Posorja</option>
-            <option value="quevedo">Quevedo</option>
-            <option value="riobamba">Riobamba</option>
-            <!-- <option value="salinas">Salinas</option> -->
-            <option value="santa_elena">Santa Elena</option>
-            <option value="salitre">Salitre</option>
-        </select>
-        <label>Estación de servicio*</label>
-        <select name="Estación de servicio*" id="fuel" class="fullInput" required>
-            <option value="" disabled selected>Elegir</option>
-        </select>
-        <label>Carga tu factura*(png, jpg, pdf)</label>
-        <input type="file" id="pdf" name="Factura Comercial" accept="pdf" required class="fullInput" placeholder="JPG, PNG, PDF..." max-file-size="1024" total-max-size="1024">
-        <label>* Facturas de consumidor final no participan</label>
-        <label>Obtén el doble de oportunidades si compraste:</label>
-        <div class="productsCheck">
-            <input type="checkbox" id="evolt" name="Evolt-t" value="evolt" name="product"><img src="<?php bloginfo('template_directory'); ?>/assets/images/evoltCheck.svg" />
-            <input type="checkbox" id="lubricante" name="Lubricante" value="lubricante" name="product" class="marleft"><img src="<?php bloginfo('template_directory'); ?>/assets/images/mobilCheck.svg" />
-            <input type="checkbox" id="altoque" name="altoque" value="lubricante" name="product" class="marleft"><img src="<?php bloginfo('template_directory'); ?>/assets/images/altoque.svg" /><br>
+    <label>Ciudad*</label>
+    <select name="Cuidad" id="ciudad" class="fullInput" required>
+        <option value="" disabled selected>Elegir</option>
+        <option value="guayaquil">Guayaquil</option>
+        <option value="quito">Quito</option>
+        <option value="sto_domingo">Sto Domingo</option>
+        <option value="ambato">Ambato</option>
+        <option value="babahoyo">Babahoyo</option>
+        <option value="cuenca">Cuenca</option>
+        <option value="duran">Duran</option>
+        <option value="esmeraldas">Esmeraldas</option>
+        <option value="el_carmen">El Carmen</option>
+        <!-- <option value="el_guabo">El Guabo</option> -->
+        <option value="loja">Loja</option>
+        <option value="machala">Machala</option>
+        <option value="manta">Manta</option>
+        <option value="montecristi">Montecristi</option>
+        <option value="nobol">Nobol</option>
+        <option value="pedernales">Pedernales</option>
+        <option value="posorja">Posorja</option>
+        <option value="quevedo">Quevedo</option>
+        <option value="riobamba">Riobamba</option>
+        <!-- <option value="salinas">Salinas</option> -->
+        <option value="santa_elena">Santa Elena</option>
+        <option value="salitre">Salitre</option>
+    </select>
+    <label>Estación de servicio*</label>
+    <select name="Estación de servicio*" id="fuel" class="fullInput" required>
+        <option value="" disabled selected>Elegir</option>
+    </select>
+    <label>Carga tu factura*(png, jpg, pdf)</label>
+    <input type="file" id="pdf" name="Factura Comercial" accept="pdf" required class="fullInput"
+        placeholder="JPG, PNG, PDF..." max-file-size="1024" total-max-size="1024">
+    <label>* Facturas de consumidor final no participan</label>
+    <label>Obtén el doble de oportunidades si compraste:</label>
+    <div class="productsCheck">
+        <input type="checkbox" id="evolt" name="Evolt-t" value="evolt" name="product"><img
+            src="<?php bloginfo('template_directory'); ?>/assets/images/evoltCheck.svg" />
+        <input type="checkbox" id="lubricante" name="Lubricante" value="lubricante" name="product" class="marleft"><img
+            src="<?php bloginfo('template_directory'); ?>/assets/images/mobilCheck.svg" />
+        <input type="checkbox" id="altoque" name="altoque" value="lubricante" name="product" class="marleft"><img
+            src="<?php bloginfo('template_directory'); ?>/assets/images/altoque.svg" /><br>
+    </div>
+    <label>Obtén el triple de oportunidades si compraste:</label>
+    <div class="targets">
+        <button type='button' onclick="removeVoucher()" id="reset" disabled><img
+                src="<?php bloginfo('template_directory'); ?>/assets/images/recycle.png" alt="reset" /></button>
+        <input type="radio" id="visa" name="target" value="visa">
+        <img src="<?php bloginfo('template_directory'); ?>/assets/images/visatitanium.png" />
+        <p>Visa Titanium</p><br>
+        <input type="radio" id="discover" name="target" value="discover">
+        <img src="<?php bloginfo('template_directory'); ?>/assets/images/discover.png" />
+        <p>Discover</p><br>
+        <input type="radio" id="diners" name="target" value="diners">
+        <img src="<?php bloginfo('template_directory'); ?>/assets/images/dinersclub.png" />
+        <p>Diners Club</p><br>
+        <div class="voucher">
+            <label>Carga tu voucher*(png, jpg, pdf)</label>
+            <input type="file" id="pdfvoucher" name="Factura Comercial" accept="pdf" class="fullWidth"
+                placeholder="JPG, PNG, PDF..." max-file-size="1024" total-max-size="1024">
         </div>
-        <label>Obtén el triple de oportunidades si compraste:</label>
-        <div class="targets">
-            <button type='button' onclick="removeVoucher()" id="reset" disabled><img src="<?php bloginfo('template_directory'); ?>/assets/images/recycle.png" alt="reset" /></button>
-            <input type="radio" id="visa" name="target" value="visa">
-            <img src="<?php bloginfo('template_directory'); ?>/assets/images/visatitanium.png" />
-            <p>Visa Titanium</p><br>
-            <input type="radio" id="discover" name="target" value="discover">
-            <img src="<?php bloginfo('template_directory'); ?>/assets/images/discover.png" />
-            <p>Discover</p><br>
-            <input type="radio" id="diners" name="target" value="diners">
-            <img src="<?php bloginfo('template_directory'); ?>/assets/images/dinersclub.png" />
-            <p>Diners Club</p><br>
-            <div class="voucher">
-                <label>Carga tu voucher*(png, jpg, pdf)</label>
-                <input type="file" id="pdfvoucher" name="Factura Comercial" accept="pdf" class="fullWidth" placeholder="JPG, PNG, PDF..." max-file-size="1024" total-max-size="1024">
-            </div>
-        </div>
-        <input type="submit" class="redButton buttAlignCenter" id="sendCodeInput" value="Ingresar factura">
-    </form>
+    </div>
+    <input type="submit" class="redButton buttAlignCenter" id="sendCodeInput" value="Ingresar factura">
+</form>
 
-    <!-- Modal -->
-    <div class="modal fade" id="amountExceeded" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body" style="text-align: center;">
-                    <div class="row">
-                        <div class="col-md-12">
+<!-- Modal -->
+<div class="modal fade" id="amountExceeded" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body" style="text-align: center;">
+                <div class="row">
+                    <div class="col-md-12">
+                        <br>
+                        <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/alert.svg" />
+                        <br><br>
+                        <p style="font-size: 16px;">
+                            ¿Estás seguro de ingresar <strong> <span id="valueInvoice">$592,50</span> ?</strong>
                             <br>
-                            <img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/assets/images/alert.svg"/>
-                            <br><br>
-                            <p style="font-size: 16px;">
-                                ¿Estás seguro de ingresar <strong> <span id="valueInvoice">$592,50</span> ?</strong>
-                                <br>
-                                Recuerda que si el valor ingresado y el de la factura no coincide serás eliminado del concurso
-                            </p>
-                        </div>
-                        <div class="col-md-6">
-                            <button class="whiteButton buttAlignCenter"  onclick="acceptValue()">
-                                Estoy seguro
-                            </button>
-                        </div>
-                        <div class="col-md-6">
-                            <button class="redButton buttAlignCenter" onclick="correctValue()">
-                                Corregir valor
-                            </button>
-                        </div>
+                            Recuerda que si el valor ingresado y el de la factura no coincide serás eliminado del
+                            concurso
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="whiteButton buttAlignCenter" onclick="acceptValue()">
+                            Estoy seguro
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="redButton buttAlignCenter" onclick="correctValue()">
+                            Corregir valor
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 <script>
 /**
  * BAJAR TAMANO DE IMAGENES DE FACTURAS
@@ -320,33 +340,33 @@ canvas{
  */
 pdf.onchange = function change() {
     const file = this.files[0]
-    if(file.type.match(/image.*/)) {
+    if (file.type.match(/image.*/)) {
         if (!file) return
-    
+
         file.image().then(img => {
             const canvas = document.createElement('canvas')
-                const ctx = canvas.getContext('2d')
+            const ctx = canvas.getContext('2d')
             const maxWidth = 900
             const maxHeight = 900
-            
+
             // calculate new size
             const ratio = Math.min(maxWidth / img.width, maxHeight / img.height)
-            const width = img.width * ratio + .5|0
-            const height = img.height * ratio + .5|0
-            
+            const width = img.width * ratio + .5 | 0
+            const height = img.height * ratio + .5 | 0
+
             // resize the canvas to the new dimensions
             canvas.width = width
             canvas.height = height
-            
+
             // scale & draw the image onto the canvas
             ctx.drawImage(img, 0, 0, width, height)
             document.body.appendChild(canvas)
-            
+
             // Get the binary (aka blob)
             canvas.toBlob(blob => {
                 const resizedFile = new File([blob], file.name, file)
                 const fileList = new FileListItem(resizedFile)
-                
+
                 // temporary remove event listener since
                 // assigning a new filelist to the input
                 // will trigger a new change event...
@@ -364,33 +384,33 @@ pdf.onchange = function change() {
  */
 pdfvoucher.onchange = function change() {
     const file = this.files[0]
-    if(file.type.match(/image.*/)) {
+    if (file.type.match(/image.*/)) {
         if (!file) return
-    
+
         file.image().then(img => {
             const canvas = document.createElement('canvas')
-                const ctx = canvas.getContext('2d')
+            const ctx = canvas.getContext('2d')
             const maxWidth = 900
             const maxHeight = 900
-            
+
             // calculate new size
             const ratio = Math.min(maxWidth / img.width, maxHeight / img.height)
-            const width = img.width * ratio + .5|0
-            const height = img.height * ratio + .5|0
-            
+            const width = img.width * ratio + .5 | 0
+            const height = img.height * ratio + .5 | 0
+
             // resize the canvas to the new dimensions
             canvas.width = width
             canvas.height = height
-            
+
             // scale & draw the image onto the canvas
             ctx.drawImage(img, 0, 0, width, height)
             document.body.appendChild(canvas)
-            
+
             // Get the binary (aka blob)
             canvas.toBlob(blob => {
                 const resizedFile = new File([blob], file.name, file)
                 const fileList = new FileListItem(resizedFile)
-                
+
                 // temporary remove event listener since
                 // assigning a new filelist to the input
                 // will trigger a new change event...
@@ -578,108 +598,108 @@ function Gb_Dashboard()
     wp_enqueue_style('css_form', plugins_url('css/form.css', __FILE__));
     wp_enqueue_script('js_form', plugins_url('js/form.js', __FILE__));
 ?>
-    <?php wp_nonce_field('graba_registro', 'registro_nonce'); ?>
-    <div class="container dashboard">
-        <h1><?php echo $title; ?></h1>
-        <div class="row ">
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4">
-                <form id="form-register" method="post">
-                    <label>Fecha:</label>
-                    <input type="text" id="datePicker" name="datePicker" min="2021-09-01" max="2022-03-31">
-                    
-                    <label>Ciudad*</label>
-                    <select name="Cuidad" id="ciudad" class="fullInput" >
-                        <option value="" disabled selected>Elegir</option>
-                        <option value="guayaquil">Guayaquil</option>
-                        <option value="quito">Quito</option>
-                        <option value="sto_domingo">Sto Domingo</option>
-                        <option value="ambato">Ambato</option>
-                        <option value="babahoyo">Babahoyo</option>
-                        <option value="cuenca">Cuenca</option>
-                        <option value="duran">Duran</option>
-                        <option value="esmeraldas">Esmeraldas</option>
-                        <option value="el_carmen">El Carmen</option>
-                        <option value="loja">Loja</option>
-                        <option value="machala">Machala</option>
-                        <option value="manta">Manta</option>
-                        <option value="montecristi">Montecristi</option>
-                        <option value="nobol">Nobol</option>
-                        <option value="pedernales">Pedernales</option>
-                        <option value="posorja">Posorja</option>
-                        <option value="quevedo">Quevedo</option>
-                        <option value="riobamba">Riobamba</option>
-                        <!-- <option value="salinas">Salinas</option> -->
-                        <option value="santa_elena">Santa Elena</option>
-                        <option value="salitre">Salitre</option>
-                        <!-- <option value="el_guabo">El Guabo</option> -->
-                    </select>
-                    <label>Estación de servicio*</label>
-                    <select name="estacion" id="fuel" class="fullInput" >
-                        <option value="" disabled selected>Elegir</option>
-                    </select>
+<?php wp_nonce_field('graba_registro', 'registro_nonce'); ?>
+<div class="container dashboard">
+    <h1><?php echo $title; ?></h1>
+    <div class="row ">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <form id="form-register" method="post">
+                <label>Fecha:</label>
+                <input type="text" id="datePicker" name="datePicker" min="2021-09-01" max="2022-03-31">
 
-                    <button type="submit">Buscar</button>
-                </form><br>
-            </div>
-            <div class="col-sm-4"></div>
-        </div>
+                <label>Ciudad*</label>
+                <select name="Cuidad" id="ciudad" class="fullInput">
+                    <option value="" disabled selected>Elegir</option>
+                    <option value="guayaquil">Guayaquil</option>
+                    <option value="quito">Quito</option>
+                    <option value="sto_domingo">Sto Domingo</option>
+                    <option value="ambato">Ambato</option>
+                    <option value="babahoyo">Babahoyo</option>
+                    <option value="cuenca">Cuenca</option>
+                    <option value="duran">Duran</option>
+                    <option value="esmeraldas">Esmeraldas</option>
+                    <option value="el_carmen">El Carmen</option>
+                    <option value="loja">Loja</option>
+                    <option value="machala">Machala</option>
+                    <option value="manta">Manta</option>
+                    <option value="montecristi">Montecristi</option>
+                    <option value="nobol">Nobol</option>
+                    <option value="pedernales">Pedernales</option>
+                    <option value="posorja">Posorja</option>
+                    <option value="quevedo">Quevedo</option>
+                    <option value="riobamba">Riobamba</option>
+                    <!-- <option value="salinas">Salinas</option> -->
+                    <option value="santa_elena">Santa Elena</option>
+                    <option value="salitre">Salitre</option>
+                    <!-- <option value="el_guabo">El Guabo</option> -->
+                </select>
+                <label>Estación de servicio*</label>
+                <select name="estacion" id="fuel" class="fullInput">
+                    <option value="" disabled selected>Elegir</option>
+                </select>
 
-        <div class="row secondBoxes">
-            <div class="col-sm-2">
-                
-            </div>
-            <div class="col-sm-4 red">
-                <h4>Participantes inscritos</h4>
-                <h2><?php echo $partCount; ?></h2>
-            </div>
-            <div class="col-sm-4 yellow">
-                <h4>Facturas registradas</h4>
-                <h2><?php echo $CountQuantFac; ?></h2>
-            </div>
-            <div class="col-sm-2">
-                
-            </div>
+                <button type="submit">Buscar</button>
+            </form><br>
         </div>
-        <div class="row firstBoxes">
-            <div class="col-sm-4 blue">
-                <h4>Participantes que ingresaron factura</h4>
-                <h2><?php echo $count; ?></h2>
-            </div>
-            <div class="col-sm-4 purple">
-                <h4>Códigos emitidos</h4>
-                <h2><?php echo $CountFac; ?></h2>
-            </div>
-            <div class="col-sm-4 pink">
-                <h4>Dinero Registrado</h4>
-                <h2>$<?php echo $CountMoney; ?></h2>
-            </div>
+        <div class="col-sm-4"></div>
+    </div>
+
+    <div class="row secondBoxes">
+        <div class="col-sm-2">
+
         </div>
-        <div class="row secondBoxes">
-            <div class="col-sm-4 pink">
-                <h4>Compartidas en Facebook</h4>
-                <h2><?php echo $CountFace; ?></h2>
-            </div>
-            <div class="col-sm-4 red">
-                <h4>N Veces agregado evolt-t</h4>
-                <h2><?php echo $CountEvolt; ?></h2>
-            </div>
-            <div class="col-sm-4 yellow">
-                <h4>N Veces agregado Mobil</h4>
-                <h2><?php echo $CountLubri; ?></h2>
-            </div>
+        <div class="col-sm-4 red">
+            <h4>Participantes inscritos</h4>
+            <h2><?php echo $partCount; ?></h2>
         </div>
-        <div class="row smallTables">
-            <div class="col-sm-4 purple">
-                <h5>Ciudades</h5>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Ciudad</th>
-                            <th>Facturas</th>
-                        </tr>
-                    <tbody>
-                        <?php
+        <div class="col-sm-4 yellow">
+            <h4>Facturas registradas</h4>
+            <h2><?php echo $CountQuantFac; ?></h2>
+        </div>
+        <div class="col-sm-2">
+
+        </div>
+    </div>
+    <div class="row firstBoxes">
+        <div class="col-sm-4 blue">
+            <h4>Participantes que ingresaron factura</h4>
+            <h2><?php echo $count; ?></h2>
+        </div>
+        <div class="col-sm-4 purple">
+            <h4>Códigos emitidos</h4>
+            <h2><?php echo $CountFac; ?></h2>
+        </div>
+        <div class="col-sm-4 pink">
+            <h4>Dinero Registrado</h4>
+            <h2>$<?php echo $CountMoney; ?></h2>
+        </div>
+    </div>
+    <div class="row secondBoxes">
+        <div class="col-sm-4 pink">
+            <h4>Compartidas en Facebook</h4>
+            <h2><?php echo $CountFace; ?></h2>
+        </div>
+        <div class="col-sm-4 red">
+            <h4>N Veces agregado evolt-t</h4>
+            <h2><?php echo $CountEvolt; ?></h2>
+        </div>
+        <div class="col-sm-4 yellow">
+            <h4>N Veces agregado Mobil</h4>
+            <h2><?php echo $CountLubri; ?></h2>
+        </div>
+    </div>
+    <div class="row smallTables">
+        <div class="col-sm-4 purple">
+            <h5>Ciudades</h5>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Ciudad</th>
+                        <th>Facturas</th>
+                    </tr>
+                <tbody>
+                    <?php
                         foreach ($citiesTable as $ct) {
                             $ciudad = ucfirst(esc_textarea($ct->ciudad));
                             $countCt = esc_textarea($ct->ctCity);
@@ -687,21 +707,21 @@ function Gb_Dashboard()
                             echo "<td>$countCt</td></tr>";
                         }
                         ?>
-                    </tbody>
-                    </thead>
-                </table>
-            </div>
-            <div class="col-sm-4 blue">
-                <h5>Tarjetas</h5>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Tarjeta</th>
-                            <th>Cuenta</th>
-                            <th>Dinero</th>
-                        </tr>
-                    <tbody class="targetTbDash">
-                        <?php
+                </tbody>
+                </thead>
+            </table>
+        </div>
+        <div class="col-sm-4 blue">
+            <h5>Tarjetas</h5>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Tarjeta</th>
+                        <th>Cuenta</th>
+                        <th>Dinero</th>
+                    </tr>
+                <tbody class="targetTbDash">
+                    <?php
                         foreach ($cardsTable as $cat) {
                             $cd = ucfirst(esc_textarea($cat->cd));
                             $ctCard = esc_textarea($cat->ctCard);
@@ -711,20 +731,20 @@ function Gb_Dashboard()
                             echo "<td>$$money</td></tr>";
                         }
                         ?>
-                    </tbody>
-                    </thead>
-                </table>
-            </div>
-            <div class="col-sm-4 pink">
-                                <h5>Est. Servicio</h5>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Estación</th>
-                            <th>Facturas</th>
-                        </tr>
-                    <tbody>
-                        <?php
+                </tbody>
+                </thead>
+            </table>
+        </div>
+        <div class="col-sm-4 pink">
+            <h5>Est. Servicio</h5>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Estación</th>
+                        <th>Facturas</th>
+                    </tr>
+                <tbody>
+                    <?php
                         foreach ($esTable as $cat2) {
                             $est = esc_textarea($cat2->estacion);
                             $ctEst = esc_textarea($cat2->estac);
@@ -732,19 +752,19 @@ function Gb_Dashboard()
                             echo "<td>$ctEst</td></tr>";
                         }
                         ?>
-                    </tbody>
-                    </thead>
-                </table>
-            </div>
+                </tbody>
+                </thead>
+            </table>
         </div>
-
     </div>
-    <div class="row">
-        <div class="col-12">
-            <div class="participantsTable">
-                <h3>Lista de participantes</h3>
-                <button onclick="exportTable()">Exportar tabla</button>
-                <?php
+
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="participantsTable">
+            <h3>Lista de participantes</h3>
+            <button onclick="exportTable()">Exportar tabla</button>
+            <?php
                 echo '<table class="table" id="mainTableGb">';
                 echo '<thead><tr><th>Nombre</th><th>';
                 echo 'Apellido</th><th>';
@@ -790,9 +810,9 @@ function Gb_Dashboard()
                 }
                 echo '</tbody></table></div>';
                 ?>
-            </div>
         </div>
     </div>
+</div>
 <?php
 }
 
@@ -821,35 +841,35 @@ function Gb_Mails()
     wp_enqueue_style('css_form', plugins_url('css/form.css', __FILE__));
     wp_enqueue_script('js_form', plugins_url('js/form.js', __FILE__));
 ?>
-    <div class="container mails">
-        <div class="row">
-            <div class="col-sm-6">
-                <h3>Correo 5 dias</h3>
-                <p>Usuarios dentro del filtro: <?php echo $fiveCount; ?></p>
-                <button onclick="submit5mails()">Enviar Correo</button>
-            </div>
-            <div class="col-sm-6">
-                <h3>Correo 10 dias</h3>
-                <p>Usuarios dentro del filtro: <?php echo $tenCount; ?></p>
-                <button onclick="submit10mails()">Enviar Correo</button>
-            </div>
+<div class="container mails">
+    <div class="row">
+        <div class="col-sm-6">
+            <h3>Correo 5 dias</h3>
+            <p>Usuarios dentro del filtro: <?php echo $fiveCount; ?></p>
+            <button onclick="submit5mails()">Enviar Correo</button>
         </div>
-        <div class="row">
-            <div class="col-sm-4">
-            </div>
-            <div class="col-sm-4">
-                <h3>Correo de ganadores</h3>
-                <p>Usuarios dentro del filtro: <?php echo $usersCount; ?></p>
-                <label>Lista de ganadores semanales<br><span>(separar por coma cada ganador)</span></label><br>
-                <textarea name="textarea" rows="10" cols="30" id="winArray" wrap="hard">
-
-                </textarea>
-                <button onclick="sendWiners()">Enviar</button>
-            </div>
-            <div class="col-sm-4">
-            </div>
+        <div class="col-sm-6">
+            <h3>Correo 10 dias</h3>
+            <p>Usuarios dentro del filtro: <?php echo $tenCount; ?></p>
+            <button onclick="submit10mails()">Enviar Correo</button>
         </div>
     </div>
+    <div class="row">
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4">
+            <h3>Correo de ganadores</h3>
+            <p>Usuarios dentro del filtro: <?php echo $usersCount; ?></p>
+            <label>Lista de ganadores semanales<br><span>(separar por coma cada ganador)</span></label><br>
+            <textarea name="textarea" rows="10" cols="30" id="winArray" wrap="hard">
+
+                </textarea>
+            <button onclick="sendWiners()">Enviar</button>
+        </div>
+        <div class="col-sm-4">
+        </div>
+    </div>
+</div>
 <?php
 }
 
@@ -901,8 +921,8 @@ function Gb_Codigos()
 
     wp_enqueue_style('css_form', plugins_url('css/form.css', __FILE__));
     wp_enqueue_script('js_form', plugins_url('js/form.js', __FILE__));?>
-    <div class="col-12">
-        <?php
+<div class="col-12">
+    <?php
         echo "<ul class='pagination'>";
         for ($i = 1; $i <= $page_count; $i++) {
             if ($i === $page) { // this is current page
@@ -913,13 +933,13 @@ function Gb_Codigos()
         }
         echo '</ul>'
         ?>
-        <br>
-        <h3>Codigos Registrados Totales <?php echo $totalCount; ?></h3>
-        <h3>Codigos en pantalla <?php echo $partialCount; ?></h3>
-        <div>
-            <button onclick="exportTableBackend()">Descargar csv</button>
-        </div>
-        <?php
+    <br>
+    <h3>Codigos Registrados Totales <?php echo $totalCount; ?></h3>
+    <h3>Codigos en pantalla <?php echo $partialCount; ?></h3>
+    <div>
+        <button onclick="exportTableBackend()">Descargar csv</button>
+    </div>
+    <?php
         echo '<table class="table" id="mainTableGb">';
         echo '<thead><tr><th>Codigo</th><th>';
         echo 'Nombre</th><th>';
@@ -945,6 +965,6 @@ function Gb_Codigos()
         }
         echo '</tbody></table></div>';
         ?>
-    </div>
+</div>
 <?php
 }
